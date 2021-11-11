@@ -56,15 +56,31 @@
 		1178E84E273DDEB10049EA54 /* Messenger */ = {
 			isa = PBXGroup;
 			children = (
+				1178E863273DDEE80049EA54 /* Application */,
+				1178E853273DDEB10049EA54 /* ViewController.swift */,
+				1178E864273DDF0B0049EA54 /* Supporting Files */,
+			);
+			path = Messenger;
+			sourceTree = "<group>";
+		};
+		1178E863273DDEE80049EA54 /* Application */ = {
+			isa = PBXGroup;
+			children = (
 				1178E84F273DDEB10049EA54 /* AppDelegate.swift */,
 				1178E851273DDEB10049EA54 /* SceneDelegate.swift */,
-				1178E853273DDEB10049EA54 /* ViewController.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		1178E864273DDF0B0049EA54 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				1178E855273DDEB10049EA54 /* Main.storyboard */,
 				1178E858273DDEB40049EA54 /* Assets.xcassets */,
 				1178E85A273DDEB40049EA54 /* LaunchScreen.storyboard */,
 				1178E85D273DDEB40049EA54 /* Info.plist */,
 			);
-			path = Messenger;
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,7 +307,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3JF86XZDGA;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Messenger/Info.plist;
+				INFOPLIST_FILE = "Messenger/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -319,7 +335,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3JF86XZDGA;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Messenger/Info.plist;
+				INFOPLIST_FILE = "Messenger/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
