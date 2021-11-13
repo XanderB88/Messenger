@@ -7,23 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		116E5E3E273F33F400AE2FB2 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E5E3D273F33F400AE2FB2 /* UILabel+Extension.swift */; };
+		116E5E40273F341200AE2FB2 /* UIImageview+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E5E3F273F341200AE2FB2 /* UIImageview+Extension.swift */; };
+		116E5E42273F47FB00AE2FB2 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E5E41273F47FB00AE2FB2 /* UIStackView+Extension.swift */; };
 		1178E850273DDEB10049EA54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178E84F273DDEB10049EA54 /* AppDelegate.swift */; };
 		1178E852273DDEB10049EA54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178E851273DDEB10049EA54 /* SceneDelegate.swift */; };
-		1178E854273DDEB10049EA54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178E853273DDEB10049EA54 /* ViewController.swift */; };
-		1178E857273DDEB10049EA54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1178E855273DDEB10049EA54 /* Main.storyboard */; };
+		1178E854273DDEB10049EA54 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178E853273DDEB10049EA54 /* AuthenticationViewController.swift */; };
 		1178E859273DDEB40049EA54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1178E858273DDEB40049EA54 /* Assets.xcassets */; };
 		1178E85C273DDEB40049EA54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1178E85A273DDEB40049EA54 /* LaunchScreen.storyboard */; };
+		1178E867273DFEA20049EA54 /* UIButton+Exension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178E866273DFEA20049EA54 /* UIButton+Exension.swift */; };
+		1178E86A273E01D90049EA54 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178E869273E01D90049EA54 /* UIColor+Extension.swift */; };
+		1178E86C273E05FA0049EA54 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178E86B273E05FA0049EA54 /* Font+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		116E5E3D273F33F400AE2FB2 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		116E5E3F273F341200AE2FB2 /* UIImageview+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageview+Extension.swift"; sourceTree = "<group>"; };
+		116E5E41273F47FB00AE2FB2 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		1178E84C273DDEB10049EA54 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1178E84F273DDEB10049EA54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1178E851273DDEB10049EA54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1178E853273DDEB10049EA54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1178E856273DDEB10049EA54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1178E853273DDEB10049EA54 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		1178E858273DDEB40049EA54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1178E85B273DDEB40049EA54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1178E85D273DDEB40049EA54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1178E866273DFEA20049EA54 /* UIButton+Exension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Exension.swift"; sourceTree = "<group>"; };
+		1178E869273E01D90049EA54 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		1178E86B273E05FA0049EA54 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +47,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		116E5E43273F492D00AE2FB2 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				1178E866273DFEA20049EA54 /* UIButton+Exension.swift */,
+				1178E869273E01D90049EA54 /* UIColor+Extension.swift */,
+				1178E86B273E05FA0049EA54 /* Font+Extension.swift */,
+				116E5E3D273F33F400AE2FB2 /* UILabel+Extension.swift */,
+				116E5E3F273F341200AE2FB2 /* UIImageview+Extension.swift */,
+				116E5E41273F47FB00AE2FB2 /* UIStackView+Extension.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		116E5E44273F49D300AE2FB2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1178E853273DDEB10049EA54 /* AuthenticationViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		1178E843273DDEB10049EA54 = {
 			isa = PBXGroup;
 			children = (
@@ -57,7 +88,8 @@
 			isa = PBXGroup;
 			children = (
 				1178E863273DDEE80049EA54 /* Application */,
-				1178E853273DDEB10049EA54 /* ViewController.swift */,
+				1178E865273DFE6E0049EA54 /* Extensions */,
+				116E5E44273F49D300AE2FB2 /* Views */,
 				1178E864273DDF0B0049EA54 /* Supporting Files */,
 			);
 			path = Messenger;
@@ -75,12 +107,19 @@
 		1178E864273DDF0B0049EA54 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1178E855273DDEB10049EA54 /* Main.storyboard */,
 				1178E858273DDEB40049EA54 /* Assets.xcassets */,
 				1178E85A273DDEB40049EA54 /* LaunchScreen.storyboard */,
 				1178E85D273DDEB40049EA54 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1178E865273DFE6E0049EA54 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				116E5E43273F492D00AE2FB2 /* UIKit */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,7 +182,6 @@
 			files = (
 				1178E85C273DDEB40049EA54 /* LaunchScreen.storyboard in Resources */,
 				1178E859273DDEB40049EA54 /* Assets.xcassets in Resources */,
-				1178E857273DDEB10049EA54 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,23 +192,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1178E854273DDEB10049EA54 /* ViewController.swift in Sources */,
+				1178E867273DFEA20049EA54 /* UIButton+Exension.swift in Sources */,
+				1178E854273DDEB10049EA54 /* AuthenticationViewController.swift in Sources */,
+				1178E86C273E05FA0049EA54 /* Font+Extension.swift in Sources */,
+				116E5E40273F341200AE2FB2 /* UIImageview+Extension.swift in Sources */,
+				116E5E3E273F33F400AE2FB2 /* UILabel+Extension.swift in Sources */,
+				116E5E42273F47FB00AE2FB2 /* UIStackView+Extension.swift in Sources */,
 				1178E850273DDEB10049EA54 /* AppDelegate.swift in Sources */,
 				1178E852273DDEB10049EA54 /* SceneDelegate.swift in Sources */,
+				1178E86A273E01D90049EA54 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1178E855273DDEB10049EA54 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1178E856273DDEB10049EA54 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1178E85A273DDEB40049EA54 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -310,7 +346,6 @@
 				INFOPLIST_FILE = "Messenger/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -338,7 +373,6 @@
 				INFOPLIST_FILE = "Messenger/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
