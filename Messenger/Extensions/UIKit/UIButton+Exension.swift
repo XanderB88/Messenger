@@ -14,13 +14,19 @@ extension UIButton {
                      backgroundColor: UIColor,
                      backgroundColorAlfa: CGFloat,
                      font: UIFont = .mainFont25,
-                     cornerRadius: CGFloat = 5) {
-        self.init(type: .system)
+                     cornerRadius: CGFloat = 5,
+                     icon: UIImage) {
         
+        self.init(configuration: .plain())
+        self.configuration?.imagePadding = 20
+    
         self.setTitle(title, for: .normal)
         self.setTitleColor(titleColor, for: .normal)
         self.backgroundColor = backgroundColor.withAlphaComponent(backgroundColorAlfa)
         self.titleLabel?.font = font
         self.layer.cornerRadius = cornerRadius
+        
+        self.setImage(icon.withRenderingMode(.alwaysOriginal), for: .normal)
+        self.imageView?.contentMode = .scaleToFill
     }
 }

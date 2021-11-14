@@ -10,9 +10,9 @@ import UIKit
 class AuthenticationViewController: UIViewController {
     
     // MARK: - Buttons
-    let googleButton = UIButton(title: "Google", backgroundColor: .mainWhite, backgroundColorAlfa: 0.2)
-    let emailButton = UIButton(title: "Email", backgroundColor: .mainWhite, backgroundColorAlfa: 0.2)
-    let loginButton = UIButton(title: "LogIn", backgroundColor: .mainWhite, backgroundColorAlfa: 0.2)
+    let googleButton = UIButton(title: "Google", backgroundColor: .mainWhite, backgroundColorAlfa: 0.2, icon: #imageLiteral(resourceName: "google"))
+    let emailButton = UIButton(title: "Email", backgroundColor: .mainWhite, backgroundColorAlfa: 0.2, icon: #imageLiteral(resourceName: "email"))
+    let loginButton = UIButton(title: "LogIn", backgroundColor: .mainWhite, backgroundColorAlfa: 0.2, icon: #imageLiteral(resourceName: "login"))
     
     // MARK: - Labels
     
