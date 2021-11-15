@@ -92,7 +92,7 @@ extension AuthenticationViewController {
 // MARK: - Activate a canvas
 import SwiftUI
 
-struct ViewControllerProvider: PreviewProvider {
+struct AuthenticationViewControllerProvider: PreviewProvider {
     
     static var previews: some View {
         ContainerView().edgesIgnoringSafeArea(.all)
@@ -109,6 +109,5 @@ struct ViewControllerProvider: PreviewProvider {
         func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
         }
     }
-    
 }
 
