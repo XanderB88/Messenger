@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
     
     // MARK: - TextFields
     let emailTextField = UnderlineTextField( placeholder: "Email")
-    let passwordTextField = UnderlineTextField( placeholder: "Password")
+    let passwordTextField = UnderlineTextField( placeholder: "Password", isSecured: true)
     
     // MARK: - Lifecycle
     override func viewDidLoad() {

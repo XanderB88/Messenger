@@ -9,10 +9,12 @@ import UIKit
 
 class UnderlineTextField: UITextField {
     
-    convenience init(font: UIFont? = .secondaryFont18, placeholder: String = "") {
+    convenience init(font: UIFont? = .secondaryFont18, placeholder: String = "", isSecured: Bool = false) {
         self.init()
         
         self.font = font
+        self.textColor = .mainWhite
+        self.isSecureTextEntry = isSecured
         self.borderStyle = .none
         self.placeholder = placeholder
         self.translatesAutoresizingMaskIntoConstraints = false
