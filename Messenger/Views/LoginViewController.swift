@@ -30,8 +30,8 @@ class LoginViewController: UIViewController {
     let needAccountLabel = UILabel(text: "NEED AN ACCOUNT?", textColor: .secondaryWhite, font: .secondaryFont18)
     
     // MARK: - TextFields
-    let emailTextField = UnderlineTextField()
-    let passwordTextField = UnderlineTextField()
+    let emailTextField = UnderlineTextField( placeholder: "Email")
+    let passwordTextField = UnderlineTextField( placeholder: "Password")
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
