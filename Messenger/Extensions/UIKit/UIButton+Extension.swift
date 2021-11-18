@@ -14,8 +14,7 @@ extension UIButton {
                      backgroundColor: UIColor,
                      backgroundColorAlfa: CGFloat = 1,
                      font: UIFont? = .mainFont24,
-                     cornerRadius: CGFloat = 5,
-                     icon: UIImage) {
+                     cornerRadius: CGFloat = 5) {
         
         self.init(type: .system)
         
@@ -24,15 +23,16 @@ extension UIButton {
         self.backgroundColor = backgroundColor.withAlphaComponent(backgroundColorAlfa)
         self.titleLabel?.font = font
         self.layer.cornerRadius = cornerRadius
+    }
+    
+    func setupIconForButton(icon: UIImage) {
+        let setupIcon = UIImageView(image: icon, contentMode: .scaleAspectFit)
+        setupIcon.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(setupIcon)
         
-        self.setImage(icon.withRenderingMode(.alwaysOriginal), for: .normal)
-        self.imageView?.contentMode = .scaleToFill
-        
-        self.titleEdgeInsets = UIEdgeInsets(
-                    top: 0,
-                    left: 15,
-                    bottom: 0,
-                    right: -15
-                )
+        NSLayoutConstraint.activate([
+            setupIcon.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 80),
+            setupIcon.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+        ])
     }
 }

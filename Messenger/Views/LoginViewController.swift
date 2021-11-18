@@ -7,19 +7,16 @@
 
 import UIKit
 
-class LogInViewController: UIViewController {
+class LoginViewController: UIViewController {
     
     // MARK: - Buttons
-    let googleButton = UIButton(title: "Google", backgroundColor: .mainWhite, backgroundColorAlfa: 0.2, icon: #imageLiteral(resourceName: "google"))
-    let loginButton = UIButton(title: "LogIn", backgroundColor: .mainWhite, backgroundColorAlfa: 0.2, icon: #imageLiteral(resourceName: "login"))
+    let googleButton = UIButton(title: "Google", backgroundColor: .mainWhite, backgroundColorAlfa: 0.2)
+    let loginButton = UIButton(title: "LogIn", backgroundColor: .mainWhite, backgroundColorAlfa: 0.2)
+    let signupButton = UIButton(title: "SignUp", titleColor: .mainRed, backgroundColor: .clear, font: .secondaryFont18)
     
-    lazy var signupButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("SignUp", for: .normal)
-        button.setTitleColor(.mainRed, for: .normal)
-        button.titleLabel?.font = .secondaryFont18
-        return button
-    }()
+    // MARK: - Icons for buttons
+    let googleIcon = UIImage(named: "google")
+    let loginIcon = UIImage(named: "login")
     
     // MARK: - Labels
     let greetingLabel = UILabel(text: "WELCOME BACK!", textColor: .mainWhite, font: .headerFont30)
@@ -38,12 +35,13 @@ class LogInViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .mainDark
+        setupIconsForButtons()
         setupConstraints()
     }
 }
 
 // MARK: - Setup constraints
-extension LogInViewController {
+extension LoginViewController {
     private func setupConstraints() {
         
         // Greeting label
@@ -80,7 +78,6 @@ extension LogInViewController {
         ])
         
         // Bottom form
-        
         let bottomForm = UIStackView(arrangedSubviews: [needAccountLabel, signupButton], axis: .horizontal, spacing: 5)
         
         view.addSubview(bottomForm)
@@ -91,12 +88,23 @@ extension LogInViewController {
             bottomForm.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50)
         ])
     }
+    
+    // Add icons to buttons
+    fileprivate func setupIconsForButtons(){
+        
+        guard let googleIcon = googleIcon,
+              let loginIcon = loginIcon
+        else { return }
+      
+        googleButton.setupIconForButton(icon: googleIcon)
+        loginButton.setupIconForButton(icon: loginIcon)
+    }
 }
 
 // MARK: - Activate a canvas
 import SwiftUI
 
-struct LogInViewControllerProvider: PreviewProvider {
+struct LoginViewControllerProvider: PreviewProvider {
     
     static var previews: some View {
         ContainerView().edgesIgnoringSafeArea(.all)
@@ -104,7 +112,7 @@ struct LogInViewControllerProvider: PreviewProvider {
     
     struct ContainerView: UIViewControllerRepresentable {
         
-        let viewController = LogInViewController()
+        let viewController = LoginViewController()
         
         func makeUIViewController(context: Context) -> some UIViewController {
             return viewController

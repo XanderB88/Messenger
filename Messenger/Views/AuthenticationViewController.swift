@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  AuthenticationViewController.swift
 //  Messenger
 //
 //  Created by Alexander on 12.11.2021.
@@ -10,9 +10,14 @@ import UIKit
 class AuthenticationViewController: UIViewController {
     
     // MARK: - Buttons
-    let googleButton = UIButton(title: "Google", backgroundColor: .mainWhite, backgroundColorAlfa: 0.2, icon: #imageLiteral(resourceName: "google"))
-    let emailButton = UIButton(title: "Email", backgroundColor: .mainWhite, backgroundColorAlfa: 0.2, icon: #imageLiteral(resourceName: "email"))
-    let loginButton = UIButton(title: "LogIn", backgroundColor: .mainWhite, backgroundColorAlfa: 0.2, icon: #imageLiteral(resourceName: "login"))
+    let googleButton = UIButton(title: "Google", backgroundColor: .mainWhite, backgroundColorAlfa: 0.2)
+    let emailButton = UIButton(title: "Email", backgroundColor: .mainWhite, backgroundColorAlfa: 0.2)
+    let loginButton = UIButton(title: "LogIn", backgroundColor: .mainWhite, backgroundColorAlfa: 0.2)
+    
+    // MARK: - Icons for buttons
+    let googleIcon = UIImage(named: "google")
+    let emailIcon = UIImage(named: "email")
+    let loginIcon = UIImage(named: "login")
     
     // MARK: - Labels
     
@@ -29,6 +34,7 @@ class AuthenticationViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .mainDark
+        setupIconsForButtons()
         setupConstraints()
     }
 }
@@ -57,7 +63,7 @@ extension AuthenticationViewController {
         ])
         
         // Setup  buttons
-
+        
         // Google button with label
         googleLabel.translatesAutoresizingMaskIntoConstraints = false
         googleButton.translatesAutoresizingMaskIntoConstraints = false
@@ -86,6 +92,19 @@ extension AuthenticationViewController {
             generalButtonForm.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             generalButtonForm.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
+    }
+    
+    // Add icons to buttons
+    fileprivate func setupIconsForButtons(){
+        
+        guard let googleIcon = googleIcon,
+              let emailIcon = emailIcon,
+              let loginIcon = loginIcon
+        else { return }
+      
+        googleButton.setupIconForButton(icon: googleIcon)
+        emailButton.setupIconForButton(icon: emailIcon)
+        loginButton.setupIconForButton(icon: loginIcon)
     }
 }
 
