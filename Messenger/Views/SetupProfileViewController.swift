@@ -24,6 +24,9 @@ class SetupProfileViewController: UIViewController {
     let firstNameTextField = UnderlineTextField( placeholder: "First Name")
     let secondNameTextField = UnderlineTextField( placeholder: "Second Name")
     
+    // Segmented control
+    let genderControl = UISegmentedControl(first: "Male", second: "Female")
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +52,6 @@ extension SetupProfileViewController {
         ])
         
         // Profile image form
-        
         profileImageForm.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(profileImageForm)
@@ -66,7 +68,7 @@ extension SetupProfileViewController {
         let secondNameTextFieldForm = UIStackView(arrangedSubviews: [secondNameLabel, secondNameTextField], axis: .vertical, spacing: 15)
         
         // User form
-        let signupForm = UIStackView(arrangedSubviews: [firstNameTextFieldForm, secondNameTextFieldForm, goToChatButton], axis: .vertical, spacing: 40)
+        let signupForm = UIStackView(arrangedSubviews: [firstNameTextFieldForm, secondNameTextFieldForm, genderControl, goToChatButton], axis: .vertical, spacing: 40)
         
         view.addSubview(signupForm)
         

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		11623C602741D3DA00EFA598 /* UnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11623C5F2741D3DA00EFA598 /* UnderlineTextField.swift */; };
+		1162D6C22747148800AAF936 /* UISegmentedControl+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1162D6C12747148800AAF936 /* UISegmentedControl+Extension.swift */; };
 		116E5E3E273F33F400AE2FB2 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E5E3D273F33F400AE2FB2 /* UILabel+Extension.swift */; };
 		116E5E40273F341200AE2FB2 /* UIImageview+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E5E3F273F341200AE2FB2 /* UIImageview+Extension.swift */; };
 		116E5E42273F47FB00AE2FB2 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E5E41273F47FB00AE2FB2 /* UIStackView+Extension.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		11623C5F2741D3DA00EFA598 /* UnderlineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineTextField.swift; sourceTree = "<group>"; };
+		1162D6C12747148800AAF936 /* UISegmentedControl+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+Extension.swift"; sourceTree = "<group>"; };
 		116E5E3D273F33F400AE2FB2 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		116E5E3F273F341200AE2FB2 /* UIImageview+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageview+Extension.swift"; sourceTree = "<group>"; };
 		116E5E41273F47FB00AE2FB2 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
@@ -66,7 +68,7 @@
 				116E5E3D273F33F400AE2FB2 /* UILabel+Extension.swift */,
 				116E5E3F273F341200AE2FB2 /* UIImageview+Extension.swift */,
 				116E5E41273F47FB00AE2FB2 /* UIStackView+Extension.swift */,
-				11623C5F2741D3DA00EFA598 /* UnderlineTextField.swift */,
+				1162D6C12747148800AAF936 /* UISegmentedControl+Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				11A8064A2745E99300C08379 /* AddProfilePhoto.swift */,
+				11623C5F2741D3DA00EFA598 /* UnderlineTextField.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				1178E86A273E01D90049EA54 /* UIColor+Extension.swift in Sources */,
 				11A806472745E97800C08379 /* LoginViewController.swift in Sources */,
 				11A8064E2745EA0E00C08379 /* UIButton+Extension.swift in Sources */,
+				1162D6C22747148800AAF936 /* UISegmentedControl+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
