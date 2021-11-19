@@ -1,5 +1,5 @@
 //
-//  SignUpViewController.swift
+//  EmailRegistrationViewController.swift
 //  Messenger
 //
 //  Created by Alexander on 16.11.2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignupViewController: UIViewController {
+class EmailRegistrationViewController: UIViewController {
 
     // MARK: - Buttons
     let signupButton = UIButton(title: "SignUp", backgroundColor: .mainWhite, backgroundColorAlfa: 0.2)
@@ -35,7 +35,7 @@ class SignupViewController: UIViewController {
 }
 
 // MARK: - Setup constraints
-extension SignupViewController {
+extension EmailRegistrationViewController {
     
     private func setupConstraints() {
         
@@ -86,7 +86,7 @@ extension SignupViewController {
 // MARK: - Activate a canvas
 import SwiftUI
 
-struct SignupViewControllerProvider: PreviewProvider {
+struct EmailRegistrationViewControllerProvider: PreviewProvider {
     
     static var previews: some View {
         ContainerView().edgesIgnoringSafeArea(.all)
@@ -94,7 +94,7 @@ struct SignupViewControllerProvider: PreviewProvider {
     
     struct ContainerView: UIViewControllerRepresentable {
         
-        let viewController = SignupViewController()
+        let viewController = EmailRegistrationViewController()
         
         func makeUIViewController(context: Context) -> some UIViewController {
             return viewController
