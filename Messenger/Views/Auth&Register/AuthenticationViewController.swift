@@ -32,7 +32,7 @@ class AuthenticationViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         view.backgroundColor = .mainDark
         setupIconsForButtons()
         setupConstraints()
