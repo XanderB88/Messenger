@@ -16,8 +16,7 @@ extension UISegmentedControl {
         self.insertSegment(withTitle: second, at: 1, animated: true)
         self.selectedSegmentIndex = 0
         
-        let font = UIFont.secondaryFont18
-        let attributes : [NSAttributedString.Key: Any] = [.font: font ?? .systemFont(ofSize: 18), .foregroundColor: UIColor.mainWhite]
+        let attributes : [NSAttributedString.Key: Any] = [.font: UIFont.secondaryFont!, .foregroundColor: UIColor.mainWhite]
         self.selectedSegmentTintColor = UIColor.mainWhite.withAlphaComponent(0.2)
         self.setTitleTextAttributes(attributes, for: .normal)
     }

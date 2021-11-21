@@ -9,10 +9,36 @@ import UIKit
 
 class PeopleViewController: UIViewController {
 
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .mainDark
+        setupSearchBar()
+    }
+    
+    // MARK: - Private methods
+    
+    // Search bar
+    private func setupSearchBar() {
+        
+        let searchController = UISearchController(searchResultsController: nil)
+        navigationItem.searchController = searchController
+        searchController.navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.obscuresBackgroundDuringPresentation = false
+        
+        searchController.searchBar.searchTextField.font = .searchFont
+        searchController.searchBar.searchTextField.textColor = .mainWhite
+  
+        searchController.searchBar.delegate = self
+    }
+}
+
+// MARK: - Search bar delegate
+extension PeopleViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
     }
 }
 
@@ -27,7 +53,7 @@ struct PeopleViewControllerProvider: PreviewProvider {
     
     struct ContainerView: UIViewControllerRepresentable {
         
-        let viewController = PeopleViewController()
+        let viewController = MainTabBarController()
         
         func makeUIViewController(context: Context) -> some UIViewController {
             return viewController

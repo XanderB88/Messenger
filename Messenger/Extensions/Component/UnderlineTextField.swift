@@ -9,7 +9,7 @@ import UIKit
 
 class UnderlineTextField: UITextField {
     
-    convenience init(font: UIFont? = .secondaryFont18, placeholder: String = "", isSecured: Bool = false) {
+    convenience init(font: UIFont? = .secondaryFont, placeholder: String = "", isSecured: Bool = false) {
         self.init()
         
         self.font = font

@@ -21,10 +21,10 @@ class AuthenticationViewController: UIViewController {
     
     // MARK: - Labels
     
-    let logoLabel = UILabel(text: "Messenger", textColor: .mainWhite, font: .logoFont40)
-    let googleLabel = UILabel(text: "GET STARTED USING", textColor: .secondaryWhite, font: .secondaryFont18)
-    let emailLabel = UILabel(text: "SIGN UP USING", textColor: .secondaryWhite, font: .secondaryFont18)
-    let loginLabel = UILabel(text: "ALREDY HAS ACCOUNT", textColor: .secondaryWhite, font: .secondaryFont18)
+    let logoLabel = UILabel(text: "Messenger", textColor: .mainWhite, font: .logoFont)
+    let googleLabel = UILabel(text: "GET STARTED USING", textColor: .secondaryWhite, font: .secondaryFont)
+    let emailLabel = UILabel(text: "SIGN UP USING", textColor: .secondaryWhite, font: .secondaryFont)
+    let loginLabel = UILabel(text: "ALREDY HAS ACCOUNT", textColor: .secondaryWhite, font: .secondaryFont)
     
     // MARK: - Images
     let logoImageView = UIImageView(image: #imageLiteral(resourceName: "messenger"), contentMode: .scaleAspectFit)

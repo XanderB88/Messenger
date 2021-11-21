@@ -13,7 +13,7 @@ extension UIButton {
                      titleColor: UIColor? = .mainWhite,
                      backgroundColor: UIColor,
                      backgroundColorAlfa: CGFloat = 1,
-                     font: UIFont? = .mainFont24,
+                     font: UIFont? = .mainFont,
                      cornerRadius: CGFloat = 5) {
         
         self.init(type: .system)

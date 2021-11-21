@@ -12,19 +12,19 @@ class LoginViewController: UIViewController {
     // MARK: - Buttons
     let googleButton = UIButton(title: "Google", backgroundColor: .mainWhite, backgroundColorAlfa: 0.2)
     let loginButton = UIButton(title: "LogIn", backgroundColor: .mainWhite, backgroundColorAlfa: 0.2)
-    let signupButton = UIButton(title: "SignUp", titleColor: .mainRed, backgroundColor: .clear, font: .secondaryFont18)
+    let signupButton = UIButton(title: "SignUp", titleColor: .mainRed, backgroundColor: .clear, font: .secondaryFont)
     
     // MARK: - Icons for buttons
     let googleIcon = UIImage(named: "google")
     let loginIcon = UIImage(named: "login")
     
     // MARK: - Labels
-    let greetingLabel = UILabel(text: "WELCOME BACK!", textColor: .mainWhite, font: .headerFont30)
-    let googleLabel = UILabel(text: "LOGIN WITH", textColor: .secondaryWhite, font: .secondaryFont18)
-    let orLabel = UILabel(text: "OR", textColor: .secondaryWhite, font: .secondaryFont18)
-    let emailLabel = UILabel(text: "EMAIL", textColor: .secondaryWhite, font: .secondaryFont18)
-    let passwordLabel = UILabel(text: "PASSWORD", textColor: .secondaryWhite, font: .secondaryFont18)
-    let needAccountLabel = UILabel(text: "NEED AN ACCOUNT?", textColor: .secondaryWhite, font: .secondaryFont18)
+    let greetingLabel = UILabel(text: "WELCOME BACK!", textColor: .mainWhite, font: .headerFont)
+    let googleLabel = UILabel(text: "LOGIN WITH", textColor: .secondaryWhite, font: .secondaryFont)
+    let orLabel = UILabel(text: "OR", textColor: .secondaryWhite, font: .secondaryFont)
+    let emailLabel = UILabel(text: "EMAIL", textColor: .secondaryWhite, font: .secondaryFont)
+    let passwordLabel = UILabel(text: "PASSWORD", textColor: .secondaryWhite, font: .secondaryFont)
+    let needAccountLabel = UILabel(text: "NEED AN ACCOUNT?", textColor: .secondaryWhite, font: .secondaryFont)
     
     // MARK: - TextFields
     let emailTextField = UnderlineTextField( placeholder: "Email")

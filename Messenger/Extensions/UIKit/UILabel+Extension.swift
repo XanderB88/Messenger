@@ -12,7 +12,7 @@ extension UILabel {
    
     convenience init(text: String,
                      textColor: UIColor,
-                     font: UIFont? = .mainFont24) {
+                     font: UIFont? = .mainFont) {
         self.init()
        
         self.text = text

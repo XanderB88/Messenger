@@ -11,14 +11,14 @@ class EmailRegistrationViewController: UIViewController {
 
     // MARK: - Buttons
     let signupButton = UIButton(title: "SignUp", backgroundColor: .mainWhite, backgroundColorAlfa: 0.2)
-    let loginButton = UIButton(title: "LogIn", titleColor: .mainRed, backgroundColor: .clear, font: .secondaryFont18)
+    let loginButton = UIButton(title: "LogIn", titleColor: .mainRed, backgroundColor: .clear, font: .secondaryFont)
     
     // MARK: - Labels
-    let greetingLabel = UILabel(text: "GOOD TO SEE YOU!", textColor: .mainWhite, font: .headerFont30)
-    let emailLabel = UILabel(text: "EMAIL", textColor: .secondaryWhite, font: .secondaryFont18)
-    let passwordLabel = UILabel(text: "PASSWORD", textColor: .secondaryWhite, font: .secondaryFont18)
-    let confirmPasswordLabel = UILabel(text: "CONFIRM PASSWORD", textColor: .secondaryWhite, font: .secondaryFont18)
-    let alreadyOnboardLabel = UILabel(text: "ALREADY ONBOARD?", textColor: .secondaryWhite, font: .secondaryFont18)
+    let greetingLabel = UILabel(text: "GOOD TO SEE YOU!", textColor: .mainWhite, font: .headerFont)
+    let emailLabel = UILabel(text: "EMAIL", textColor: .secondaryWhite, font: .secondaryFont)
+    let passwordLabel = UILabel(text: "PASSWORD", textColor: .secondaryWhite, font: .secondaryFont)
+    let confirmPasswordLabel = UILabel(text: "CONFIRM PASSWORD", textColor: .secondaryWhite, font: .secondaryFont)
+    let alreadyOnboardLabel = UILabel(text: "ALREADY ONBOARD?", textColor: .secondaryWhite, font: .secondaryFont)
     
     // MARK: - TextFields
     let emailTextField = UnderlineTextField( placeholder: "Email")

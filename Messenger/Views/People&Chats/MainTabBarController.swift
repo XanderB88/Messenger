@@ -21,8 +21,8 @@ class MainTabBarController: UITabBarController {
         let chatsViewController = ChatsViewController()
         
         viewControllers = [
-            generateNavigationControllers(rootViewController: peopleViewController, title: "People", image: peopleIcon),
-            generateNavigationControllers(rootViewController: chatsViewController, title: "Chats", image: chatsIcon)
+            generateNavigationControllers(rootViewController: chatsViewController, title: "Chats", image: chatsIcon),
+            generateNavigationControllers(rootViewController: peopleViewController, title: "People", image: peopleIcon)
         ]
     }
 }
@@ -34,7 +34,11 @@ extension MainTabBarController {
         
         let navigationViewController = UINavigationController(rootViewController: rootViewController)
         navigationViewController.tabBarItem.title = title
+        
+        let attributes : [NSAttributedString.Key: Any] = [.font: UIFont.tabBarItemFont!]
+        navigationViewController.tabBarItem.setTitleTextAttributes(attributes, for: .normal)
         navigationViewController.tabBarItem.image = image
+        
         tabBar.tintColor = .mainWhite
         tabBar.barTintColor = .lightGray
       

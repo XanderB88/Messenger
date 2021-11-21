@@ -9,22 +9,22 @@ import UIKit
 
 class SetupProfileViewController: UIViewController {
     
-    
+    // MARK: - Custom add photo component
     let profileImageForm = AddProfilePhoto()
     
     // MARK: - Buttons
     let goToChatButton = UIButton(title: "Go to chat", backgroundColor: .mainWhite, backgroundColorAlfa: 0.2)
     
     // MARK: - Labels
-    let greetingLabel = UILabel(text: "SET UP PROFILE", textColor: .mainWhite, font: .headerFont30)
-    let firstNameLabel = UILabel(text: "FIRST NAME", textColor: .secondaryWhite, font: .secondaryFont18)
-    let secondNameLabel = UILabel(text: "SECOND NAME", textColor: .secondaryWhite, font: .secondaryFont18)
+    let greetingLabel = UILabel(text: "SET UP PROFILE", textColor: .mainWhite, font: .headerFont)
+    let firstNameLabel = UILabel(text: "FIRST NAME", textColor: .secondaryWhite, font: .secondaryFont)
+    let secondNameLabel = UILabel(text: "SECOND NAME", textColor: .secondaryWhite, font: .secondaryFont)
     
     // MARK: - TextFields
     let firstNameTextField = UnderlineTextField( placeholder: "First Name")
     let secondNameTextField = UnderlineTextField( placeholder: "Second Name")
     
-    // Segmented control
+    // MARK: - Segmented control
     let genderControl = UISegmentedControl(first: "Male", second: "Female")
     
     // MARK: - Lifecycle
