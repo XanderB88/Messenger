@@ -40,7 +40,7 @@ extension MainTabBarController {
         navigationViewController.tabBarItem.image = image
         
         tabBar.tintColor = .mainWhite
-        tabBar.barTintColor = .lightGray
+        tabBar.barTintColor = .mainDark
       
         return navigationViewController
     }

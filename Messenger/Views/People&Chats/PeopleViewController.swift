@@ -13,13 +13,14 @@ class PeopleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .mainDark
+        view.backgroundColor = .white
         setupSearchBar()
     }
+}
+
+// MARK: - Setup search bar
+extension PeopleViewController {
     
-    // MARK: - Private methods
-    
-    // Search bar
     private func setupSearchBar() {
         
         let searchController = UISearchController(searchResultsController: nil)
@@ -30,7 +31,7 @@ class PeopleViewController: UIViewController {
         
         searchController.searchBar.searchTextField.font = .searchFont
         searchController.searchBar.searchTextField.textColor = .mainWhite
-  
+        
         searchController.searchBar.delegate = self
     }
 }
