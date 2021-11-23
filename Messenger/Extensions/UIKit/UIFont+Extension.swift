@@ -25,7 +25,7 @@ extension UIFont {
         return UIFont.init(name: "Noteworthy", size: 18) ?? .systemFont(ofSize: 18)
     }
     
-    static var searchFont: UIFont? {
+    static var searchAndMessageFont: UIFont? {
         return UIFont.init(name: "Noteworthy", size: 16) ?? .systemFont(ofSize: 16)
     }
     

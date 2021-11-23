@@ -12,6 +12,7 @@ class ChatsViewController: UIViewController {
     // MARK: - Constants
     let waitingChats = Bundle.main.decode([ChatModel].self, from: "waitingChats.json")
     let activeChats = Bundle.main.decode([ChatModel].self, from: "activeChats.json")
+    let chatCellSize: CGFloat = 88
     
     enum Section: Int, CaseIterable {
         case waitingChats, activeChats
@@ -20,7 +21,6 @@ class ChatsViewController: UIViewController {
     // MARK: - Variables
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, ChatModel>?
-    var chatCellSize: CGFloat = 88
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -46,7 +46,7 @@ extension ChatsViewController {
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.obscuresBackgroundDuringPresentation = false
         
-        searchController.searchBar.searchTextField.font = .searchFont
+        searchController.searchBar.searchTextField.font = .searchAndMessageFont
         searchController.searchBar.searchTextField.textColor = .mainWhite
         
         searchController.searchBar.delegate = self
@@ -61,9 +61,9 @@ extension ChatsViewController {
         collectionView.backgroundColor = .mainDark
         view.addSubview(collectionView)
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "WaitingChatsCell")
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "ActiveChatsCell")
-        
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "WaitingChatCell")
+        collectionView.register(ActiveChatCell.self, forCellWithReuseIdentifier: ActiveChatCell.reusableId)
+    
     }
     
     private func setupCompositionalLayout() -> UICollectionViewLayout {
@@ -120,9 +120,21 @@ extension ChatsViewController {
         return section
     }
     
+    private func cellConfiguration<T: CellConfigurationProtocol>(cellType: T.Type, with model: ChatModel, at indexPath: IndexPath) -> T {
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellType.reusableId, for: indexPath) as? T else {
+           
+            fatalError("Unable to dequeue \(cellType)")
+        }
+        
+        cell.cellConfiguration(with: model)
+        
+        return cell
+    }
+    
     private func setupDataSource() {
       
-        dataSource = UICollectionViewDiffableDataSource<Section, ChatModel>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, itemIdentifier) -> UICollectionViewCell? in
+        dataSource = UICollectionViewDiffableDataSource<Section, ChatModel>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, chat) -> UICollectionViewCell? in
             
             guard let section = Section(rawValue: indexPath.section) else {
                
@@ -133,19 +145,15 @@ extension ChatsViewController {
                 
                 case .waitingChats:
 
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WaitingChatsCell", for: indexPath)
-                    cell.layer.cornerRadius = self.chatCellSize / 2
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WaitingChatCell", for: indexPath)
+                    
                     cell.backgroundColor = .yellow
-
+                   
                     return cell
 
                 case .activeChats:
                     
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActiveChatsCell", for: indexPath)
-                    
-                    cell.backgroundColor = .blue
-                   
-                    return cell
+                    return self.cellConfiguration(cellType: ActiveChatCell.self, with: chat, at: indexPath)
             }
         })
     }

@@ -37,6 +37,21 @@ class AddProfilePhoto: UIView {
         setupConstraints()
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        profileImage.layer.masksToBounds = true
+        profileImage.layer.cornerRadius = profileImage.frame.width / 2
+    }
+}
+
+// MARK: - Setup constraints
+extension AddProfilePhoto {
+   
     private func setupConstraints() {
         
         NSLayoutConstraint.activate([
@@ -57,16 +72,5 @@ class AddProfilePhoto: UIView {
             self.bottomAnchor.constraint(equalTo: profileImage.bottomAnchor),
             self.trailingAnchor.constraint(equalTo: plusButton.trailingAnchor)
         ])
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        profileImage.layer.masksToBounds = true
-        profileImage.layer.cornerRadius = profileImage.frame.width / 2
     }
 }

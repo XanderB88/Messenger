@@ -29,7 +29,7 @@ extension PeopleViewController {
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.obscuresBackgroundDuringPresentation = false
         
-        searchController.searchBar.searchTextField.font = .searchFont
+        searchController.searchBar.searchTextField.font = .searchAndMessageFont
         searchController.searchBar.searchTextField.textColor = .mainWhite
         
         searchController.searchBar.delegate = self
