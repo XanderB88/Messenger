@@ -53,7 +53,6 @@ extension ActiveChatCell: CellConfigurationProtocol {
         
         //User image
         userImageView.translatesAutoresizingMaskIntoConstraints = false
-        userImageView.backgroundColor = .blue
        
         NSLayoutConstraint.activate([
             userImageView.widthAnchor.constraint(equalToConstant: chatCellSize),

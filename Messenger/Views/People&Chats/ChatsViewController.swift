@@ -61,7 +61,7 @@ extension ChatsViewController {
         collectionView.backgroundColor = .mainDark
         view.addSubview(collectionView)
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "WaitingChatCell")
+        collectionView.register(WaitingChatCell.self, forCellWithReuseIdentifier: WaitingChatCell.reusableId)
         collectionView.register(ActiveChatCell.self, forCellWithReuseIdentifier: ActiveChatCell.reusableId)
     
     }
@@ -145,11 +145,7 @@ extension ChatsViewController {
                 
                 case .waitingChats:
 
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WaitingChatCell", for: indexPath)
-                    
-                    cell.backgroundColor = .yellow
-                   
-                    return cell
+                    return self.cellConfiguration(cellType: WaitingChatCell.self, with: chat, at: indexPath)
 
                 case .activeChats:
                     

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		11125484274725D400F6F53F /* EmailRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11125483274725D400F6F53F /* EmailRegistrationViewController.swift */; };
+		11616732274DADB000A81B2D /* WaitingChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11616731274DADB000A81B2D /* WaitingChatCell.swift */; };
 		11623C602741D3DA00EFA598 /* UnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11623C5F2741D3DA00EFA598 /* UnderlineTextField.swift */; };
 		1162D6C22747148800AAF936 /* UISegmentedControl+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1162D6C12747148800AAF936 /* UISegmentedControl+Extension.swift */; };
 		11690133274C628300A0C991 /* ActiveChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11690132274C628300A0C991 /* ActiveChatCell.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		11125483274725D400F6F53F /* EmailRegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailRegistrationViewController.swift; sourceTree = "<group>"; };
+		11616731274DADB000A81B2D /* WaitingChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatCell.swift; sourceTree = "<group>"; };
 		11623C5F2741D3DA00EFA598 /* UnderlineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineTextField.swift; sourceTree = "<group>"; };
 		1162D6C12747148800AAF936 /* UISegmentedControl+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+Extension.swift"; sourceTree = "<group>"; };
 		11690132274C628300A0C991 /* ActiveChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveChatCell.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				11690132274C628300A0C991 /* ActiveChatCell.swift */,
+				11616731274DADB000A81B2D /* WaitingChatCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				116DE6EF274882BE0060016D /* PeopleViewController.swift in Sources */,
 				1178E850273DDEB10049EA54 /* AppDelegate.swift in Sources */,
 				1178E852273DDEB10049EA54 /* SceneDelegate.swift in Sources */,
+				11616732274DADB000A81B2D /* WaitingChatCell.swift in Sources */,
 				1178E86A273E01D90049EA54 /* UIColor+Extension.swift in Sources */,
 				11A806472745E97800C08379 /* LoginViewController.swift in Sources */,
 				11A8064E2745EA0E00C08379 /* UIButton+Extension.swift in Sources */,
