@@ -1,5 +1,5 @@
 //
-//  GradientSideLine.swift
+//  GradientView.swift
 //  Messenger
 //
 //  Created by Alexander on 24.11.2021.

@@ -48,7 +48,8 @@ extension ChatsViewController {
         
         searchController.searchBar.searchTextField.font = .searchAndMessageFont
         searchController.searchBar.searchTextField.textColor = .mainWhite
-        
+        searchController.searchBar.searchTextField.leftView?.tintColor = .secondaryWhite
+        searchController.searchBar.tintColor = .mainBlue
         searchController.searchBar.delegate = self
     }
     
