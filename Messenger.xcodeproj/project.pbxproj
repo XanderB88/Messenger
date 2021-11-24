@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		11125484274725D400F6F53F /* EmailRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11125483274725D400F6F53F /* EmailRegistrationViewController.swift */; };
 		11616732274DADB000A81B2D /* WaitingChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11616731274DADB000A81B2D /* WaitingChatCell.swift */; };
+		11616736274DB61E00A81B2D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11616735274DB61E00A81B2D /* GradientView.swift */; };
 		11623C602741D3DA00EFA598 /* UnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11623C5F2741D3DA00EFA598 /* UnderlineTextField.swift */; };
 		1162D6C22747148800AAF936 /* UISegmentedControl+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1162D6C12747148800AAF936 /* UISegmentedControl+Extension.swift */; };
 		11690133274C628300A0C991 /* ActiveChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11690132274C628300A0C991 /* ActiveChatCell.swift */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		11125483274725D400F6F53F /* EmailRegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailRegistrationViewController.swift; sourceTree = "<group>"; };
 		11616731274DADB000A81B2D /* WaitingChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatCell.swift; sourceTree = "<group>"; };
+		11616735274DB61E00A81B2D /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		11623C5F2741D3DA00EFA598 /* UnderlineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineTextField.swift; sourceTree = "<group>"; };
 		1162D6C12747148800AAF936 /* UISegmentedControl+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+Extension.swift"; sourceTree = "<group>"; };
 		11690132274C628300A0C991 /* ActiveChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveChatCell.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 			children = (
 				11A8064A2745E99300C08379 /* AddProfilePhoto.swift */,
 				11623C5F2741D3DA00EFA598 /* UnderlineTextField.swift */,
+				11616735274DB61E00A81B2D /* GradientView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				11A806462745E97800C08379 /* AuthenticationViewController.swift in Sources */,
 				116E1E60274B0E8B00C0B27E /* ChatModel.swift in Sources */,
 				116DE6F1274883650060016D /* MainTabBarController.swift in Sources */,
+				11616736274DB61E00A81B2D /* GradientView.swift in Sources */,
 				11690133274C628300A0C991 /* ActiveChatCell.swift in Sources */,
 				11125484274725D400F6F53F /* EmailRegistrationViewController.swift in Sources */,
 				116E5E40273F341200AE2FB2 /* UIImageview+Extension.swift in Sources */,

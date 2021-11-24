@@ -13,7 +13,7 @@ class ActiveChatCell: UICollectionViewCell {
     let userImageView = UIImageView()
     let userName = UILabel(text: "User name", textColor: .mainWhite, font: .secondaryFont)
     let lastMessage = UILabel(text: "What's up", textColor: .secondaryWhite, font: .searchAndMessageFont)
-    let gradientSideLineView = UIView()
+    let gradientSideLineView = GradientView(from: .topTrailing, to: .bottomTrailing, startColor: .mainBlue, endColor: .secondaryBlue)
     let chatCellSize: CGFloat = 88
     
     override init(frame: CGRect) {
@@ -68,7 +68,7 @@ extension ActiveChatCell: CellConfigurationProtocol {
         
         // Gradient side line
         gradientSideLineView.translatesAutoresizingMaskIntoConstraints = false
-        gradientSideLineView.backgroundColor = .gray
+//        gradientSideLineView.backgroundColor = .gray
         
         NSLayoutConstraint.activate([
             gradientSideLineView.widthAnchor.constraint(equalToConstant: 8)
