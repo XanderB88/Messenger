@@ -9,31 +9,13 @@ import UIKit
 
 class PeopleViewController: UIViewController {
 
+    var searchBar = SearchBar()
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .white
-        setupSearchBar()
-    }
-}
-
-// MARK: - Setup search bar
-extension PeopleViewController {
-    
-    private func setupSearchBar() {
-        
-        let searchController = UISearchController(searchResultsController: nil)
-        navigationItem.searchController = searchController
-        searchController.navigationItem.hidesSearchBarWhenScrolling = false
-        searchController.hidesNavigationBarDuringPresentation = false
-        searchController.obscuresBackgroundDuringPresentation = false
-        
-        searchController.searchBar.searchTextField.font = .searchAndMessageFont
-        searchController.searchBar.searchTextField.textColor = .mainWhite
-        searchController.searchBar.searchTextField.leftView?.tintColor = .secondaryWhite
-        searchController.searchBar.tintColor = .mainBlue
-        searchController.searchBar.delegate = self
+        view.backgroundColor = .mainDark
+        searchBar.setupSearchBar(navigationItem: navigationItem, delegate: self)
     }
 }
 

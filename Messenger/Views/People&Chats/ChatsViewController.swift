@@ -15,46 +15,41 @@ class ChatsViewController: UIViewController {
     let chatCellSize: CGFloat = 88
     
     enum Section: Int, CaseIterable {
+       
         case waitingChats, activeChats
+        
+        func description() -> String {
+            
+            switch self {
+                case .waitingChats:
+                    return "Waiting chats"
+                case .activeChats:
+                    return "Active chats"
+            }
+        }
     }
    
     // MARK: - Variables
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, ChatModel>?
+    var searchBar = SearchBar()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .mainDark
-        setupSearchBar()
+        
+        searchBar.setupSearchBar(navigationItem: navigationItem, delegate: self)
         setupCollectionView()
         setupDataSource()
         reloadData()
     }
 }
 
-
 extension ChatsViewController {
-   
-    // MARK: - Setup search bar
-    private func setupSearchBar() {
-        
-        let searchController = UISearchController(searchResultsController: nil)
-        navigationItem.searchController = searchController
-        searchController.navigationItem.hidesSearchBarWhenScrolling = false
-        searchController.hidesNavigationBarDuringPresentation = false
-        searchController.obscuresBackgroundDuringPresentation = false
-        
-        searchController.searchBar.searchTextField.font = .searchAndMessageFont
-        searchController.searchBar.searchTextField.textColor = .mainWhite
-        searchController.searchBar.searchTextField.leftView?.tintColor = .secondaryWhite
-        searchController.searchBar.tintColor = .mainBlue
-        searchController.searchBar.delegate = self
-    }
     
     // MARK: - Setup collection view
-    
     private func setupCollectionView() {
        
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: setupCompositionalLayout())
@@ -64,9 +59,12 @@ extension ChatsViewController {
         
         collectionView.register(WaitingChatCell.self, forCellWithReuseIdentifier: WaitingChatCell.reusableId)
         collectionView.register(ActiveChatCell.self, forCellWithReuseIdentifier: ActiveChatCell.reusableId)
+        
+        collectionView.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reusableId)
     
     }
     
+    // MARK: - Setup compositional layout
     private func setupCompositionalLayout() -> UICollectionViewLayout {
       
         let layout = UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
@@ -77,7 +75,6 @@ extension ChatsViewController {
             }
             
             switch section {
-                    
                 case .waitingChats:
                     return self.setupWaitingChats()
                 case .activeChats:
@@ -86,9 +83,14 @@ extension ChatsViewController {
             
         }
         
+        let configuration = UICollectionViewCompositionalLayoutConfiguration()
+        configuration.interSectionSpacing = 30
+        layout.configuration = configuration
+        
         return layout
     }
     
+    // MARK: - Setup layout configuration for chats
     private func setupWaitingChats() -> NSCollectionLayoutSection {
         
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
@@ -102,6 +104,9 @@ extension ChatsViewController {
         section.contentInsets = NSDirectionalEdgeInsets.init(top: 16, leading: 20, bottom: 0, trailing: 20)
        
         section.orthogonalScrollingBehavior = .continuous
+        
+        let sectionHeader = createSectionHeader()
+        section.boundarySupplementaryItems = [sectionHeader]
         
         return section
     }
@@ -117,10 +122,22 @@ extension ChatsViewController {
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = 10
         section.contentInsets = NSDirectionalEdgeInsets.init(top: 16, leading: 20, bottom: 0, trailing: 20)
+        
+        let sectionHeader = createSectionHeader()
+        section.boundarySupplementaryItems = [sectionHeader]
        
         return section
     }
+   
+    private func createSectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
+        
+        let sectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(1))
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: sectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        
+        return sectionHeader
+    }
     
+    // MARK: - Collection View Diffable Data Source
     private func cellConfiguration<T: CellConfigurationProtocol>(cellType: T.Type, with model: ChatModel, at indexPath: IndexPath) -> T {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellType.reusableId, for: indexPath) as? T else {
@@ -143,18 +160,32 @@ extension ChatsViewController {
             }
            
             switch section {
-                
                 case .waitingChats:
-
                     return self.cellConfiguration(cellType: WaitingChatCell.self, with: chat, at: indexPath)
-
                 case .activeChats:
-                    
                     return self.cellConfiguration(cellType: ActiveChatCell.self, with: chat, at: indexPath)
             }
         })
+        
+        dataSource?.supplementaryViewProvider  = { collectionView, kind, indexPath in
+            
+            guard let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionHeader.reusableId, for: indexPath) as? SectionHeader else {
+                
+                fatalError("Can't create a new section header")
+            }
+            
+            guard let section = Section(rawValue: indexPath.section) else {
+                
+                fatalError("Unknown section kind")
+            }
+                    
+            sectionHeader.configTitle(text: section.description(), font: .secondaryFont, textColor: .mainWhite)
+            
+            return sectionHeader
+        }
     }
     
+    // MARK: - Reload data
     private func reloadData() {
        
         var snapshot = NSDiffableDataSourceSnapshot<Section, ChatModel>()
@@ -162,6 +193,7 @@ extension ChatsViewController {
         snapshot.appendSections([.waitingChats, .activeChats])
         snapshot.appendItems(waitingChats, toSection: .waitingChats)
         snapshot.appendItems(activeChats, toSection: .activeChats)
+       
         dataSource?.apply(snapshot, animatingDifferences: true)
     }
 }
