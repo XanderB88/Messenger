@@ -1,22 +1,21 @@
 //
-//  WaitingChatCell.swift
+//  UserCell.swift
 //  Messenger
 //
-//  Created by Alexander on 24.11.2021.
+//  Created by Alexander on 27.11.2021.
 //
 
-import Foundation
 import UIKit
 
-class WaitingChatCell: UICollectionViewCell {
+class UserCell: UICollectionViewCell {
     
     // MARK: - Constants
     let userImageView = UIImageView()
-    let chatCellSize: CGFloat = 88
+    let userName = UILabel(text: "User name", textColor: .mainWhite, font: .secondaryFont)
     
-    override init(frame: CGRect){
+    override init(frame: CGRect) {
         super.init(frame: frame)
-        
+      
         setupViewConfiguration()
         setupConstraints()
     }
@@ -27,35 +26,45 @@ class WaitingChatCell: UICollectionViewCell {
 }
 
 // MARK: - Cell configuration
-extension WaitingChatCell: CellConfigurationProtocol {
+extension UserCell: CellConfigurationProtocol {
     
     static var reusableId: String {
-        return "WaitingChatCell"
+        return "Users"
     }
     
     func cellConfiguration<U>(with model: U) where U : Hashable {
         
-        guard let chat: ChatModel = model as? ChatModel else { return }
+        guard let user: UserModel = model as? UserModel else { return }
         
-        userImageView.image = UIImage(named: chat.userImageString)
+        userImageView.image = UIImage(named: user.userImageString)
+        userName.text = user.username
     }
-    
+   
     // MARK: - Setup view configuration
     private func setupViewConfiguration() {
-        self.layer.cornerRadius = chatCellSize / 2
-        self.clipsToBounds = true
+        userImageView.layer.cornerRadius = 5
+        userImageView.clipsToBounds = true
     }
     
     // MARK: - Setup constraints
     private func setupConstraints() {
-        
+        userName.translatesAutoresizingMaskIntoConstraints = false
         userImageView.translatesAutoresizingMaskIntoConstraints = false
-       
-        self.addSubview(userImageView)
+ 
+        let userForm = UIStackView(arrangedSubviews: [userImageView, userName], axis: .vertical, spacing: 0)
+        
+        self.addSubview(userForm)
         
         NSLayoutConstraint.activate([
-            userImageView.widthAnchor.constraint(equalToConstant: chatCellSize),
-            userImageView.heightAnchor.constraint(equalToConstant: chatCellSize)
+            userImageView.heightAnchor.constraint(equalTo: userForm.widthAnchor)
+            
+        ])
+       
+        NSLayoutConstraint.activate([
+            userForm.topAnchor.constraint(equalTo: self.topAnchor),
+            userForm.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            userForm.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            userForm.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
 }
@@ -63,7 +72,7 @@ extension WaitingChatCell: CellConfigurationProtocol {
 // MARK: - Activate a canvas
 import SwiftUI
 
-struct WaitingChatCellProvider: PreviewProvider {
+struct UserCellProvider: PreviewProvider {
     
     static var previews: some View {
         ContainerView().edgesIgnoringSafeArea(.all)

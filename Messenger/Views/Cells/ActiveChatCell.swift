@@ -29,18 +29,21 @@ class ActiveChatCell: UICollectionViewCell {
 
 // MARK: - Cell configuration
 extension ActiveChatCell: CellConfigurationProtocol {
+   
     
     static var reusableId: String {
         return "ActiveChatCell"
     }
     
-    func cellConfiguration(with model: ChatModel) {
+    func cellConfiguration<U>(with model: U) where U : Hashable {
         
-        userImageView.image = UIImage(named: model.userImageString)
-        userName.text = model.username
-        lastMessage.text = model.lastMessage
+        guard let chat: ChatModel = model as? ChatModel else { return }
+        
+        userImageView.image = UIImage(named: chat.userImageString)
+        userName.text = chat.username
+        lastMessage.text = chat.lastMessage
     }
-   
+    
     // MARK: - Setup view configuration
     private func setupViewConfiguration() {
         self.backgroundColor = .mainWhite.withAlphaComponent(0.1)
@@ -68,7 +71,6 @@ extension ActiveChatCell: CellConfigurationProtocol {
         
         // Gradient side line
         gradientSideLineView.translatesAutoresizingMaskIntoConstraints = false
-//        gradientSideLineView.backgroundColor = .gray
         
         NSLayoutConstraint.activate([
             gradientSideLineView.widthAnchor.constraint(equalToConstant: 8)

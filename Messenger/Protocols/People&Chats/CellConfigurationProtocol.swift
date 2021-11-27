@@ -10,5 +10,5 @@ import Foundation
 protocol CellConfigurationProtocol {
     
     static var reusableId: String { get }
-    func cellConfiguration(with model: ChatModel)
+    func cellConfiguration<U: Hashable>(with model: U)
 }

@@ -2,32 +2,52 @@
     {
         "username": "Robert Zenden",
         "userImageString": "user1",
-        "lastMessage": "How are you?",
         "id": 1
     },
     {
         "username": "John Smith",
         "userImageString": "user2",
-        "lastMessage": "Where are you?",
         "id": 2
     },
     {
         "username": "Michel Night",
         "userImageString": "user3",
-        "lastMessage": "Who are you?",
         "id": 3
     },
     {
         "username": "Alexander Jenkins",
         "userImageString": "user4",
-        "lastMessage": "How old are you?",
         "id": 4
     },
     {
         "username": "Veronica White",
         "userImageString": "user5",
-        "lastMessage": "Where are we?",
         "id": 5
+    },
+    {
+        "username": "Peter Brown",
+        "userImageString": "user6",
+        "id": 6
+    },
+    {
+        "username": "Roman Pears",
+        "userImageString": "user7",
+        "id": 7
+    },
+    {
+        "username": "Brian Grimes",
+        "userImageString": "user8",
+        "id": 8
+    },
+    {
+        "username": "Liza Edelstein",
+        "userImageString": "user9",
+        "id": 9
+    },
+    {
+        "username": "Victoria Jordan",
+        "userImageString": "user10",
+        "id": 10
     }
 ]
 

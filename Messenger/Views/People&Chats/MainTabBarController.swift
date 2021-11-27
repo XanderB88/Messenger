@@ -21,8 +21,8 @@ class MainTabBarController: UITabBarController {
         let chatsViewController = ChatsViewController()
         
         viewControllers = [
-            generateNavigationControllers(rootViewController: chatsViewController, title: "Chats", image: chatsIcon),
-            generateNavigationControllers(rootViewController: peopleViewController, title: "People", image: peopleIcon)
+            generateNavigationControllers(rootViewController: peopleViewController, title: "People", image: peopleIcon),
+            generateNavigationControllers(rootViewController: chatsViewController, title: "Chats", image: chatsIcon)
         ]
     }
 }

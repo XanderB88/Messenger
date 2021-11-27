@@ -138,18 +138,7 @@ extension ChatsViewController {
     }
     
     // MARK: - Collection View Diffable Data Source
-    private func cellConfiguration<T: CellConfigurationProtocol>(cellType: T.Type, with model: ChatModel, at indexPath: IndexPath) -> T {
-        
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellType.reusableId, for: indexPath) as? T else {
-           
-            fatalError("Unable to dequeue \(cellType)")
-        }
-        
-        cell.cellConfiguration(with: model)
-        
-        return cell
-    }
-    
+   
     private func setupDataSource() {
       
         dataSource = UICollectionViewDiffableDataSource<Section, ChatModel>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, chat) -> UICollectionViewCell? in
@@ -161,9 +150,9 @@ extension ChatsViewController {
            
             switch section {
                 case .waitingChats:
-                    return self.cellConfiguration(cellType: WaitingChatCell.self, with: chat, at: indexPath)
+                    return self.cellConfiguration(collectionView: collectionView, cellType: WaitingChatCell.self, with: chat, at: indexPath)
                 case .activeChats:
-                    return self.cellConfiguration(cellType: ActiveChatCell.self, with: chat, at: indexPath)
+                    return self.cellConfiguration(collectionView: collectionView, cellType: ActiveChatCell.self, with: chat, at: indexPath)
             }
         })
         
