@@ -53,30 +53,26 @@ extension ActiveChatCell: CellConfigurationProtocol {
     
     // MARK: - Setup constraints
     private func setupConstraints() {
-        
-        //User image
+
         userImageView.translatesAutoresizingMaskIntoConstraints = false
        
         NSLayoutConstraint.activate([
             userImageView.widthAnchor.constraint(equalToConstant: chatCellSize),
             userImageView.heightAnchor.constraint(equalToConstant: chatCellSize)
         ])
-        
-        // Message form
+
         userName.translatesAutoresizingMaskIntoConstraints = false
         lastMessage.translatesAutoresizingMaskIntoConstraints = false
         
         let messageForm = UIStackView(arrangedSubviews: [userName, lastMessage], axis: .vertical, spacing: -20)
         messageForm.distribution = .fillEqually
-        
-        // Gradient side line
+
         gradientSideLineView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             gradientSideLineView.widthAnchor.constraint(equalToConstant: 8)
         ])
-       
-        // General message form
+
         let generalMessageForm = UIStackView(arrangedSubviews: [userImageView, messageForm, gradientSideLineView], axis: .horizontal, spacing: 15)
         
         self.addSubview(generalMessageForm)

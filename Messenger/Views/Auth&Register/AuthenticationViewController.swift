@@ -44,7 +44,6 @@ extension AuthenticationViewController {
     
     fileprivate func setupConstraints() {
         
-        // Setup logo
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         
         let logoForm = UIStackView(arrangedSubviews: [logoLabel, logoImageView], axis: .horizontal, spacing: 10)
@@ -62,27 +61,21 @@ extension AuthenticationViewController {
             logoForm.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -75),
         ])
         
-        // Setup  buttons
-        
-        // Google button with label
         googleLabel.translatesAutoresizingMaskIntoConstraints = false
         googleButton.translatesAutoresizingMaskIntoConstraints = false
         
         let googleButtonForm = UIStackView(arrangedSubviews: [googleLabel, googleButton], axis: .vertical, spacing: 15)
         
-        // Email button with label
         emailLabel.translatesAutoresizingMaskIntoConstraints = false
         emailButton.translatesAutoresizingMaskIntoConstraints = false
         
         let emailButtonForm = UIStackView(arrangedSubviews: [emailLabel, emailButton], axis: .vertical, spacing: 15)
         
-        // Email button with label
         loginLabel.translatesAutoresizingMaskIntoConstraints = false
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         
         let loginButtonForm = UIStackView(arrangedSubviews: [loginLabel, loginButton], axis: .vertical, spacing: 15)
         
-        // General button form
         let generalButtonForm = UIStackView(arrangedSubviews: [googleButtonForm, emailButtonForm, loginButtonForm], axis: .vertical, spacing: 40)
         
         view.addSubview(generalButtonForm)

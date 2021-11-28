@@ -44,7 +44,6 @@ class LoginViewController: UIViewController {
 extension LoginViewController {
     private func setupConstraints() {
         
-        // Greeting label
         greetingLabel.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(greetingLabel)
@@ -54,19 +53,15 @@ extension LoginViewController {
             greetingLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
-        // Google button with label
         googleLabel.translatesAutoresizingMaskIntoConstraints = false
         googleButton.translatesAutoresizingMaskIntoConstraints = false
         
         let googleButtonForm = UIStackView(arrangedSubviews: [googleLabel, googleButton], axis: .vertical, spacing: 15)
         
-        // Email textfield with label
         let emailTextFieldForm = UIStackView(arrangedSubviews: [emailLabel, emailTextField], axis: .vertical, spacing: 15)
         
-        // Password textfield with label
         let passwordTextFieldForm = UIStackView(arrangedSubviews: [passwordLabel, passwordTextField], axis: .vertical, spacing: 15)
         
-        // Login form
         let loginForm = UIStackView(arrangedSubviews: [googleButtonForm, orLabel, emailTextFieldForm, passwordTextFieldForm, loginButton], axis: .vertical, spacing: 40)
         
         view.addSubview(loginForm)

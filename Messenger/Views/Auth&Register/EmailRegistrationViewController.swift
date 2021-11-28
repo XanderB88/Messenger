@@ -39,7 +39,6 @@ extension EmailRegistrationViewController {
     
     private func setupConstraints() {
         
-        // Greeting label
         greetingLabel.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(greetingLabel)
@@ -49,16 +48,12 @@ extension EmailRegistrationViewController {
             greetingLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
-        // Email textfield with label
         let emailTextFieldForm = UIStackView(arrangedSubviews: [emailLabel, emailTextField], axis: .vertical, spacing: 15)
         
-        // Password textfield with label
         let passwordTextFieldForm = UIStackView(arrangedSubviews: [passwordLabel, passwordTextField], axis: .vertical, spacing: 15)
         
-        // Confirm password textfield with label
         let confirmPasswordTextFieldForm = UIStackView(arrangedSubviews: [confirmPasswordLabel, confirmPasswordTextField], axis: .vertical, spacing: 15)
         
-        // Signup form
         let signupForm = UIStackView(arrangedSubviews: [emailTextFieldForm, passwordTextFieldForm, confirmPasswordTextFieldForm, signupButton], axis: .vertical, spacing: 40)
         
         view.addSubview(signupForm)
@@ -69,7 +64,6 @@ extension EmailRegistrationViewController {
             signupForm.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
         
-        // Bottom form
         let bottomForm = UIStackView(arrangedSubviews: [alreadyOnboardLabel, loginButton], axis: .horizontal, spacing: 5)
         
         view.addSubview(bottomForm)

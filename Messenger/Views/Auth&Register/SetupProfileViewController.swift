@@ -41,7 +41,6 @@ extension SetupProfileViewController {
     
     private func setupConstraints() {
         
-        // Greeting label
         greetingLabel.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(greetingLabel)
@@ -50,8 +49,7 @@ extension SetupProfileViewController {
             greetingLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
             greetingLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
-        
-        // Profile image form
+   
         profileImageForm.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(profileImageForm)
@@ -61,13 +59,10 @@ extension SetupProfileViewController {
             profileImageForm.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
-        // First name textfield with label
         let firstNameTextFieldForm = UIStackView(arrangedSubviews: [firstNameLabel, firstNameTextField], axis: .vertical, spacing: 15)
-        
-        // First name textfield with label
+     
         let secondNameTextFieldForm = UIStackView(arrangedSubviews: [secondNameLabel, secondNameTextField], axis: .vertical, spacing: 15)
-        
-        // User form
+
         let signupForm = UIStackView(arrangedSubviews: [firstNameTextFieldForm, secondNameTextFieldForm, genderControl, goToChatButton], axis: .vertical, spacing: 40)
         
         view.addSubview(signupForm)
