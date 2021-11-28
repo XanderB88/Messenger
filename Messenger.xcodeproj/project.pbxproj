@@ -27,6 +27,7 @@
 		116E5E40273F341200AE2FB2 /* UIImageview+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E5E3F273F341200AE2FB2 /* UIImageview+Extension.swift */; };
 		116E5E42273F47FB00AE2FB2 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E5E41273F47FB00AE2FB2 /* UIStackView+Extension.swift */; };
 		116F8F042753012200283018 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116F8F032753012200283018 /* ProfileViewController.swift */; };
+		116F8F0627531BEF00283018 /* MessageFromProfileTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116F8F0527531BEF00283018 /* MessageFromProfileTextField.swift */; };
 		116FFD4727519F6B000E6C2D /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 116FFD4627519F6B000E6C2D /* users.json */; };
 		116FFD492751A0E2000E6C2D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116FFD482751A0E2000E6C2D /* UserModel.swift */; };
 		116FFD4B2751A30B000E6C2D /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116FFD4A2751A30B000E6C2D /* UserCell.swift */; };
@@ -65,6 +66,7 @@
 		116E5E3F273F341200AE2FB2 /* UIImageview+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageview+Extension.swift"; sourceTree = "<group>"; };
 		116E5E41273F47FB00AE2FB2 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		116F8F032753012200283018 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		116F8F0527531BEF00283018 /* MessageFromProfileTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFromProfileTextField.swift; sourceTree = "<group>"; };
 		116FFD4627519F6B000E6C2D /* users.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
 		116FFD482751A0E2000E6C2D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		116FFD4A2751A30B000E6C2D /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				11623C5F2741D3DA00EFA598 /* UnderlineTextField.swift */,
 				11616735274DB61E00A81B2D /* GradientView.swift */,
 				115F12EE274F1F7300B238E2 /* SearchBar.swift */,
+				116F8F0527531BEF00283018 /* MessageFromProfileTextField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1178E86C273E05FA0049EA54 /* UIFont+Extension.swift in Sources */,
+				116F8F0627531BEF00283018 /* MessageFromProfileTextField.swift in Sources */,
 				11A806462745E97800C08379 /* AuthenticationViewController.swift in Sources */,
 				115F12EA274F077A00B238E2 /* SectionHeader.swift in Sources */,
 				116E1E60274B0E8B00C0B27E /* ChatModel.swift in Sources */,

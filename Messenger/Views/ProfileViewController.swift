@@ -17,8 +17,8 @@ class ProfileViewController: UIViewController {
     let aboutUserLabel = UILabel(text: "I'm a cool girl and want to chat with you!", textColor: .secondaryWhite, font: .secondaryFont)
     
     // MARK: - TextFields
-    let messageTextField = UnderlineTextField(font: .secondaryFont, placeholder: "Write something here", isSecured: false)
-    
+    let messageTextField = MessageFromProfileTextField(font: .secondaryFont, placeholder: "Write something here", isSecured: false)
+
     // MARK: - ProfileForm
     let profileForm = UIView()
     
@@ -69,20 +69,20 @@ extension ProfileViewController {
         
         NSLayoutConstraint.activate([
             userNameLabel.topAnchor.constraint(equalTo: profileForm.topAnchor, constant: 16),
-            userNameLabel.leadingAnchor.constraint(equalTo: profileForm.leadingAnchor, constant: 16),
-            userNameLabel.trailingAnchor.constraint(equalTo: profileForm.trailingAnchor, constant: -16)
+            userNameLabel.leadingAnchor.constraint(equalTo: profileForm.leadingAnchor, constant: 24),
+            userNameLabel.trailingAnchor.constraint(equalTo: profileForm.trailingAnchor, constant: -24)
         ])
         
         NSLayoutConstraint.activate([
             aboutUserLabel.topAnchor.constraint(equalTo: userNameLabel.bottomAnchor, constant: 8),
-            aboutUserLabel.leadingAnchor.constraint(equalTo: profileForm.leadingAnchor, constant: 16),
-            aboutUserLabel.trailingAnchor.constraint(equalTo: profileForm.trailingAnchor, constant: -16)
+            aboutUserLabel.leadingAnchor.constraint(equalTo: profileForm.leadingAnchor, constant: 24),
+            aboutUserLabel.trailingAnchor.constraint(equalTo: profileForm.trailingAnchor, constant: -24)
         ])
         
         NSLayoutConstraint.activate([
             messageTextField.topAnchor.constraint(equalTo: aboutUserLabel.bottomAnchor, constant: 16),
-            messageTextField.leadingAnchor.constraint(equalTo: profileForm.leadingAnchor, constant: 16),
-            messageTextField.trailingAnchor.constraint(equalTo: profileForm.trailingAnchor, constant: -16),
+            messageTextField.leadingAnchor.constraint(equalTo: profileForm.leadingAnchor, constant: 24),
+            messageTextField.trailingAnchor.constraint(equalTo: profileForm.trailingAnchor, constant: -24),
             messageTextField.heightAnchor.constraint(equalToConstant: 45)
         ])
         
