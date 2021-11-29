@@ -14,6 +14,8 @@
 		11616736274DB61E00A81B2D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11616735274DB61E00A81B2D /* GradientView.swift */; };
 		11623C602741D3DA00EFA598 /* UnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11623C5F2741D3DA00EFA598 /* UnderlineTextField.swift */; };
 		1162D6C22747148800AAF936 /* UISegmentedControl+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1162D6C12747148800AAF936 /* UISegmentedControl+Extension.swift */; };
+		1167AB3B2754411D0085A66C /* ChatRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1167AB3A2754411D0085A66C /* ChatRequestViewController.swift */; };
+		1167AB3D275448F30085A66C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1167AB3C275448F30085A66C /* UIView+Extension.swift */; };
 		11690133274C628300A0C991 /* ActiveChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11690132274C628300A0C991 /* ActiveChatCell.swift */; };
 		11690136274C648000A0C991 /* CellConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11690135274C648000A0C991 /* CellConfigurationProtocol.swift */; };
 		116DE6ED274882AA0060016D /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116DE6EC274882AA0060016D /* ChatsViewController.swift */; };
@@ -53,6 +55,8 @@
 		11616735274DB61E00A81B2D /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		11623C5F2741D3DA00EFA598 /* UnderlineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineTextField.swift; sourceTree = "<group>"; };
 		1162D6C12747148800AAF936 /* UISegmentedControl+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+Extension.swift"; sourceTree = "<group>"; };
+		1167AB3A2754411D0085A66C /* ChatRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequestViewController.swift; sourceTree = "<group>"; };
+		1167AB3C275448F30085A66C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		11690132274C628300A0C991 /* ActiveChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveChatCell.swift; sourceTree = "<group>"; };
 		11690135274C648000A0C991 /* CellConfigurationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfigurationProtocol.swift; sourceTree = "<group>"; };
 		116DE6EC274882AA0060016D /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +186,7 @@
 				116E5E41273F47FB00AE2FB2 /* UIStackView+Extension.swift */,
 				1162D6C12747148800AAF936 /* UISegmentedControl+Extension.swift */,
 				116FFD4C2751A8EB000E6C2D /* UIViewController+Extension.swift */,
+				1167AB3C275448F30085A66C /* UIView+Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -192,6 +197,7 @@
 				116DE6EB27487FC10060016D /* Auth&Register */,
 				116DE6F2274888410060016D /* People&Chats */,
 				116F8F032753012200283018 /* ProfileViewController.swift */,
+				1167AB3A2754411D0085A66C /* ChatRequestViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -342,8 +348,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1167AB3D275448F30085A66C /* UIView+Extension.swift in Sources */,
 				1178E86C273E05FA0049EA54 /* UIFont+Extension.swift in Sources */,
 				116F8F0627531BEF00283018 /* MessageFromProfileTextField.swift in Sources */,
+				1167AB3B2754411D0085A66C /* ChatRequestViewController.swift in Sources */,
 				11A806462745E97800C08379 /* AuthenticationViewController.swift in Sources */,
 				115F12EA274F077A00B238E2 /* SectionHeader.swift in Sources */,
 				116E1E60274B0E8B00C0B27E /* ChatModel.swift in Sources */,
