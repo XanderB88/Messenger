@@ -43,7 +43,7 @@ class ChatsViewController: UIViewController {
         searchBar.setupSearchBar(navigationItem: navigationItem, delegate: self)
         setupCollectionView()
         setupDataSource()
-        reloadData()
+        reloadData(with: nil)
     }
 }
 
@@ -175,13 +175,17 @@ extension ChatsViewController {
     }
     
     // MARK: - Reload data
-    private func reloadData() {
+    private func reloadData(with searchText: String?) {
+        
+        let filteredActiveChats = activeChats.filter { (activeChat) -> Bool in
+            activeChat.containsChatWithUser(filter: searchText)
+        }
        
         var snapshot = NSDiffableDataSourceSnapshot<Section, ChatModel>()
         
         snapshot.appendSections([.waitingChats, .activeChats])
         snapshot.appendItems(waitingChats, toSection: .waitingChats)
-        snapshot.appendItems(activeChats, toSection: .activeChats)
+        snapshot.appendItems(filteredActiveChats, toSection: .activeChats)
        
         dataSource?.apply(snapshot, animatingDifferences: true)
     }
@@ -190,6 +194,7 @@ extension ChatsViewController {
 // MARK: - Search bar delegate
 extension ChatsViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        reloadData(with: searchText)
         print(searchText)
     }
 }

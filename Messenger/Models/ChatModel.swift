@@ -21,4 +21,13 @@ struct ChatModel: Hashable, Decodable {
     static func == (lhs: ChatModel, rhs: ChatModel) -> Bool {
         return lhs.id == rhs.id
     }
+    
+    func containsChatWithUser(filter: String?) -> Bool {
+        
+        guard let filter = filter else { return true }
+        
+        if filter.isEmpty { return true }
+        
+        return username.lowercased().contains(filter.lowercased())
+    }
 }
