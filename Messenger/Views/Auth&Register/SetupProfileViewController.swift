@@ -17,12 +17,12 @@ class SetupProfileViewController: UIViewController {
     
     // MARK: - Labels
     let greetingLabel = UILabel(text: "SET UP PROFILE", textColor: .mainWhite, font: .headerFont)
-    let firstNameLabel = UILabel(text: "FIRST NAME", textColor: .secondaryWhite, font: .secondaryFont)
-    let secondNameLabel = UILabel(text: "SECOND NAME", textColor: .secondaryWhite, font: .secondaryFont)
+    let fullNameLabel = UILabel(text: "FULL NAME", textColor: .secondaryWhite, font: .secondaryFont)
+    let aboutMeLabel = UILabel(text: "ABOUT ME", textColor: .secondaryWhite, font: .secondaryFont)
     
     // MARK: - TextFields
-    let firstNameTextField = UnderlineTextField( placeholder: "First Name")
-    let secondNameTextField = UnderlineTextField( placeholder: "Second Name")
+    let fullNameTextField = UnderlineTextField( placeholder: "Full Name")
+    let aboutMeTextField = UnderlineTextField( placeholder: "About me")
     
     // MARK: - Segmented control
     let genderControl = UISegmentedControl(first: "Male", second: "Female")
@@ -59,11 +59,11 @@ extension SetupProfileViewController {
             profileImageForm.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
-        let firstNameTextFieldForm = UIStackView(arrangedSubviews: [firstNameLabel, firstNameTextField], axis: .vertical, spacing: 15)
+        let fullNameTextFieldForm = UIStackView(arrangedSubviews: [fullNameLabel, fullNameTextField], axis: .vertical, spacing: 15)
      
-        let secondNameTextFieldForm = UIStackView(arrangedSubviews: [secondNameLabel, secondNameTextField], axis: .vertical, spacing: 15)
+        let aboutMeTextFieldForm = UIStackView(arrangedSubviews: [aboutMeLabel, aboutMeTextField], axis: .vertical, spacing: 15)
 
-        let signupForm = UIStackView(arrangedSubviews: [firstNameTextFieldForm, secondNameTextFieldForm, genderControl, goToChatButton], axis: .vertical, spacing: 40)
+        let signupForm = UIStackView(arrangedSubviews: [fullNameTextFieldForm, aboutMeTextFieldForm, genderControl, goToChatButton], axis: .vertical, spacing: 40)
         
         view.addSubview(signupForm)
         
