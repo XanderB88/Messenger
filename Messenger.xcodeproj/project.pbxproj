@@ -18,6 +18,8 @@
 		1167AB3D275448F30085A66C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1167AB3C275448F30085A66C /* UIView+Extension.swift */; };
 		11690133274C628300A0C991 /* ActiveChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11690132274C628300A0C991 /* ActiveChatCell.swift */; };
 		11690136274C648000A0C991 /* CellConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11690135274C648000A0C991 /* CellConfigurationProtocol.swift */; };
+		116B46E62757015500B064C4 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116B46E52757015500B064C4 /* Validator.swift */; };
+		116B46E827570CAB00B064C4 /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116B46E727570CAB00B064C4 /* AuthenticationError.swift */; };
 		116DE6ED274882AA0060016D /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116DE6EC274882AA0060016D /* ChatsViewController.swift */; };
 		116DE6EF274882BE0060016D /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116DE6EE274882BE0060016D /* PeopleViewController.swift */; };
 		116DE6F1274883650060016D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116DE6F0274883650060016D /* MainTabBarController.swift */; };
@@ -61,6 +63,8 @@
 		1167AB3C275448F30085A66C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		11690132274C628300A0C991 /* ActiveChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveChatCell.swift; sourceTree = "<group>"; };
 		11690135274C648000A0C991 /* CellConfigurationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfigurationProtocol.swift; sourceTree = "<group>"; };
+		116B46E52757015500B064C4 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		116B46E727570CAB00B064C4 /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
 		116DE6EC274882AA0060016D /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
 		116DE6EE274882BE0060016D /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		116DE6F0274883650060016D /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -236,6 +240,8 @@
 				11690134274C633200A0C991 /* Protocols */,
 				116E5E44273F49D300AE2FB2 /* Views */,
 				1178E864273DDF0B0049EA54 /* Supporting Files */,
+				116B46E52757015500B064C4 /* Validator.swift */,
+				116B46E727570CAB00B064C4 /* AuthenticationError.swift */,
 			);
 			path = Messenger;
 			sourceTree = "<group>";
@@ -299,7 +305,6 @@
 				B13A9A59CEC1F78D205A2704 /* Pods-Messenger.debug.xcconfig */,
 				EB917D643C9E09410BBB0720 /* Pods-Messenger.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -433,6 +438,7 @@
 				11616736274DB61E00A81B2D /* GradientView.swift in Sources */,
 				11690133274C628300A0C991 /* ActiveChatCell.swift in Sources */,
 				11125484274725D400F6F53F /* EmailRegistrationViewController.swift in Sources */,
+				116B46E62757015500B064C4 /* Validator.swift in Sources */,
 				116E5E40273F341200AE2FB2 /* UIImageview+Extension.swift in Sources */,
 				11A8064B2745E99300C08379 /* AddProfilePhoto.swift in Sources */,
 				11724BED2745F3F5003AF64E /* SetupProfileViewController.swift in Sources */,
@@ -448,6 +454,7 @@
 				1178E850273DDEB10049EA54 /* AppDelegate.swift in Sources */,
 				116FFD4B2751A30B000E6C2D /* UserCell.swift in Sources */,
 				1178E852273DDEB10049EA54 /* SceneDelegate.swift in Sources */,
+				116B46E827570CAB00B064C4 /* AuthenticationError.swift in Sources */,
 				11616732274DADB000A81B2D /* WaitingChatCell.swift in Sources */,
 				1178E86A273E01D90049EA54 /* UIColor+Extension.swift in Sources */,
 				11A806472745E97800C08379 /* LoginViewController.swift in Sources */,
