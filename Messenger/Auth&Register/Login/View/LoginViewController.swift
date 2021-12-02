@@ -37,6 +37,22 @@ class LoginViewController: UIViewController {
         view.backgroundColor = .mainDark
         setupIconsForButtons()
         setupConstraints()
+        
+        googleButton.addTarget(self, action: #selector(googleButtonPressed), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
+        signupButton.addTarget(self, action: #selector(signupButtonPressed), for: .touchUpInside)
+    }
+    
+    @objc private func googleButtonPressed() {
+        
+    }
+    
+    @objc private func loginButtonPressed() {
+        
+    }
+    
+    @objc private func signupButtonPressed() {
+        
     }
 }
 

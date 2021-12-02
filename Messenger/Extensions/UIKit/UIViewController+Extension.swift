@@ -20,5 +20,4 @@ extension UIViewController {
         
         return cell
     }
-    
 }

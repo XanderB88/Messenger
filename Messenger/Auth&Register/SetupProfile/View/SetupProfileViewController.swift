@@ -33,6 +33,12 @@ class SetupProfileViewController: UIViewController {
         
         view.backgroundColor = .mainDark
         setupConstraints()
+        
+        goToChatButton.addTarget(self, action: #selector(goToChatButtonPressed), for: .touchUpInside)
+    }
+    
+    @objc private func goToChatButtonPressed() {
+        
     }
 }
 

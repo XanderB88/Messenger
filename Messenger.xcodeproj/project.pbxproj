@@ -138,8 +138,8 @@
 		116DE6EB27487FC10060016D /* Auth&Register */ = {
 			isa = PBXGroup;
 			children = (
-				118C8A962758655E00B0C014 /* Login */,
 				118C8A952758654600B0C014 /* Authentication */,
+				118C8A962758655E00B0C014 /* Login */,
 				118C8A97275865A100B0C014 /* EmailRegistration */,
 				118C8A98275865D000B0C014 /* SetupProfile */,
 			);
@@ -212,14 +212,14 @@
 		1178E84E273DDEB10049EA54 /* Messenger */ = {
 			isa = PBXGroup;
 			children = (
-				1163EB252758450800728C6D /* Services */,
 				1178E863273DDEE80049EA54 /* Application */,
+				1163EB252758450800728C6D /* Services */,
 				116E1E5E274B0E5B00C0B27E /* Models */,
 				1178E865273DFE6E0049EA54 /* Extensions */,
 				116DE6EB27487FC10060016D /* Auth&Register */,
+				116DE6F2274888410060016D /* People&Chats */,
 				118C8A9E2758675400B0C014 /* Profile */,
 				118C8A9D2758672C00B0C014 /* ChatRequest */,
-				116DE6F2274888410060016D /* People&Chats */,
 				1178E864273DDF0B0049EA54 /* Supporting Files */,
 			);
 			path = Messenger;

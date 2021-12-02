@@ -31,6 +31,17 @@ class EmailRegistrationViewController: UIViewController {
 
         view.backgroundColor = .mainDark
         setupConstraints()
+        
+        signupButton.addTarget(self, action: #selector(signupButtonPressed), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
+    }
+    
+    @objc private func signupButtonPressed() {
+        
+    }
+    
+    @objc private func loginButtonPressed() {
+        
     }
 }
 

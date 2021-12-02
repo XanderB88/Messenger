@@ -28,6 +28,17 @@ class ChatRequestViewController: UIViewController {
         super.viewDidLoad()
         
         setupConstraints()
+        
+        acceptButton.addTarget(self, action: #selector(acceptButtonPressed), for: .touchUpInside)
+        denyButton.addTarget(self, action: #selector(denyButtonPressed), for: .touchUpInside)
+    }
+    
+    @objc private func acceptButtonPressed() {
+        
+    }
+    
+    @objc private func denyButtonPressed() {
+        
     }
     
     override func viewWillLayoutSubviews() {
