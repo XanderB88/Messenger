@@ -9,16 +9,14 @@ import Foundation
 import Firebase
 import FirebaseAuth
 
-protocol AuthenticationServiceProtocol {
-    
-    func register(email: String?, password: String?, confirmPassword: String?, completion: @escaping (Result<User, Error>) -> Void)
-    func login(email: String?, password: String?, completion: @escaping (Result<User, Error>) -> Void)
-}
-
 class AuthenticationService: AuthenticationServiceProtocol {
     
     private let authentication = Auth.auth()
-    private let validator = Validator()
+    private let validator: ValidatorProtocol
+    
+    required init(validator: ValidatorProtocol) {
+        self.validator = validator
+    }
     
     func register(email: String?, password: String?, confirmPassword: String?, completion: @escaping (Result<User, Error>) -> Void) {
         
