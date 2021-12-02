@@ -8,7 +8,7 @@
 import Foundation
 
 enum AuthenticationError {
-    case fieldsNotFilled
+    case fieldsIsNotFilled
     case invalidEmail
     case invalidPassword
     case passwordsIsNotMatched
@@ -21,7 +21,7 @@ extension AuthenticationError: LocalizedError {
     var errorDescription: String? {
        
         switch self {
-            case .fieldsNotFilled:
+            case .fieldsIsNotFilled:
                 return NSLocalizedString("Please fill out all fields", comment: "")
             case .invalidEmail:
                 return NSLocalizedString("Email format is incorrect", comment: "")

@@ -14,6 +14,7 @@
 		11616736274DB61E00A81B2D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11616735274DB61E00A81B2D /* GradientView.swift */; };
 		11623C602741D3DA00EFA598 /* UnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11623C5F2741D3DA00EFA598 /* UnderlineTextField.swift */; };
 		1162D6C22747148800AAF936 /* UISegmentedControl+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1162D6C12747148800AAF936 /* UISegmentedControl+Extension.swift */; };
+		1163EB272758456600728C6D /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1163EB262758456600728C6D /* AuthenticationService.swift */; };
 		1167AB3B2754411D0085A66C /* ChatRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1167AB3A2754411D0085A66C /* ChatRequestViewController.swift */; };
 		1167AB3D275448F30085A66C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1167AB3C275448F30085A66C /* UIView+Extension.swift */; };
 		11690133274C628300A0C991 /* ActiveChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11690132274C628300A0C991 /* ActiveChatCell.swift */; };
@@ -59,6 +60,7 @@
 		11616735274DB61E00A81B2D /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		11623C5F2741D3DA00EFA598 /* UnderlineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineTextField.swift; sourceTree = "<group>"; };
 		1162D6C12747148800AAF936 /* UISegmentedControl+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+Extension.swift"; sourceTree = "<group>"; };
+		1163EB262758456600728C6D /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		1167AB3A2754411D0085A66C /* ChatRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequestViewController.swift; sourceTree = "<group>"; };
 		1167AB3C275448F30085A66C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		11690132274C628300A0C991 /* ActiveChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveChatCell.swift; sourceTree = "<group>"; };
@@ -126,6 +128,14 @@
 				11690135274C648000A0C991 /* CellConfigurationProtocol.swift */,
 			);
 			path = "People&Chats";
+			sourceTree = "<group>";
+		};
+		1163EB252758450800728C6D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1163EB262758456600728C6D /* AuthenticationService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		11690131274C625200A0C991 /* Cells */ = {
@@ -234,6 +244,7 @@
 		1178E84E273DDEB10049EA54 /* Messenger */ = {
 			isa = PBXGroup;
 			children = (
+				1163EB252758450800728C6D /* Services */,
 				1178E863273DDEE80049EA54 /* Application */,
 				116E1E5E274B0E5B00C0B27E /* Models */,
 				1178E865273DFE6E0049EA54 /* Extensions */,
@@ -429,6 +440,7 @@
 				1167AB3D275448F30085A66C /* UIView+Extension.swift in Sources */,
 				1178E86C273E05FA0049EA54 /* UIFont+Extension.swift in Sources */,
 				116F8F0627531BEF00283018 /* MessageFromProfileTextField.swift in Sources */,
+				1163EB272758456600728C6D /* AuthenticationService.swift in Sources */,
 				1167AB3B2754411D0085A66C /* ChatRequestViewController.swift in Sources */,
 				11A806462745E97800C08379 /* AuthenticationViewController.swift in Sources */,
 				115F12EA274F077A00B238E2 /* SectionHeader.swift in Sources */,
