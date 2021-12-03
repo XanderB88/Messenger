@@ -27,11 +27,25 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         
         setupConstraints()
+        setTargetForButton()
+        
+    }
+    
+    @objc private func sendMessage() {
+        
     }
 }
 
 // MARK: - Setup constraints
 extension ProfileViewController {
+    
+    private func setTargetForButton() {
+        
+        if let button = messageTextField.rightView as? UIButton {
+            
+            button.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
+        }
+    }
     
     private func setupConstraints() {
         

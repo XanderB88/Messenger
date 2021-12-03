@@ -10,6 +10,11 @@
 		11125484274725D400F6F53F /* EmailRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11125483274725D400F6F53F /* EmailRegistrationViewController.swift */; };
 		115F12EA274F077A00B238E2 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115F12E9274F077A00B238E2 /* SectionHeader.swift */; };
 		115F12EF274F1F7300B238E2 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115F12EE274F1F7300B238E2 /* SearchBar.swift */; };
+		116067152759A96300ABA84B /* EmailRegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116067142759A96300ABA84B /* EmailRegistrationPresenter.swift */; };
+		116067172759B89B00ABA84B /* AssemblyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116067162759B89B00ABA84B /* AssemblyBuilder.swift */; };
+		1160671B2759BD6400ABA84B /* EmailRegistrationViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160671A2759BD6400ABA84B /* EmailRegistrationViewProtocol.swift */; };
+		1160671D2759BDA500ABA84B /* EmailRegistrationPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160671C2759BDA500ABA84B /* EmailRegistrationPresenterProtocol.swift */; };
+		116067202759BE5100ABA84B /* AssemblyBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160671F2759BE5100ABA84B /* AssemblyBuilderProtocol.swift */; };
 		11616732274DADB000A81B2D /* WaitingChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11616731274DADB000A81B2D /* WaitingChatCell.swift */; };
 		11616736274DB61E00A81B2D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11616735274DB61E00A81B2D /* GradientView.swift */; };
 		11623C602741D3DA00EFA598 /* UnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11623C5F2741D3DA00EFA598 /* UnderlineTextField.swift */; };
@@ -57,6 +62,11 @@
 		11125483274725D400F6F53F /* EmailRegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailRegistrationViewController.swift; sourceTree = "<group>"; };
 		115F12E9274F077A00B238E2 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		115F12EE274F1F7300B238E2 /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		116067142759A96300ABA84B /* EmailRegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegistrationPresenter.swift; sourceTree = "<group>"; };
+		116067162759B89B00ABA84B /* AssemblyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyBuilder.swift; sourceTree = "<group>"; };
+		1160671A2759BD6400ABA84B /* EmailRegistrationViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegistrationViewProtocol.swift; sourceTree = "<group>"; };
+		1160671C2759BDA500ABA84B /* EmailRegistrationPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegistrationPresenterProtocol.swift; sourceTree = "<group>"; };
+		1160671F2759BE5100ABA84B /* AssemblyBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyBuilderProtocol.swift; sourceTree = "<group>"; };
 		11616731274DADB000A81B2D /* WaitingChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatCell.swift; sourceTree = "<group>"; };
 		11616735274DB61E00A81B2D /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		11623C5F2741D3DA00EFA598 /* UnderlineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineTextField.swift; sourceTree = "<group>"; };
@@ -116,6 +126,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		116067182759BD2200ABA84B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				116067142759A96300ABA84B /* EmailRegistrationPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		116067192759BD3500ABA84B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				1160671A2759BD6400ABA84B /* EmailRegistrationViewProtocol.swift */,
+				1160671C2759BDA500ABA84B /* EmailRegistrationPresenterProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		1160671E2759BE2100ABA84B /* AssemblyBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				116067162759B89B00ABA84B /* AssemblyBuilder.swift */,
+				1160671F2759BE5100ABA84B /* AssemblyBuilderProtocol.swift */,
+			);
+			path = AssemblyBuilder;
+			sourceTree = "<group>";
+		};
 		1163EB252758450800728C6D /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +257,7 @@
 				118C8A9E2758675400B0C014 /* Profile */,
 				118C8A9D2758672C00B0C014 /* ChatRequest */,
 				1178E864273DDF0B0049EA54 /* Supporting Files */,
+				1160671E2759BE2100ABA84B /* AssemblyBuilder */,
 			);
 			path = Messenger;
 			sourceTree = "<group>";
@@ -277,6 +314,8 @@
 		118C8A97275865A100B0C014 /* EmailRegistration */ = {
 			isa = PBXGroup;
 			children = (
+				116067192759BD3500ABA84B /* Protocols */,
+				116067182759BD2200ABA84B /* Presenter */,
 				118C8AA12758680F00B0C014 /* View */,
 			);
 			path = EmailRegistration;
@@ -538,6 +577,7 @@
 			files = (
 				1167AB3D275448F30085A66C /* UIView+Extension.swift in Sources */,
 				1178E86C273E05FA0049EA54 /* UIFont+Extension.swift in Sources */,
+				1160671D2759BDA500ABA84B /* EmailRegistrationPresenterProtocol.swift in Sources */,
 				116F8F0627531BEF00283018 /* MessageFromProfileTextField.swift in Sources */,
 				1163EB272758456600728C6D /* AuthenticationService.swift in Sources */,
 				11A806462745E97800C08379 /* AuthenticationViewController.swift in Sources */,
@@ -558,21 +598,25 @@
 				115F12EF274F1F7300B238E2 /* SearchBar.swift in Sources */,
 				116E5E3E273F33F400AE2FB2 /* UILabel+Extension.swift in Sources */,
 				116E5E42273F47FB00AE2FB2 /* UIStackView+Extension.swift in Sources */,
+				1160671B2759BD6400ABA84B /* EmailRegistrationViewProtocol.swift in Sources */,
 				116FFD492751A0E2000E6C2D /* UserModel.swift in Sources */,
 				11623C602741D3DA00EFA598 /* UnderlineTextField.swift in Sources */,
 				116DE6EF274882BE0060016D /* PeopleViewController.swift in Sources */,
 				1178E850273DDEB10049EA54 /* AppDelegate.swift in Sources */,
 				116FFD4B2751A30B000E6C2D /* UserCell.swift in Sources */,
+				116067172759B89B00ABA84B /* AssemblyBuilder.swift in Sources */,
 				1178E852273DDEB10049EA54 /* SceneDelegate.swift in Sources */,
 				116B46E827570CAB00B064C4 /* AuthenticationError.swift in Sources */,
 				1163EB2A27585EE100728C6D /* AuthenticationServiceProtocol.swift in Sources */,
 				11616732274DADB000A81B2D /* WaitingChatCell.swift in Sources */,
 				1178E86A273E01D90049EA54 /* UIColor+Extension.swift in Sources */,
+				116067152759A96300ABA84B /* EmailRegistrationPresenter.swift in Sources */,
 				11A806472745E97800C08379 /* LoginViewController.swift in Sources */,
 				11A8064E2745EA0E00C08379 /* UIButton+Extension.swift in Sources */,
 				118C8A9C275866FB00B0C014 /* ProfileViewController.swift in Sources */,
 				11690136274C648000A0C991 /* CellConfigurationProtocol.swift in Sources */,
 				1162D6C22747148800AAF936 /* UISegmentedControl+Extension.swift in Sources */,
+				116067202759BE5100ABA84B /* AssemblyBuilderProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

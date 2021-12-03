@@ -25,6 +25,9 @@ class EmailRegistrationViewController: UIViewController {
     let passwordTextField = UnderlineTextField( placeholder: "Password", isSecured: true)
     let confirmPasswordTextField = UnderlineTextField( placeholder: "Confirm password", isSecured: true)
     
+    // MARK: - Presenter
+    var presenter: EmailRegistrationPresenterProtocol!
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,10 +41,22 @@ class EmailRegistrationViewController: UIViewController {
     
     @objc private func signupButtonPressed() {
         
+        presenter.register(email: emailTextField.text, password: passwordTextField.text, confirmPassword: confirmPasswordTextField.text)
     }
     
     @objc private func loginButtonPressed() {
         
+    }
+}
+
+extension EmailRegistrationViewController: EmailRegistrationViewProtocol {
+    
+    func success() {
+        self.showAlert(withTitle: "Success", withMessage: "User was registered")
+    }
+    
+    func failure(error: Error) {
+        self.showAlert(withTitle: "Error", withMessage: error.localizedDescription)
     }
 }
 
