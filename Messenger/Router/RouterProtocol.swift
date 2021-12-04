@@ -11,4 +11,5 @@ protocol RouterProtocol: AnyObject {
     
     var window: UIWindow? { get set }
     var assemblyBuilder: AssemblyBuilderProtocol? { get set }
+    init(window: UIWindow?, assemblyBuilder: AssemblyBuilderProtocol)
 }

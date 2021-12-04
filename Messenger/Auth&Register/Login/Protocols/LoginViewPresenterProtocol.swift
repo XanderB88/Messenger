@@ -11,4 +11,5 @@ protocol LoginViewPresenterProtocol: AnyObject {
     
     init(view: LoginViewProtocol, authenticationService: AuthenticationServiceProtocol, router: RouterAuthenticationProtocol)
     func login(email: String?, password: String?)
+    func pressedToSignUpButton()
 }

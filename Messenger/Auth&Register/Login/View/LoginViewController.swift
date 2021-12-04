@@ -58,6 +58,10 @@ class LoginViewController: UIViewController {
     
     @objc private func signupButtonPressed() {
         
+        dismiss(animated: true) {
+            
+            self.presenter.pressedToSignUpButton()
+        }
     }
 }
 
@@ -107,7 +111,6 @@ extension LoginViewController {
             loginForm.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
         
-        // Bottom form
         let bottomForm = UIStackView(arrangedSubviews: [needAccountLabel, signupButton], axis: .horizontal, spacing: 5)
         
         view.addSubview(bottomForm)
@@ -119,7 +122,6 @@ extension LoginViewController {
         ])
     }
     
-    // Add icons to buttons
     fileprivate func setupIconsForButtons(){
         
         guard let googleIcon = googleIcon,

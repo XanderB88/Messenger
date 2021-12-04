@@ -45,7 +45,11 @@ class EmailRegistrationViewController: UIViewController {
     }
     
     @objc private func loginButtonPressed() {
-        
+       
+        dismiss(animated: true) {
+           
+            self.presenter.pressedToLoginButton()
+        }
     }
 }
 

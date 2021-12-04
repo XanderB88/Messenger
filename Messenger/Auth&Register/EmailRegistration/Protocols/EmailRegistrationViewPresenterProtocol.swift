@@ -12,4 +12,5 @@ protocol EmailRegistrationViewPresenterProtocol: AnyObject {
     init(view: EmailRegistrationViewProtocol, authenticationService: AuthenticationServiceProtocol, router: RouterAuthenticationProtocol)
     
     func register(email: String?, password: String?, confirmPassword: String?)
+    func pressedToLoginButton()
 }

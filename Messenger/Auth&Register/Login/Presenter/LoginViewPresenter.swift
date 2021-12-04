@@ -8,7 +8,7 @@
 import Foundation
 
 class LoginViewPresenter: LoginViewPresenterProtocol {
-   
+    
     weak var view: LoginViewProtocol?
     let authenticationService: AuthenticationServiceProtocol!
     let router: RouterAuthenticationProtocol?
@@ -33,6 +33,10 @@ class LoginViewPresenter: LoginViewPresenterProtocol {
                     self.view?.failure(error: error)
             }
         }
+    }
+   
+    func pressedToSignUpButton() {
         
+        router?.toEmailRegistrationScreen()
     }
 }

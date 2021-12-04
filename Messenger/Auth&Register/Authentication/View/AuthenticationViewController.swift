@@ -50,7 +50,7 @@ class AuthenticationViewController: UIViewController {
     }
     
     @objc private func emailButtonPressed() {
-        
+        presenter.pressedToEmailRegistrationButton()
     }
     
     @objc private func loginButtonPressed() {

@@ -19,4 +19,8 @@ class AuthenticationViewPresenter: AuthenticationViewPresenterProtocol {
     func pressedToLoginButton() {
         router?.toLoginScreen()
     }
+   
+    func pressedToEmailRegistrationButton() {
+        router?.toEmailRegistrationScreen()
+    }
 }

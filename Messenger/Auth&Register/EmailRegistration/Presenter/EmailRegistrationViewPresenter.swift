@@ -34,4 +34,9 @@ class EmailRegistrationViewPresenter: EmailRegistrationViewPresenterProtocol {
             }
         }
     }
+    
+    func pressedToLoginButton() {
+        
+        router?.toLoginScreen()
+    }
 }

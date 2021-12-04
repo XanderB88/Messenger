@@ -11,4 +11,5 @@ protocol AuthenticationViewPresenterProtocol: AnyObject {
     
     init(router: RouterAuthenticationProtocol)
     func pressedToLoginButton()
+    func pressedToEmailRegistrationButton()
 }

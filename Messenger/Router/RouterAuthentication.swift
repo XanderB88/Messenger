@@ -25,22 +25,26 @@ class RouterAuthentication: RouterAuthenticationProtocol {
             guard let authenticationScreen = assemblyBuilder?.createAuthenticationScreen(router: self) else { return }
                 
             window.rootViewController = authenticationScreen
-
-           
         }
     }
     
     func toLoginScreen() {
        
+        if let window = window {
+            
         guard let loginScreen = assemblyBuilder?.createLoginScreen(router: self) else { return }
         
-        window?.rootViewController?.present(loginScreen, animated: true, completion: nil)
+        window.rootViewController?.present(loginScreen, animated: true, completion: nil)
+        }
     }
     
     func toEmailRegistrationScreen() {
         
-        guard let emailRegistrationScreen = assemblyBuilder?.createLoginScreen(router: self) else { return }
+        if let window = window {
+            
+        guard let emailRegistrationScreen = assemblyBuilder?.createEmailRegistrationScreen(router: self) else { return }
         
-        window?.rootViewController?.present(emailRegistrationScreen, animated: true, completion: nil)
+        window.rootViewController?.present(emailRegistrationScreen, animated: true, completion: nil)
+        }
     }
 }
