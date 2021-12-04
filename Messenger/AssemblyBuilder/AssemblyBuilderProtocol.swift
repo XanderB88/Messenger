@@ -9,6 +9,7 @@ import UIKit
 
 protocol AssemblyBuilderProtocol {
    
-    func createEmailRegistrationScreen() -> UIViewController
-    func createLoginScreen() -> UIViewController
+    func createAuthenticationScreen(router: RouterAuthenticationProtocol) -> UIViewController
+    func createEmailRegistrationScreen(router: RouterAuthenticationProtocol) -> UIViewController
+    func createLoginScreen(router: RouterAuthenticationProtocol) -> UIViewController
 }

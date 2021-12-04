@@ -29,6 +29,9 @@ class AuthenticationViewController: UIViewController {
     // MARK: - Images
     let logoImageView = UIImageView(image: #imageLiteral(resourceName: "messenger"), contentMode: .scaleAspectFit)
     
+    // MARK: - Presenter
+    var presenter: AuthenticationViewPresenterProtocol!
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +54,7 @@ class AuthenticationViewController: UIViewController {
     }
     
     @objc private func loginButtonPressed() {
-        
+        presenter.pressedToLoginButton()
     }
 }
 

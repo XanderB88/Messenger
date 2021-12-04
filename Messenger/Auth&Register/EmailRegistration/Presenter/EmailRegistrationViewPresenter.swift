@@ -11,11 +11,13 @@ class EmailRegistrationViewPresenter: EmailRegistrationViewPresenterProtocol {
     
     weak var view: EmailRegistrationViewProtocol?
     let authenticationService: AuthenticationServiceProtocol!
+    let router: RouterAuthenticationProtocol?
    
-    required init(view: EmailRegistrationViewProtocol, authenticationService: AuthenticationServiceProtocol) {
+    required init(view: EmailRegistrationViewProtocol, authenticationService: AuthenticationServiceProtocol, router: RouterAuthenticationProtocol) {
         
         self.view = view
         self.authenticationService = authenticationService
+        self.router = router
     }
     
     func register(email: String?, password: String?, confirmPassword: String?) {

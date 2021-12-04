@@ -11,11 +11,13 @@ class LoginViewPresenter: LoginViewPresenterProtocol {
    
     weak var view: LoginViewProtocol?
     let authenticationService: AuthenticationServiceProtocol!
+    let router: RouterAuthenticationProtocol?
     
-    required init(view: LoginViewProtocol, authenticationService: AuthenticationServiceProtocol) {
+    required init(view: LoginViewProtocol, authenticationService: AuthenticationServiceProtocol, router: RouterAuthenticationProtocol) {
         
         self.view = view
         self.authenticationService = authenticationService
+        self.router = router
     }
     
     func login(email: String?, password: String?) {

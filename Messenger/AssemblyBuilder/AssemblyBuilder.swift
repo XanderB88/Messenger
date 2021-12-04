@@ -8,26 +8,37 @@
 import UIKit
 
 class AssemblyBuilder: AssemblyBuilderProtocol {
+   
+    func createAuthenticationScreen(router: RouterAuthenticationProtocol) -> UIViewController {
+        
+        let view = AuthenticationViewController()
     
-    func createEmailRegistrationScreen() -> UIViewController {
+        let presenter = AuthenticationViewPresenter(router: router)
+        view.presenter = presenter
+     
+        return view
+    }
+    
+    
+    func createEmailRegistrationScreen(router: RouterAuthenticationProtocol) -> UIViewController {
         
         let view = EmailRegistrationViewController()
         let validator = Validator()
         let authenticationService = AuthenticationService(validator: validator)
        
-        let presenter = EmailRegistrationViewPresenter(view: view, authenticationService: authenticationService)
+        let presenter = EmailRegistrationViewPresenter(view: view, authenticationService: authenticationService, router: router)
         view.presenter = presenter
        
         return view
     }
     
-    func createLoginScreen() -> UIViewController {
+    func createLoginScreen(router: RouterAuthenticationProtocol) -> UIViewController {
         
         let view = LoginViewController()
         let validator = Validator()
         let authenticationService = AuthenticationService(validator: validator)
         
-        let presenter = LoginViewPresenter(view: view, authenticationService: authenticationService)
+        let presenter = LoginViewPresenter(view: view, authenticationService: authenticationService, router: router)
         view.presenter = presenter
         
         return view

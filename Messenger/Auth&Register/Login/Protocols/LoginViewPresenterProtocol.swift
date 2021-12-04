@@ -9,6 +9,6 @@ import Foundation
 
 protocol LoginViewPresenterProtocol: AnyObject {
     
-    init(view: LoginViewProtocol, authenticationService: AuthenticationServiceProtocol)
+    init(view: LoginViewProtocol, authenticationService: AuthenticationServiceProtocol, router: RouterAuthenticationProtocol)
     func login(email: String?, password: String?)
 }

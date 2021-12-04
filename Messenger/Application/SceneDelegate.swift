@@ -21,8 +21,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         
         let assemblyBuilder = AssemblyBuilder()
+        let router = RouterAuthentication(window: window, assemblyBuilder: assemblyBuilder)
+        router.initialAuthenticationScreen()
         
-        window?.rootViewController = assemblyBuilder.createLoginScreen()
         window?.makeKeyAndVisible()
     }
 

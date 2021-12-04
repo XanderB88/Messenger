@@ -45,6 +45,11 @@
 		1175D790275AE4FD00039D8F /* LoginViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1175D78F275AE4FD00039D8F /* LoginViewPresenter.swift */; };
 		1175D793275AE53200039D8F /* LoginViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1175D792275AE53200039D8F /* LoginViewProtocol.swift */; };
 		1175D795275AE54C00039D8F /* LoginViewPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1175D794275AE54C00039D8F /* LoginViewPresenterProtocol.swift */; };
+		1175D797275AFFB200039D8F /* RouterAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1175D796275AFFB200039D8F /* RouterAuthentication.swift */; };
+		1175D799275B179100039D8F /* AuthenticationViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1175D798275B179100039D8F /* AuthenticationViewPresenter.swift */; };
+		1175D79B275B17B900039D8F /* AuthenticationViewPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1175D79A275B17B900039D8F /* AuthenticationViewPresenterProtocol.swift */; };
+		1175D7A0275B1EF100039D8F /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1175D79F275B1EF100039D8F /* RouterProtocol.swift */; };
+		1175D7A3275B1F3E00039D8F /* RouterAuthenticationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1175D7A2275B1F3E00039D8F /* RouterAuthenticationProtocol.swift */; };
 		1178E850273DDEB10049EA54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178E84F273DDEB10049EA54 /* AppDelegate.swift */; };
 		1178E852273DDEB10049EA54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178E851273DDEB10049EA54 /* SceneDelegate.swift */; };
 		1178E859273DDEB40049EA54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1178E858273DDEB40049EA54 /* Assets.xcassets */; };
@@ -100,6 +105,11 @@
 		1175D78F275AE4FD00039D8F /* LoginViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewPresenter.swift; sourceTree = "<group>"; };
 		1175D792275AE53200039D8F /* LoginViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewProtocol.swift; sourceTree = "<group>"; };
 		1175D794275AE54C00039D8F /* LoginViewPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewPresenterProtocol.swift; sourceTree = "<group>"; };
+		1175D796275AFFB200039D8F /* RouterAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterAuthentication.swift; sourceTree = "<group>"; };
+		1175D798275B179100039D8F /* AuthenticationViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewPresenter.swift; sourceTree = "<group>"; };
+		1175D79A275B17B900039D8F /* AuthenticationViewPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewPresenterProtocol.swift; sourceTree = "<group>"; };
+		1175D79F275B1EF100039D8F /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
+		1175D7A2275B1F3E00039D8F /* RouterAuthenticationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterAuthenticationProtocol.swift; sourceTree = "<group>"; };
 		1178E84C273DDEB10049EA54 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1178E84F273DDEB10049EA54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1178E851273DDEB10049EA54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -250,6 +260,32 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		1175D79E275B1EAB00039D8F /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				1175D796275AFFB200039D8F /* RouterAuthentication.swift */,
+				1175D79F275B1EF100039D8F /* RouterProtocol.swift */,
+				1175D7A2275B1F3E00039D8F /* RouterAuthenticationProtocol.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		1175D7A4275B1F7200039D8F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1175D798275B179100039D8F /* AuthenticationViewPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1175D7A5275B1F8300039D8F /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				1175D79A275B17B900039D8F /* AuthenticationViewPresenterProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		1178E843273DDEB10049EA54 = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +309,8 @@
 			children = (
 				1178E863273DDEE80049EA54 /* Application */,
 				1163EB252758450800728C6D /* Services */,
+				1160671E2759BE2100ABA84B /* AssemblyBuilder */,
+				1175D79E275B1EAB00039D8F /* Router */,
 				116E1E5E274B0E5B00C0B27E /* Models */,
 				1178E865273DFE6E0049EA54 /* Extensions */,
 				116DE6EB27487FC10060016D /* Auth&Register */,
@@ -280,7 +318,6 @@
 				118C8A9E2758675400B0C014 /* Profile */,
 				118C8A9D2758672C00B0C014 /* ChatRequest */,
 				1178E864273DDF0B0049EA54 /* Supporting Files */,
-				1160671E2759BE2100ABA84B /* AssemblyBuilder */,
 			);
 			path = Messenger;
 			sourceTree = "<group>";
@@ -321,6 +358,8 @@
 		118C8A952758654600B0C014 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				1175D7A5275B1F8300039D8F /* Protocol */,
+				1175D7A4275B1F7200039D8F /* Presenter */,
 				118C8AA02758680600B0C014 /* View */,
 			);
 			path = Authentication;
@@ -610,13 +649,17 @@
 				11A806462745E97800C08379 /* AuthenticationViewController.swift in Sources */,
 				115F12EA274F077A00B238E2 /* SectionHeader.swift in Sources */,
 				116E1E60274B0E8B00C0B27E /* ChatModel.swift in Sources */,
+				1175D7A3275B1F3E00039D8F /* RouterAuthenticationProtocol.swift in Sources */,
 				116FFD4D2751A8EB000E6C2D /* UIViewController+Extension.swift in Sources */,
 				116DE6F1274883650060016D /* MainTabBarController.swift in Sources */,
 				11616736274DB61E00A81B2D /* GradientView.swift in Sources */,
 				11690133274C628300A0C991 /* ActiveChatCell.swift in Sources */,
 				11125484274725D400F6F53F /* EmailRegistrationViewController.swift in Sources */,
+				1175D7A0275B1EF100039D8F /* RouterProtocol.swift in Sources */,
 				116B46E62757015500B064C4 /* Validator.swift in Sources */,
+				1175D797275AFFB200039D8F /* RouterAuthentication.swift in Sources */,
 				116E5E40273F341200AE2FB2 /* UIImageview+Extension.swift in Sources */,
+				1175D799275B179100039D8F /* AuthenticationViewPresenter.swift in Sources */,
 				11A8064B2745E99300C08379 /* AddProfilePhoto.swift in Sources */,
 				11724BED2745F3F5003AF64E /* SetupProfileViewController.swift in Sources */,
 				116DE6ED274882AA0060016D /* ChatsViewController.swift in Sources */,
@@ -639,6 +682,7 @@
 				11616732274DADB000A81B2D /* WaitingChatCell.swift in Sources */,
 				1178E86A273E01D90049EA54 /* UIColor+Extension.swift in Sources */,
 				116067152759A96300ABA84B /* EmailRegistrationViewPresenter.swift in Sources */,
+				1175D79B275B17B900039D8F /* AuthenticationViewPresenterProtocol.swift in Sources */,
 				11A806472745E97800C08379 /* LoginViewController.swift in Sources */,
 				11A8064E2745EA0E00C08379 /* UIButton+Extension.swift in Sources */,
 				118C8A9C275866FB00B0C014 /* ProfileViewController.swift in Sources */,
