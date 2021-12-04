@@ -24,9 +24,9 @@ extension AuthenticationError: LocalizedError {
             case .fieldsIsNotFilled:
                 return NSLocalizedString("Please fill out all fields", comment: "")
             case .invalidEmail:
-                return NSLocalizedString("Email format is incorrect", comment: "Email must be formatted user@mailbox.com")
+                return NSLocalizedString("The email address is badly formatted", comment: "Email must be formatted user@mailbox.com")
             case .invalidPassword:
-                return NSLocalizedString("Password format is incorrect", comment: "Password must contain uppercase and lowercase letters and numbers")
+                return NSLocalizedString("The password is badly formatted", comment: "Password must contain uppercase and lowercase letters and numbers")
             case .passwordsIsNotMatched:
                 return NSLocalizedString("Passwords is not matched", comment: "")
             case .serverError:

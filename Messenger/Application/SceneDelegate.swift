@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let assemblyBuilder = AssemblyBuilder()
         
-        window?.rootViewController = assemblyBuilder.createEmailRegistrationScreen()
+        window?.rootViewController = assemblyBuilder.createLoginScreen()
         window?.makeKeyAndVisible()
     }
 

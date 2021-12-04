@@ -10,10 +10,10 @@
 		11125484274725D400F6F53F /* EmailRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11125483274725D400F6F53F /* EmailRegistrationViewController.swift */; };
 		115F12EA274F077A00B238E2 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115F12E9274F077A00B238E2 /* SectionHeader.swift */; };
 		115F12EF274F1F7300B238E2 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115F12EE274F1F7300B238E2 /* SearchBar.swift */; };
-		116067152759A96300ABA84B /* EmailRegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116067142759A96300ABA84B /* EmailRegistrationPresenter.swift */; };
+		116067152759A96300ABA84B /* EmailRegistrationViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116067142759A96300ABA84B /* EmailRegistrationViewPresenter.swift */; };
 		116067172759B89B00ABA84B /* AssemblyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116067162759B89B00ABA84B /* AssemblyBuilder.swift */; };
 		1160671B2759BD6400ABA84B /* EmailRegistrationViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160671A2759BD6400ABA84B /* EmailRegistrationViewProtocol.swift */; };
-		1160671D2759BDA500ABA84B /* EmailRegistrationPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160671C2759BDA500ABA84B /* EmailRegistrationPresenterProtocol.swift */; };
+		1160671D2759BDA500ABA84B /* EmailRegistrationViewPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160671C2759BDA500ABA84B /* EmailRegistrationViewPresenterProtocol.swift */; };
 		116067202759BE5100ABA84B /* AssemblyBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160671F2759BE5100ABA84B /* AssemblyBuilderProtocol.swift */; };
 		11616732274DADB000A81B2D /* WaitingChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11616731274DADB000A81B2D /* WaitingChatCell.swift */; };
 		11616736274DB61E00A81B2D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11616735274DB61E00A81B2D /* GradientView.swift */; };
@@ -42,6 +42,9 @@
 		116FFD4B2751A30B000E6C2D /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116FFD4A2751A30B000E6C2D /* UserCell.swift */; };
 		116FFD4D2751A8EB000E6C2D /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116FFD4C2751A8EB000E6C2D /* UIViewController+Extension.swift */; };
 		11724BED2745F3F5003AF64E /* SetupProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11724BEC2745F3F5003AF64E /* SetupProfileViewController.swift */; };
+		1175D790275AE4FD00039D8F /* LoginViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1175D78F275AE4FD00039D8F /* LoginViewPresenter.swift */; };
+		1175D793275AE53200039D8F /* LoginViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1175D792275AE53200039D8F /* LoginViewProtocol.swift */; };
+		1175D795275AE54C00039D8F /* LoginViewPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1175D794275AE54C00039D8F /* LoginViewPresenterProtocol.swift */; };
 		1178E850273DDEB10049EA54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178E84F273DDEB10049EA54 /* AppDelegate.swift */; };
 		1178E852273DDEB10049EA54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178E851273DDEB10049EA54 /* SceneDelegate.swift */; };
 		1178E859273DDEB40049EA54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1178E858273DDEB40049EA54 /* Assets.xcassets */; };
@@ -62,10 +65,10 @@
 		11125483274725D400F6F53F /* EmailRegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailRegistrationViewController.swift; sourceTree = "<group>"; };
 		115F12E9274F077A00B238E2 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		115F12EE274F1F7300B238E2 /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
-		116067142759A96300ABA84B /* EmailRegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegistrationPresenter.swift; sourceTree = "<group>"; };
+		116067142759A96300ABA84B /* EmailRegistrationViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegistrationViewPresenter.swift; sourceTree = "<group>"; };
 		116067162759B89B00ABA84B /* AssemblyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyBuilder.swift; sourceTree = "<group>"; };
 		1160671A2759BD6400ABA84B /* EmailRegistrationViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegistrationViewProtocol.swift; sourceTree = "<group>"; };
-		1160671C2759BDA500ABA84B /* EmailRegistrationPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegistrationPresenterProtocol.swift; sourceTree = "<group>"; };
+		1160671C2759BDA500ABA84B /* EmailRegistrationViewPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegistrationViewPresenterProtocol.swift; sourceTree = "<group>"; };
 		1160671F2759BE5100ABA84B /* AssemblyBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyBuilderProtocol.swift; sourceTree = "<group>"; };
 		11616731274DADB000A81B2D /* WaitingChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatCell.swift; sourceTree = "<group>"; };
 		11616735274DB61E00A81B2D /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -94,6 +97,9 @@
 		116FFD4A2751A30B000E6C2D /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		116FFD4C2751A8EB000E6C2D /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		11724BEC2745F3F5003AF64E /* SetupProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewController.swift; sourceTree = "<group>"; };
+		1175D78F275AE4FD00039D8F /* LoginViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewPresenter.swift; sourceTree = "<group>"; };
+		1175D792275AE53200039D8F /* LoginViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewProtocol.swift; sourceTree = "<group>"; };
+		1175D794275AE54C00039D8F /* LoginViewPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewPresenterProtocol.swift; sourceTree = "<group>"; };
 		1178E84C273DDEB10049EA54 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1178E84F273DDEB10049EA54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1178E851273DDEB10049EA54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,7 +135,7 @@
 		116067182759BD2200ABA84B /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				116067142759A96300ABA84B /* EmailRegistrationPresenter.swift */,
+				116067142759A96300ABA84B /* EmailRegistrationViewPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -138,7 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				1160671A2759BD6400ABA84B /* EmailRegistrationViewProtocol.swift */,
-				1160671C2759BDA500ABA84B /* EmailRegistrationPresenterProtocol.swift */,
+				1160671C2759BDA500ABA84B /* EmailRegistrationViewPresenterProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -146,8 +152,8 @@
 		1160671E2759BE2100ABA84B /* AssemblyBuilder */ = {
 			isa = PBXGroup;
 			children = (
-				116067162759B89B00ABA84B /* AssemblyBuilder.swift */,
 				1160671F2759BE5100ABA84B /* AssemblyBuilderProtocol.swift */,
+				116067162759B89B00ABA84B /* AssemblyBuilder.swift */,
 			);
 			path = AssemblyBuilder;
 			sourceTree = "<group>";
@@ -225,6 +231,23 @@
 				1167AB3C275448F30085A66C /* UIView+Extension.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		1175D78E275AE40500039D8F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1175D78F275AE4FD00039D8F /* LoginViewPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1175D791275AE50A00039D8F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				1175D792275AE53200039D8F /* LoginViewProtocol.swift */,
+				1175D794275AE54C00039D8F /* LoginViewPresenterProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		1178E843273DDEB10049EA54 = {
@@ -306,6 +329,8 @@
 		118C8A962758655E00B0C014 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				1175D791275AE50A00039D8F /* Protocols */,
+				1175D78E275AE40500039D8F /* Presenter */,
 				118C8A9F275867FA00B0C014 /* View */,
 			);
 			path = Login;
@@ -576,8 +601,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1167AB3D275448F30085A66C /* UIView+Extension.swift in Sources */,
+				1175D790275AE4FD00039D8F /* LoginViewPresenter.swift in Sources */,
 				1178E86C273E05FA0049EA54 /* UIFont+Extension.swift in Sources */,
-				1160671D2759BDA500ABA84B /* EmailRegistrationPresenterProtocol.swift in Sources */,
+				1175D795275AE54C00039D8F /* LoginViewPresenterProtocol.swift in Sources */,
+				1160671D2759BDA500ABA84B /* EmailRegistrationViewPresenterProtocol.swift in Sources */,
 				116F8F0627531BEF00283018 /* MessageFromProfileTextField.swift in Sources */,
 				1163EB272758456600728C6D /* AuthenticationService.swift in Sources */,
 				11A806462745E97800C08379 /* AuthenticationViewController.swift in Sources */,
@@ -598,6 +625,7 @@
 				115F12EF274F1F7300B238E2 /* SearchBar.swift in Sources */,
 				116E5E3E273F33F400AE2FB2 /* UILabel+Extension.swift in Sources */,
 				116E5E42273F47FB00AE2FB2 /* UIStackView+Extension.swift in Sources */,
+				1175D793275AE53200039D8F /* LoginViewProtocol.swift in Sources */,
 				1160671B2759BD6400ABA84B /* EmailRegistrationViewProtocol.swift in Sources */,
 				116FFD492751A0E2000E6C2D /* UserModel.swift in Sources */,
 				11623C602741D3DA00EFA598 /* UnderlineTextField.swift in Sources */,
@@ -610,7 +638,7 @@
 				1163EB2A27585EE100728C6D /* AuthenticationServiceProtocol.swift in Sources */,
 				11616732274DADB000A81B2D /* WaitingChatCell.swift in Sources */,
 				1178E86A273E01D90049EA54 /* UIColor+Extension.swift in Sources */,
-				116067152759A96300ABA84B /* EmailRegistrationPresenter.swift in Sources */,
+				116067152759A96300ABA84B /* EmailRegistrationViewPresenter.swift in Sources */,
 				11A806472745E97800C08379 /* LoginViewController.swift in Sources */,
 				11A8064E2745EA0E00C08379 /* UIButton+Extension.swift in Sources */,
 				118C8A9C275866FB00B0C014 /* ProfileViewController.swift in Sources */,

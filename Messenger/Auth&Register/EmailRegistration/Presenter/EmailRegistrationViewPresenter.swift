@@ -7,7 +7,7 @@
 
 import Foundation
 
-class EmailRegistrationPresenter: EmailRegistrationPresenterProtocol {
+class EmailRegistrationViewPresenter: EmailRegistrationViewPresenterProtocol {
     
     weak var view: EmailRegistrationViewProtocol?
     let authenticationService: AuthenticationServiceProtocol!
@@ -25,7 +25,6 @@ class EmailRegistrationPresenter: EmailRegistrationPresenterProtocol {
             guard let self = self else { return }
             
             switch result {
-
                 case .success(_):
                     self.view?.success()
                 case .failure(let error):

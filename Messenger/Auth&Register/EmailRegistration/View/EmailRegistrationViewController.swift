@@ -26,7 +26,7 @@ class EmailRegistrationViewController: UIViewController {
     let confirmPasswordTextField = UnderlineTextField( placeholder: "Confirm password", isSecured: true)
     
     // MARK: - Presenter
-    var presenter: EmailRegistrationPresenterProtocol!
+    var presenter: EmailRegistrationViewPresenterProtocol!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -49,10 +49,11 @@ class EmailRegistrationViewController: UIViewController {
     }
 }
 
+// MARK: - Email registration view protocol
 extension EmailRegistrationViewController: EmailRegistrationViewProtocol {
     
     func success() {
-        self.showAlert(withTitle: "Success", withMessage: "User was registered")
+        self.showAlert(withTitle: "Success", withMessage: "You was registered")
     }
     
     func failure(error: Error) {

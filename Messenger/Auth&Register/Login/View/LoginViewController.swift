@@ -30,6 +30,10 @@ class LoginViewController: UIViewController {
     let emailTextField = UnderlineTextField( placeholder: "Email")
     let passwordTextField = UnderlineTextField( placeholder: "Password", isSecured: true)
     
+    // MARK: - Presenter
+    
+    var presenter: LoginViewPresenterProtocol!
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,10 +53,25 @@ class LoginViewController: UIViewController {
     
     @objc private func loginButtonPressed() {
         
+        presenter.login(email: emailTextField.text, password: passwordTextField.text)
     }
     
     @objc private func signupButtonPressed() {
         
+    }
+}
+
+// MARK: - Login view protocol
+extension LoginViewController: LoginViewProtocol {
+   
+    func success() {
+        
+        self.showAlert(withTitle: "Success", withMessage: "You are logged in")
+    }
+    
+    func failure(error: Error) {
+        
+        self.showAlert(withTitle: "Error", withMessage: error.localizedDescription)
     }
 }
 

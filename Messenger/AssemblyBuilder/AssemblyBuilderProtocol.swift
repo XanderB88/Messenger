@@ -10,4 +10,5 @@ import UIKit
 protocol AssemblyBuilderProtocol {
    
     func createEmailRegistrationScreen() -> UIViewController
+    func createLoginScreen() -> UIViewController
 }

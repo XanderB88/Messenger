@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol EmailRegistrationPresenterProtocol: AnyObject {
+protocol EmailRegistrationViewPresenterProtocol: AnyObject {
     
     init(view: EmailRegistrationViewProtocol, authenticationService: AuthenticationServiceProtocol)
     
