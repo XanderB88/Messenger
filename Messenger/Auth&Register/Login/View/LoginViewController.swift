@@ -106,7 +106,7 @@ extension LoginViewController {
         view.addSubview(loginForm)
         
         NSLayoutConstraint.activate([
-            loginForm.topAnchor.constraint(equalTo: greetingLabel.bottomAnchor, constant: 100),
+            loginForm.topAnchor.constraint(equalTo: greetingLabel.bottomAnchor, constant: 70),
             loginForm.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             loginForm.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
@@ -118,7 +118,7 @@ extension LoginViewController {
         NSLayoutConstraint.activate([
             bottomForm.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 95),
             bottomForm.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -95),
-            bottomForm.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50)
+            bottomForm.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -35)
         ])
     }
     

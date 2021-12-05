@@ -102,7 +102,7 @@ extension EmailRegistrationViewController {
         NSLayoutConstraint.activate([
             bottomForm.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 95),
             bottomForm.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -95),
-            bottomForm.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50)
+            bottomForm.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -35)
         ])
     }
 }
