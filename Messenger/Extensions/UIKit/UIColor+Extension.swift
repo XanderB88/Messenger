@@ -33,6 +33,10 @@ extension UIColor {
         return #colorLiteral(red: 0.7494370341, green: 0.7639812827, blue: 0.7901355028, alpha: 1)
     }
     
+    static var alertControllerColor: UIColor {
+        return #colorLiteral(red: 0.349545449, green: 0.3639615774, blue: 0.3901388347, alpha: 1)
+    }
+    
     static var clear: UIColor {
         return #colorLiteral(red: 0.1948233843, green: 0.2145973742, blue: 0.2537175119, alpha: 0)
     }

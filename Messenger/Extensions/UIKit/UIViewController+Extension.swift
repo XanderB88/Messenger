@@ -25,6 +25,11 @@ extension UIViewController {
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
+        alertController.setBackgroundColor(color: UIColor.alertControllerColor)
+        alertController.setTitleAttributes(font: UIFont.secondaryFont, color: UIColor.mainWhite)
+        alertController.setMessageAttributes(font: UIFont.searchAndMessageFont, color: UIColor.mainWhite)
+        alertController.setTint(color: UIColor.mainWhite)
+        
         let okAction = UIAlertAction(title: "Ok", style: .default) { _ in 
             
             completion()
