@@ -13,4 +13,5 @@ protocol EmailRegistrationViewPresenterProtocol: AnyObject {
     
     func register(email: String?, password: String?, confirmPassword: String?)
     func pressedToLoginButton()
+    func toSetupProfileScreen()
 }

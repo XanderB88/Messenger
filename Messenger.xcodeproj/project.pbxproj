@@ -22,6 +22,8 @@
 		1163EB272758456600728C6D /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1163EB262758456600728C6D /* AuthenticationService.swift */; };
 		1163EB2A27585EE100728C6D /* AuthenticationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1163EB2927585EE100728C6D /* AuthenticationServiceProtocol.swift */; };
 		1167AB3D275448F30085A66C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1167AB3C275448F30085A66C /* UIView+Extension.swift */; };
+		1168914E275C5657005003A0 /* SetupProfileViewPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1168914D275C5657005003A0 /* SetupProfileViewPresenterProtocol.swift */; };
+		11689150275C572C005003A0 /* SetupProfileViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1168914F275C572C005003A0 /* SetupProfileViewPresenter.swift */; };
 		11690133274C628300A0C991 /* ActiveChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11690132274C628300A0C991 /* ActiveChatCell.swift */; };
 		11690136274C648000A0C991 /* CellConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11690135274C648000A0C991 /* CellConfigurationProtocol.swift */; };
 		116B46E62757015500B064C4 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116B46E52757015500B064C4 /* Validator.swift */; };
@@ -82,6 +84,8 @@
 		1163EB262758456600728C6D /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		1163EB2927585EE100728C6D /* AuthenticationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationServiceProtocol.swift; sourceTree = "<group>"; };
 		1167AB3C275448F30085A66C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		1168914D275C5657005003A0 /* SetupProfileViewPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewPresenterProtocol.swift; sourceTree = "<group>"; };
+		1168914F275C572C005003A0 /* SetupProfileViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewPresenter.swift; sourceTree = "<group>"; };
 		11690132274C628300A0C991 /* ActiveChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveChatCell.swift; sourceTree = "<group>"; };
 		11690135274C648000A0C991 /* CellConfigurationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfigurationProtocol.swift; sourceTree = "<group>"; };
 		116B46E52757015500B064C4 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
@@ -185,6 +189,22 @@
 				116B46E727570CAB00B064C4 /* AuthenticationError.swift */,
 			);
 			path = AuthenticationServiceHelpers;
+			sourceTree = "<group>";
+		};
+		1168914B275C561A005003A0 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1168914F275C572C005003A0 /* SetupProfileViewPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1168914C275C5627005003A0 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				1168914D275C5657005003A0 /* SetupProfileViewPresenterProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		116DE6EB27487FC10060016D /* Auth&Register */ = {
@@ -388,6 +408,8 @@
 		118C8A98275865D000B0C014 /* SetupProfile */ = {
 			isa = PBXGroup;
 			children = (
+				1168914C275C5627005003A0 /* Protocol */,
+				1168914B275C561A005003A0 /* Presenter */,
 				118C8AA22758681D00B0C014 /* View */,
 			);
 			path = SetupProfile;
@@ -650,6 +672,7 @@
 				115F12EA274F077A00B238E2 /* SectionHeader.swift in Sources */,
 				116E1E60274B0E8B00C0B27E /* ChatModel.swift in Sources */,
 				1175D7A3275B1F3E00039D8F /* RouterAuthenticationProtocol.swift in Sources */,
+				11689150275C572C005003A0 /* SetupProfileViewPresenter.swift in Sources */,
 				116FFD4D2751A8EB000E6C2D /* UIViewController+Extension.swift in Sources */,
 				116DE6F1274883650060016D /* MainTabBarController.swift in Sources */,
 				11616736274DB61E00A81B2D /* GradientView.swift in Sources */,
@@ -677,6 +700,7 @@
 				116FFD4B2751A30B000E6C2D /* UserCell.swift in Sources */,
 				116067172759B89B00ABA84B /* AssemblyBuilder.swift in Sources */,
 				1178E852273DDEB10049EA54 /* SceneDelegate.swift in Sources */,
+				1168914E275C5657005003A0 /* SetupProfileViewPresenterProtocol.swift in Sources */,
 				116B46E827570CAB00B064C4 /* AuthenticationError.swift in Sources */,
 				1163EB2A27585EE100728C6D /* AuthenticationServiceProtocol.swift in Sources */,
 				11616732274DADB000A81B2D /* WaitingChatCell.swift in Sources */,

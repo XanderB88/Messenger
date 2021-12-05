@@ -57,7 +57,13 @@ class EmailRegistrationViewController: UIViewController {
 extension EmailRegistrationViewController: EmailRegistrationViewProtocol {
     
     func success() {
-        self.showAlert(withTitle: "Success", withMessage: "You was registered")
+        self.showAlert(withTitle: "Success", withMessage: "You was registered") {
+            
+            self.dismiss(animated: true) {
+                
+                self.presenter.toSetupProfileScreen()
+            }
+        }
     }
     
     func failure(error: Error) {

@@ -9,6 +9,7 @@ import Foundation
 
 class EmailRegistrationViewPresenter: EmailRegistrationViewPresenterProtocol {
     
+    
     weak var view: EmailRegistrationViewProtocol?
     let authenticationService: AuthenticationServiceProtocol!
     let router: RouterAuthenticationProtocol?
@@ -38,5 +39,10 @@ class EmailRegistrationViewPresenter: EmailRegistrationViewPresenterProtocol {
     func pressedToLoginButton() {
         
         router?.toLoginScreen()
+    }
+   
+    func toSetupProfileScreen() {
+       
+        router?.toSetupProfileScreen()
     }
 }

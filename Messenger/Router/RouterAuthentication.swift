@@ -47,4 +47,14 @@ class RouterAuthentication: RouterAuthenticationProtocol {
         window.rootViewController?.present(emailRegistrationScreen, animated: true, completion: nil)
         }
     }
+    
+    func toSetupProfileScreen() {
+        
+        if let window = window {
+            
+        guard let setupProfileScreen = assemblyBuilder?.createSetupProfileScreen(router: self) else { return }
+        
+        window.rootViewController?.present(setupProfileScreen, animated: true, completion: nil)
+        }
+    }
 }

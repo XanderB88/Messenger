@@ -27,6 +27,9 @@ class SetupProfileViewController: UIViewController {
     // MARK: - Segmented control
     let genderControl = UISegmentedControl(first: "Male", second: "Female")
     
+    // MARK: - Presenter
+    var presenter: SetupProfileViewPresenterProtocol!
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()

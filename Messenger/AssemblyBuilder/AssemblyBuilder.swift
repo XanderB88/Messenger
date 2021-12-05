@@ -43,4 +43,14 @@ class AssemblyBuilder: AssemblyBuilderProtocol {
         
         return view
     }
+    
+    func createSetupProfileScreen(router: RouterAuthenticationProtocol) -> UIViewController {
+        
+        let view = SetupProfileViewController()
+        
+        let presenter = SetupProfileViewPresenter(router: router)
+        view.presenter = presenter
+        
+        return view
+    }
 }

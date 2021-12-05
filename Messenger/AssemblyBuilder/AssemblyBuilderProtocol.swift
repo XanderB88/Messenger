@@ -12,4 +12,5 @@ protocol AssemblyBuilderProtocol {
     func createAuthenticationScreen(router: RouterAuthenticationProtocol) -> UIViewController
     func createEmailRegistrationScreen(router: RouterAuthenticationProtocol) -> UIViewController
     func createLoginScreen(router: RouterAuthenticationProtocol) -> UIViewController
+    func createSetupProfileScreen(router: RouterAuthenticationProtocol) -> UIViewController
 }

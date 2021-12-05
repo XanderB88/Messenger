@@ -21,11 +21,14 @@ extension UIViewController {
         return cell
     }
     
-    func showAlert(withTitle title: String, withMessage message: String) {
+    func showAlert(withTitle title: String, withMessage message: String, completion: @escaping () -> Void = { }) {
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { _ in 
+            
+            completion()
+        }
         
         alertController.addAction(okAction)
         

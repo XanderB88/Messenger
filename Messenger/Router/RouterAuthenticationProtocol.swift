@@ -12,4 +12,5 @@ protocol RouterAuthenticationProtocol: RouterProtocol {
     func initialAuthenticationScreen()
     func toLoginScreen()
     func toEmailRegistrationScreen()
+    func toSetupProfileScreen()
 }
