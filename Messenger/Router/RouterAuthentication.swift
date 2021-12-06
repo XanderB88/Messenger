@@ -57,4 +57,14 @@ class RouterAuthentication: RouterAuthenticationProtocol {
         window.rootViewController?.present(setupProfileScreen, animated: true, completion: nil)
         }
     }
+    
+    func toPeopleAndChatsTabBarController() {
+        
+        if let window = window {
+            
+        guard let peopleAndChatsTabBarController = assemblyBuilder?.createPeopleAndChatsTabBarController() else { return }
+        
+        window.rootViewController?.present(peopleAndChatsTabBarController, animated: true, completion: nil)
+        }
+    }
 }

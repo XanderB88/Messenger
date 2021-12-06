@@ -53,4 +53,11 @@ class AssemblyBuilder: AssemblyBuilderProtocol {
         
         return view
     }
+    
+    func createPeopleAndChatsTabBarController() -> UIViewController {
+        
+        let view = PeopleAndChatsTabBarController()
+        
+        return view
+    }
 }

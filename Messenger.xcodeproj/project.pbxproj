@@ -31,7 +31,7 @@
 		116B46E827570CAB00B064C4 /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116B46E727570CAB00B064C4 /* AuthenticationError.swift */; };
 		116DE6ED274882AA0060016D /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116DE6EC274882AA0060016D /* ChatsViewController.swift */; };
 		116DE6EF274882BE0060016D /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116DE6EE274882BE0060016D /* PeopleViewController.swift */; };
-		116DE6F1274883650060016D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116DE6F0274883650060016D /* MainTabBarController.swift */; };
+		116DE6F1274883650060016D /* PeopleAndChatsTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116DE6F0274883650060016D /* PeopleAndChatsTabBarController.swift */; };
 		116E1E60274B0E8B00C0B27E /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E1E5F274B0E8B00C0B27E /* ChatModel.swift */; };
 		116E1E64274B1BDC00C0B27E /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 116E1E62274B1BDC00C0B27E /* activeChats.json */; };
 		116E1E65274B1BDC00C0B27E /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 116E1E63274B1BDC00C0B27E /* waitingChats.json */; };
@@ -94,7 +94,7 @@
 		116B46E727570CAB00B064C4 /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
 		116DE6EC274882AA0060016D /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
 		116DE6EE274882BE0060016D /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
-		116DE6F0274883650060016D /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		116DE6F0274883650060016D /* PeopleAndChatsTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleAndChatsTabBarController.swift; sourceTree = "<group>"; };
 		116E1E5F274B0E8B00C0B27E /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		116E1E62274B1BDC00C0B27E /* activeChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activeChats.json; sourceTree = "<group>"; };
 		116E1E63274B1BDC00C0B27E /* waitingChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = waitingChats.json; sourceTree = "<group>"; };
@@ -209,6 +209,23 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		116DBB5C275D89E70015806D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				116DE6F0274883650060016D /* PeopleAndChatsTabBarController.swift */,
+				115F12E9274F077A00B238E2 /* SectionHeader.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		116DBB5D275D8A060015806D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				11690135274C648000A0C991 /* CellConfigurationProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		116DE6EB27487FC10060016D /* Auth&Register */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,9 +240,8 @@
 		116DE6F2274888410060016D /* People&Chats */ = {
 			isa = PBXGroup;
 			children = (
-				116DE6F0274883650060016D /* MainTabBarController.swift */,
-				115F12E9274F077A00B238E2 /* SectionHeader.swift */,
-				11690135274C648000A0C991 /* CellConfigurationProtocol.swift */,
+				116DBB5D275D8A060015806D /* Protocols */,
+				116DBB5C275D89E70015806D /* View */,
 				118C8AA5275868CF00B0C014 /* People */,
 				118C8AA6275868F300B0C014 /* Chats */,
 			);
@@ -677,7 +693,7 @@
 				1175D7A3275B1F3E00039D8F /* RouterAuthenticationProtocol.swift in Sources */,
 				11689150275C572C005003A0 /* SetupProfileViewPresenter.swift in Sources */,
 				116FFD4D2751A8EB000E6C2D /* UIViewController+Extension.swift in Sources */,
-				116DE6F1274883650060016D /* MainTabBarController.swift in Sources */,
+				116DE6F1274883650060016D /* PeopleAndChatsTabBarController.swift in Sources */,
 				11616736274DB61E00A81B2D /* GradientView.swift in Sources */,
 				11690133274C628300A0C991 /* ActiveChatCell.swift in Sources */,
 				11125484274725D400F6F53F /* EmailRegistrationViewController.swift in Sources */,

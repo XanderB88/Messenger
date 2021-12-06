@@ -39,4 +39,9 @@ class LoginViewPresenter: LoginViewPresenterProtocol {
         
         router?.toEmailRegistrationScreen()
     }
+    
+    func toPeopleAndChatTabBarController() {
+        
+        router?.toPeopleAndChatsTabBarController()
+    }
 }

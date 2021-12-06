@@ -70,7 +70,13 @@ extension LoginViewController: LoginViewProtocol {
    
     func success() {
         
-        self.showAlert(withTitle: "Success", withMessage: "You are logged in")
+        self.showAlert(withTitle: "Success", withMessage: "You are logged in") {
+           
+            self.dismiss(animated: true) {
+                
+                self.presenter.toPeopleAndChatTabBarController()
+            }
+        }
     }
     
     func failure(error: Error) {

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainTabBarController: UITabBarController {
+class PeopleAndChatsTabBarController: UITabBarController {
     
     // MARK: - Icons for items
     let peopleIcon = UIImage(systemName: "person.3", withConfiguration: UIImage.SymbolConfiguration(weight: .medium))!
@@ -28,7 +28,7 @@ class MainTabBarController: UITabBarController {
 }
 
 // MARK: - Generate navigation view controller
-extension MainTabBarController {
+extension PeopleAndChatsTabBarController {
     
     func generateNavigationControllers(rootViewController: UIViewController, title: String, image: UIImage) -> UIViewController {
         

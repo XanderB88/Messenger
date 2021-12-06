@@ -165,7 +165,7 @@ struct PeopleViewControllerProvider: PreviewProvider {
     
     struct ContainerView: UIViewControllerRepresentable {
         
-        let viewController = MainTabBarController()
+        let viewController = PeopleAndChatsTabBarController()
         
         func makeUIViewController(context: Context) -> some UIViewController {
             return viewController
