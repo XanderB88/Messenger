@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class AssemblyBuilder: AssemblyBuilderProtocol {
    
@@ -47,10 +48,14 @@ class AssemblyBuilder: AssemblyBuilderProtocol {
     func createSetupProfileScreen(router: RouterAuthenticationProtocol) -> UIViewController {
         
         let view = SetupProfileViewController()
+        let validator = Validator()
+        let fireStoreService = FirestoreService(validator: validator)
+        let authenticationService = AuthenticationService(validator: validator)
         
-        let presenter = SetupProfileViewPresenter(router: router)
+        let presenter = SetupProfileViewPresenter(view: view, fireStoreService: fireStoreService, authenticationService: authenticationService, router: router)
+        
         view.presenter = presenter
-        
+
         return view
     }
     

@@ -10,8 +10,23 @@ import Foundation
 struct UserModel: Hashable, Decodable {
     
     var username: String
+    var email: String
+    var description: String
+    var gender: String
     var userImageString: String
-    var id: Int
+    var id: String
+    
+    var representation: [String: Any] {
+       
+        var represent = ["username": username]
+        represent["email"] = email
+        represent["description"] = description
+        represent["gender"] = gender
+        represent["userImage"] = userImageString
+        represent["uid"] = id
+        
+        return represent
+    }
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)

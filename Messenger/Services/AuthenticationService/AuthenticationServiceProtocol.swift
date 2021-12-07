@@ -9,8 +9,9 @@ import Foundation
 import Firebase
 import FirebaseAuth
 
-protocol AuthenticationServiceProtocol {
+protocol AuthenticationServiceProtocol: AnyObject {
     
+    func getCurrentUser() -> User
     func register(email: String?, password: String?, confirmPassword: String?, completion: @escaping (Result<User, Error>) -> Void)
     func login(email: String?, password: String?, completion: @escaping (Result<User, Error>) -> Void)
 }

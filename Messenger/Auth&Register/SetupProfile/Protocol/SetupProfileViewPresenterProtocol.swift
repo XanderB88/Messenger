@@ -9,6 +9,7 @@ import Foundation
 
 protocol SetupProfileViewPresenterProtocol: AnyObject {
     
-    init(router: RouterAuthenticationProtocol)
-    func pressedGoToChatButton()
+    init(view: SetupProfileViewProtocol, fireStoreService: FirestoreServiceProtocol, authenticationService: AuthenticationServiceProtocol, router: RouterAuthenticationProtocol)
+    func saveUserProfile(username: String?, userImageString: String?, description: String?, gender: String?)
+    func toChatScreen()
 }

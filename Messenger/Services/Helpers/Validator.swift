@@ -11,6 +11,7 @@ import Foundation
 protocol ValidatorProtocol {
     
     func isFilled(email: String?, password: String?, confirmPassword: String?) -> Bool
+    func isFilledUser(username: String?, description: String?, gender: String?) -> Bool
     func isValidEmail(email: String) -> Bool
     func isPasswordHasNumberAndCharacter(password: String) -> Bool
     func check(text: String, regEx: String) -> Bool
@@ -27,6 +28,19 @@ class Validator: ValidatorProtocol {
               email != "",
               password != "",
               confirmPassword != ""
+        else { return false }
+       
+        return true
+    }
+    
+    func isFilledUser(username: String?, description: String?, gender: String?) -> Bool {
+        
+        guard let username = username,
+              let description = description,
+              let gender = gender,
+              username != "",
+              description != "",
+              gender != ""
         else { return false }
        
         return true

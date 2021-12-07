@@ -23,7 +23,9 @@ class EmailRegistrationViewPresenter: EmailRegistrationViewPresenterProtocol {
     
     func register(email: String?, password: String?, confirmPassword: String?) {
         
-        authenticationService.register(email: email, password: password, confirmPassword: confirmPassword) { [weak self] result in
+        authenticationService.register(email: email,
+                                       password: password,
+                                       confirmPassword: confirmPassword) { [weak self] result in
             
             guard let self = self else { return }
             

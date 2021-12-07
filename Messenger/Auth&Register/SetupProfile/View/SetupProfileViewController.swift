@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SetupProfileViewController: UIViewController {
     
@@ -42,6 +43,28 @@ class SetupProfileViewController: UIViewController {
     
     @objc private func goToChatButtonPressed() {
         
+        presenter.saveUserProfile(username: fullNameTextField.text,
+                                  userImageString: "None",
+                                  description: aboutMeTextField.text,
+                                  gender: genderControl.titleForSegment(at: genderControl.selectedSegmentIndex))
+    }
+}
+
+extension SetupProfileViewController: SetupProfileViewProtocol {
+    func success(user: UserModel) {
+        
+        self.showAlert(withTitle: "Success", withMessage: "Profile is completed") {
+            
+            self.dismiss(animated: true) {
+                
+                self.presenter.toChatScreen()
+            }
+        }
+    }
+    
+    func failure(error: Error) {
+        
+        self.showAlert(withTitle: "Error", withMessage: error.localizedDescription)
     }
 }
 
