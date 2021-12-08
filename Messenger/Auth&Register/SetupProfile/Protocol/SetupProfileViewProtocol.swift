@@ -9,6 +9,6 @@ import Foundation
 
 protocol SetupProfileViewProtocol: AnyObject {
     
-    func success(user: UserModel)
+    func success()
     func failure(error: Error)
 }

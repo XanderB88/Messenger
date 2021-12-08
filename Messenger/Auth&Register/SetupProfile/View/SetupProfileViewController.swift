@@ -51,7 +51,7 @@ class SetupProfileViewController: UIViewController {
 }
 
 extension SetupProfileViewController: SetupProfileViewProtocol {
-    func success(user: UserModel) {
+    func success() {
         
         self.showAlert(withTitle: "Success", withMessage: "Profile is completed") {
             

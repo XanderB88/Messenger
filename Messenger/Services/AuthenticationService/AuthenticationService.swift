@@ -18,9 +18,9 @@ class AuthenticationService: AuthenticationServiceProtocol {
         self.validator = validator
     }
     
-    func getCurrentUser() -> User {
+    func getCurrentUser() -> User? {
         
-        return Auth.auth().currentUser!
+        return Auth.auth().currentUser
     }
     
     func register(email: String?, password: String?, confirmPassword: String?, completion: @escaping (Result<User, Error>) -> Void) {

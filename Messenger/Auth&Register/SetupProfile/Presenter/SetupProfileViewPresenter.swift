@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import FirebaseAuth
 
 class SetupProfileViewPresenter: SetupProfileViewPresenterProtocol {
     
@@ -25,11 +24,8 @@ class SetupProfileViewPresenter: SetupProfileViewPresenterProtocol {
     
     func saveUserProfile(username: String?, userImageString: String?, description: String?, gender: String?) {
         
-        let currentUser = authenticationService.getCurrentUser()
-        
-        print(currentUser.uid)
-        print(currentUser.email ?? "Nothing")
-        
+        guard let currentUser = authenticationService.getCurrentUser() else { return }
+
         fireStoreService.saveProfileWith(id: currentUser.uid,
                                          email: currentUser.email!,
                                          username: username,
@@ -40,8 +36,8 @@ class SetupProfileViewPresenter: SetupProfileViewPresenterProtocol {
             guard let self = self else { return }
             
             switch result {
-                case .success(let user):
-                    self.view?.success(user: user)
+                case .success(_):
+                    self.view?.success()
                 case .failure(let error):
                     self.view?.failure(error: error)
             }
