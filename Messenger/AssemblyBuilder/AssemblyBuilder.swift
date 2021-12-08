@@ -63,6 +63,8 @@ class AssemblyBuilder: AssemblyBuilderProtocol {
         
         let view = PeopleAndChatsTabBarController()
         
+        view.modalPresentationStyle = .fullScreen
+        
         return view
     }
 }

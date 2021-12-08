@@ -1,0 +1,83 @@
+[
+    {
+        "username": "Robert Zenden",
+        "email": "fake1@gmail.com",
+        "description": "I'm user",
+        "gender": "male",
+        "userImageString": "user1",
+        "id": "dkjhfkahkjdhfjksdhfa"
+    },
+    {
+        "username": "John Smith",
+        "email": "fake2@gmail.com",
+        "description": "I'm user",
+        "gender": "male",
+        "userImageString": "user2",
+        "id": "kdfjkdlfakljflkad"
+    },
+    {
+        "username": "Michel Night",
+        "email": "fake3@gmail.com",
+        "description": "I'm user",
+        "gender": "male",
+        "userImageString": "user3",
+        "id": "lkdjfkjdlsafld"
+    },
+    {
+        "username": "Alexander Jenkins",
+        "email": "fake4@gmail.com",
+        "description": "I'm user",
+        "gender": "male",
+        "userImageString": "user4",
+        "id": "djkfsdshfkadhsfjahkf"
+    },
+    {
+        "username": "Veronica White",
+        "email": "fake5@gmail.com",
+        "description": "I'm user",
+        "gender": "female",
+        "userImageString": "user5",
+        "id": "lkdfjlksdjfljdfla"
+    },
+    {
+        "username": "Peter Brown",
+        "email": "fake6@gmail.com",
+        "description": "I'm user",
+        "gender": "male",
+        "userImageString": "user6",
+        "id": "kdjfksdjfalfkdfj"
+    },
+    {
+        "username": "Roman Pears",
+        "email": "fake7@gmail.com",
+        "description": "I'm user",
+        "gender": "male",
+        "userImageString": "user7",
+        "id": "ldsjfldjfliajfljdf"
+    },
+    {
+        "username": "Brian Grimes",
+        "email": "fake8@gmail.com",
+        "description": "I'm user",
+        "gender": "male",
+        "userImageString": "user8",
+        "id": "dkjfkdsjflajfhdflaf"
+    },
+    {
+        "username": "Liza Edelstein",
+        "email": "fake9@gmail.com",
+        "description": "I'm user",
+        "gender": "female",
+        "userImageString": "user9",
+        "id": "lkdfjldfjklafkjfakfjda"
+    },
+    {
+        "username": "Victoria Jordan",
+        "email": "fake10@gmail.com",
+        "description": "I'm user",
+        "gender": "female",
+        "userImageString": "user10",
+        "id": "lkdfjdkfkaljfljfd"
+    }
+]
+
