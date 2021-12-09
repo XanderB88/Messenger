@@ -9,7 +9,7 @@ import Foundation
 
 protocol SetupProfileViewPresenterProtocol: AnyObject {
     
-    init(view: SetupProfileViewProtocol, fireStoreService: FirestoreServiceProtocol, authenticationService: AuthenticationServiceProtocol, router: RouterAuthenticationProtocol)
+    init(view: SetupProfileViewProtocol, fireStoreService: FireStoreServiceProtocol, authenticationService: AuthenticationServiceProtocol, router: RouterAuthenticationProtocol)
     func saveUserProfile(username: String?, userImageString: String?, description: String?, gender: String?)
     func toChatScreen()
 }

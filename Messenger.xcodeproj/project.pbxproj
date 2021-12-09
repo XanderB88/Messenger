@@ -59,13 +59,16 @@
 		1178E85C273DDEB40049EA54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1178E85A273DDEB40049EA54 /* LaunchScreen.storyboard */; };
 		1178E86A273E01D90049EA54 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178E869273E01D90049EA54 /* UIColor+Extension.swift */; };
 		1178E86C273E05FA0049EA54 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178E86B273E05FA0049EA54 /* UIFont+Extension.swift */; };
-		11892158275EE9AC00CF871F /* FirestoreServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11892157275EE9AC00CF871F /* FirestoreServiceProtocol.swift */; };
+		11892158275EE9AC00CF871F /* FireStoreServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11892157275EE9AC00CF871F /* FireStoreServiceProtocol.swift */; };
 		1189215C275EEB8900CF871F /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1189215B275EEB8900CF871F /* FirestoreService.swift */; };
 		1189215E275EF28B00CF871F /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1189215D275EF28A00CF871F /* UserError.swift */; };
 		11892162275EFD3D00CF871F /* SetupProfileViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11892161275EFD3D00CF871F /* SetupProfileViewProtocol.swift */; };
 		118C8A9B275866FB00B0C014 /* ChatRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118C8A99275866FB00B0C014 /* ChatRequestViewController.swift */; };
 		118C8A9C275866FB00B0C014 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118C8A9A275866FB00B0C014 /* ProfileViewController.swift */; };
 		1193F1432755B61300C601C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1193F1422755B61300C601C0 /* GoogleService-Info.plist */; };
+		119513B327618C750096FA95 /* PeopleViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119513B227618C750096FA95 /* PeopleViewProtocol.swift */; };
+		119513B527618CE00096FA95 /* PeopleViewPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119513B427618CE00096FA95 /* PeopleViewPresenterProtocol.swift */; };
+		119513B827618E4C0096FA95 /* PeopleViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119513B727618E4C0096FA95 /* PeopleViewPresenter.swift */; };
 		11A806462745E97800C08379 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A806422745E97700C08379 /* AuthenticationViewController.swift */; };
 		11A806472745E97800C08379 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A806432745E97700C08379 /* LoginViewController.swift */; };
 		11A8064B2745E99300C08379 /* AddProfilePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A8064A2745E99300C08379 /* AddProfilePhoto.swift */; };
@@ -128,13 +131,16 @@
 		1178E85D273DDEB40049EA54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1178E869273E01D90049EA54 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		1178E86B273E05FA0049EA54 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
-		11892157275EE9AC00CF871F /* FirestoreServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreServiceProtocol.swift; sourceTree = "<group>"; };
+		11892157275EE9AC00CF871F /* FireStoreServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreServiceProtocol.swift; sourceTree = "<group>"; };
 		1189215B275EEB8900CF871F /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		1189215D275EF28A00CF871F /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
 		11892161275EFD3D00CF871F /* SetupProfileViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewProtocol.swift; sourceTree = "<group>"; };
 		118C8A99275866FB00B0C014 /* ChatRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRequestViewController.swift; sourceTree = "<group>"; };
 		118C8A9A275866FB00B0C014 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1193F1422755B61300C601C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		119513B227618C750096FA95 /* PeopleViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewProtocol.swift; sourceTree = "<group>"; };
+		119513B427618CE00096FA95 /* PeopleViewPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewPresenterProtocol.swift; sourceTree = "<group>"; };
+		119513B727618E4C0096FA95 /* PeopleViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewPresenter.swift; sourceTree = "<group>"; };
 		11A806422745E97700C08379 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		11A806432745E97700C08379 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		11A8064A2745E99300C08379 /* AddProfilePhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProfilePhoto.swift; sourceTree = "<group>"; };
@@ -416,7 +422,7 @@
 		11892156275EE94600CF871F /* FirestoreService */ = {
 			isa = PBXGroup;
 			children = (
-				11892157275EE9AC00CF871F /* FirestoreServiceProtocol.swift */,
+				11892157275EE9AC00CF871F /* FireStoreServiceProtocol.swift */,
 				1189215B275EEB8900CF871F /* FirestoreService.swift */,
 			);
 			path = FirestoreService;
@@ -529,6 +535,8 @@
 		118C8AA5275868CF00B0C014 /* People */ = {
 			isa = PBXGroup;
 			children = (
+				119513B127618C4F0096FA95 /* Protocols */,
+				119513B627618E310096FA95 /* Presenter */,
 				118C8AA7275869B800B0C014 /* Views */,
 			);
 			path = People;
@@ -559,6 +567,23 @@
 				11690132274C628300A0C991 /* ActiveChatCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		119513B127618C4F0096FA95 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				119513B227618C750096FA95 /* PeopleViewProtocol.swift */,
+				119513B427618CE00096FA95 /* PeopleViewPresenterProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		119513B627618E310096FA95 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				119513B727618E4C0096FA95 /* PeopleViewPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		11A8064C2745E9A600C08379 /* Components */ = {
@@ -709,12 +734,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1167AB3D275448F30085A66C /* UIView+Extension.swift in Sources */,
-				11892158275EE9AC00CF871F /* FirestoreServiceProtocol.swift in Sources */,
+				11892158275EE9AC00CF871F /* FireStoreServiceProtocol.swift in Sources */,
 				1175D790275AE4FD00039D8F /* LoginViewPresenter.swift in Sources */,
 				1178E86C273E05FA0049EA54 /* UIFont+Extension.swift in Sources */,
 				1175D795275AE54C00039D8F /* LoginViewPresenterProtocol.swift in Sources */,
 				1160671D2759BDA500ABA84B /* EmailRegistrationViewPresenterProtocol.swift in Sources */,
+				119513B527618CE00096FA95 /* PeopleViewPresenterProtocol.swift in Sources */,
 				116F8F0627531BEF00283018 /* MessageFromProfileTextField.swift in Sources */,
+				119513B327618C750096FA95 /* PeopleViewProtocol.swift in Sources */,
 				1163EB272758456600728C6D /* AuthenticationService.swift in Sources */,
 				11A806462745E97800C08379 /* AuthenticationViewController.swift in Sources */,
 				115F12EA274F077A00B238E2 /* SectionHeader.swift in Sources */,
@@ -742,6 +769,7 @@
 				116E5E3E273F33F400AE2FB2 /* UILabel+Extension.swift in Sources */,
 				116E5E42273F47FB00AE2FB2 /* UIStackView+Extension.swift in Sources */,
 				1175D793275AE53200039D8F /* LoginViewProtocol.swift in Sources */,
+				119513B827618E4C0096FA95 /* PeopleViewPresenter.swift in Sources */,
 				1160671B2759BD6400ABA84B /* EmailRegistrationViewProtocol.swift in Sources */,
 				11689152275C5B27005003A0 /* UIAlertController+Extension.swift in Sources */,
 				116FFD492751A0E2000E6C2D /* UserModel.swift in Sources */,

@@ -62,7 +62,7 @@ class RouterAuthentication: RouterAuthenticationProtocol {
         
         if let window = window {
             
-        guard let peopleAndChatsTabBarController = assemblyBuilder?.createPeopleAndChatsTabBarController() else { return }
+            guard let peopleAndChatsTabBarController = assemblyBuilder?.createPeopleAndChatsTabBarController(router: self) else { return }
         
         window.rootViewController?.present(peopleAndChatsTabBarController, animated: true, completion: nil)
         }

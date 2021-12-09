@@ -59,9 +59,26 @@ class AssemblyBuilder: AssemblyBuilderProtocol {
         return view
     }
     
-    func createPeopleAndChatsTabBarController() -> UIViewController {
+    func createPeopleAndChatsTabBarController(router: RouterAuthenticationProtocol) -> UIViewController {
         
         let view = PeopleAndChatsTabBarController()
+        let peopleView = PeopleViewController()
+        let chatView = ChatsViewController()
+        
+        let peopleIcon = UIImage(systemName: "person.3", withConfiguration: UIImage.SymbolConfiguration(weight: .medium))!
+        let chatsIcon = UIImage(systemName: "captions.bubble", withConfiguration: UIImage.SymbolConfiguration(weight: .medium))!
+
+        view.viewControllers = [
+            view.generateNavigationControllers(rootViewController: peopleView, title: "People", image: peopleIcon),
+            view.generateNavigationControllers(rootViewController: chatView, title: "Chats", image: chatsIcon)
+        ]
+       
+        let validator = Validator()
+        let authenticationService = AuthenticationService(validator: validator)
+        
+        let peopleViewPresenter = PeopleViewPresenter(view: peopleView, authenticationService: authenticationService, router: router)
+        
+        peopleView.presenter = peopleViewPresenter
         
         view.modalPresentationStyle = .fullScreen
         

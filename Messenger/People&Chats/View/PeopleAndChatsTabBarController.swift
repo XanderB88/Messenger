@@ -8,22 +8,10 @@
 import UIKit
 
 class PeopleAndChatsTabBarController: UITabBarController {
-    
-    // MARK: - Icons for items
-    let peopleIcon = UIImage(systemName: "person.3", withConfiguration: UIImage.SymbolConfiguration(weight: .medium))!
-    let chatsIcon = UIImage(systemName: "captions.bubble", withConfiguration: UIImage.SymbolConfiguration(weight: .medium))!
-    
+        
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let peopleViewController = PeopleViewController()
-        let chatsViewController = ChatsViewController()
-        
-        viewControllers = [
-            generateNavigationControllers(rootViewController: peopleViewController, title: "People", image: peopleIcon),
-            generateNavigationControllers(rootViewController: chatsViewController, title: "Chats", image: chatsIcon)
-        ]
     }
 }
 

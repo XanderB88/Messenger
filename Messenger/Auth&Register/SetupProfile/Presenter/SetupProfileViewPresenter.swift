@@ -10,11 +10,11 @@ import Foundation
 class SetupProfileViewPresenter: SetupProfileViewPresenterProtocol {
     
     let view: SetupProfileViewProtocol?
-    let fireStoreService: FirestoreServiceProtocol!
+    let fireStoreService: FireStoreServiceProtocol!
     let authenticationService: AuthenticationServiceProtocol!
     let router: RouterAuthenticationProtocol?
     
-    required init(view: SetupProfileViewProtocol, fireStoreService: FirestoreServiceProtocol, authenticationService: AuthenticationServiceProtocol,  router: RouterAuthenticationProtocol) {
+    required init(view: SetupProfileViewProtocol, fireStoreService: FireStoreServiceProtocol, authenticationService: AuthenticationServiceProtocol,  router: RouterAuthenticationProtocol) {
        
         self.view = view
         self.fireStoreService = fireStoreService

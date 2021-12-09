@@ -22,6 +22,9 @@ class PeopleViewController: UIViewController {
     var dataSource: UICollectionViewDiffableDataSource<Section, UserModel>?
     var searchBar = SearchBar()
     
+    // MARK: - Presenter
+    var presenter: PeopleViewPresenterProtocol!
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +35,24 @@ class PeopleViewController: UIViewController {
         setupCollectionView()
         setupDataSource()
         reloadData(with: nil)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logOutButtonPressed))
+    }
+    
+    @objc private func logOutButtonPressed() {
+        
+        presenter.logOutButtonPressed()
+    }
+}
+
+extension PeopleViewController: PeopleViewProtocol {
+    
+    func success() {
+        
+        self.showLogOutAlert(withTitle: "", withMessage: "Are you sure you want to log out of your account?") {
+            
+            self.presenter.popToRoot()
+        }
     }
 }
 

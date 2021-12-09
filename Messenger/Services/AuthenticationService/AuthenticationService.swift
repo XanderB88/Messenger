@@ -81,4 +81,14 @@ class AuthenticationService: AuthenticationServiceProtocol {
             completion(.success(result.user))
         }
     }
+    
+    func logout(completion: @escaping () -> Void) {
+        
+        do {
+            try authentication.signOut()
+            completion()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
 }

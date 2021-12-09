@@ -39,4 +39,25 @@ extension UIViewController {
         
         present(alertController, animated: true, completion: nil)
     }
+    
+    func showLogOutAlert(withTitle title: String, withMessage message: String, completion: @escaping () -> Void = { }) {
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        alertController.setBackgroundColor(color: UIColor.alertControllerColor)
+        alertController.setTitleAttributes(font: UIFont.secondaryFont, color: UIColor.mainWhite)
+        alertController.setMessageAttributes(font: UIFont.searchAndMessageFont, color: UIColor.mainWhite)
+        alertController.setTint(color: UIColor.mainWhite)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let logOutAction = UIAlertAction(title: "LogOut", style: .destructive) { _ in
+            
+            completion()
+        }
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(logOutAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
 }

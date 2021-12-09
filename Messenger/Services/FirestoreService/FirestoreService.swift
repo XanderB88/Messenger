@@ -9,7 +9,7 @@ import Foundation
 import Firebase
 import FirebaseFirestore
 
-class FirestoreService: FirestoreServiceProtocol {
+class FirestoreService: FireStoreServiceProtocol {
    
     private let db = Firestore.firestore()
     private let validator: ValidatorProtocol
