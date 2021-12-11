@@ -12,12 +12,14 @@ class PeopleViewPresenter: PeopleViewPresenterProtocol {
     let view: PeopleViewProtocol?
     let authenticationService: AuthenticationServiceProtocol!
     let router: RouterAuthenticationProtocol!
+    let fireStoreService: FireStoreServiceProtocol!
     
-    required init(view: PeopleViewProtocol, authenticationService: AuthenticationServiceProtocol, router: RouterAuthenticationProtocol) {
+    required init(view: PeopleViewProtocol, authenticationService: AuthenticationServiceProtocol, router: RouterAuthenticationProtocol, fireStoreService: FireStoreServiceProtocol) {
         
         self.view = view
         self.authenticationService = authenticationService
         self.router = router
+        self.fireStoreService = fireStoreService
     }
     
     func logOutButtonPressed() {
@@ -33,5 +35,20 @@ class PeopleViewPresenter: PeopleViewPresenterProtocol {
     func popToRoot() {
         
         router.initialAuthenticationScreen()
+    }
+    
+    func getUsername(completion: @escaping (UserModel) -> Void) {
+        
+        guard let currentUser = authenticationService.getCurrentUser() else { return }
+        
+        fireStoreService.getUserData(user: currentUser) { result in
+            
+            switch result {
+                case .success(let modelUser):
+                    completion(modelUser)
+                case .failure(let error):
+                    print(error.localizedDescription)
+            }
+        }
     }
 }

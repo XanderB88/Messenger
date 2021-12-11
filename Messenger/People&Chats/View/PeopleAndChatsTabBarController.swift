@@ -9,15 +9,6 @@ import UIKit
 
 class PeopleAndChatsTabBarController: UITabBarController {
         
-    // MARK: - Lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-}
-
-// MARK: - Generate navigation view controller
-extension PeopleAndChatsTabBarController {
-    
     func generateNavigationControllers(rootViewController: UIViewController, title: String, image: UIImage) -> UIViewController {
         
         let navigationViewController = UINavigationController(rootViewController: rootViewController)
@@ -33,3 +24,4 @@ extension PeopleAndChatsTabBarController {
         return navigationViewController
     }
 }
+

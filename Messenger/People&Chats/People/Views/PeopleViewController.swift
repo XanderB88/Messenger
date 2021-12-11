@@ -36,6 +36,10 @@ class PeopleViewController: UIViewController {
         setupDataSource()
         reloadData(with: nil)
         
+        presenter.getUsername { user in
+            self.title = user.username
+        }
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logOutButtonPressed))
     }
     

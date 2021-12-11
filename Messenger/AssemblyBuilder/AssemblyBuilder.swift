@@ -75,8 +75,9 @@ class AssemblyBuilder: AssemblyBuilderProtocol {
        
         let validator = Validator()
         let authenticationService = AuthenticationService(validator: validator)
-        
-        let peopleViewPresenter = PeopleViewPresenter(view: peopleView, authenticationService: authenticationService, router: router)
+        let fireStoreService = FirestoreService(validator: validator)
+       
+        let peopleViewPresenter = PeopleViewPresenter(view: peopleView, authenticationService: authenticationService, router: router, fireStoreService: fireStoreService)
         
         peopleView.presenter = peopleViewPresenter
         
