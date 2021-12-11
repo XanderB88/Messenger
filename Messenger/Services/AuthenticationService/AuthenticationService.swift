@@ -14,7 +14,7 @@ class AuthenticationService: AuthenticationServiceProtocol {
     private let authentication = Auth.auth()
     private let validator: ValidatorProtocol
     
-    required init(validator: ValidatorProtocol) {
+    init (validator: ValidatorProtocol) {
         self.validator = validator
     }
     

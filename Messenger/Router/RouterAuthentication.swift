@@ -6,25 +6,36 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class RouterAuthentication: RouterAuthenticationProtocol {
-   
+
     var window: UIWindow?
     var assemblyBuilder: AssemblyBuilderProtocol?
+    var authenticationService: AuthenticationService!
     
-    required init(window: UIWindow?, assemblyBuilder: AssemblyBuilderProtocol) {
+    required init(window: UIWindow?, assemblyBuilder: AssemblyBuilderProtocol, authenticationService: AuthenticationService) {
        
         self.window = window
         self.assemblyBuilder = assemblyBuilder
+        self.authenticationService = authenticationService
     }
     
     func initialAuthenticationScreen() {
-       
-        if let window = window {
+        
+        if let window = self.window {
             
-            guard let authenticationScreen = assemblyBuilder?.createAuthenticationScreen(router: self) else { return }
+            if (authenticationService.getCurrentUser() != nil) {
                 
-            window.rootViewController = authenticationScreen
+                guard let peopleAndChatsTabBarController = self.assemblyBuilder?.createPeopleAndChatsTabBarController(router: self) else { return }
+                
+                window.rootViewController = peopleAndChatsTabBarController
+            } else {
+                
+                guard let authenticationScreen = assemblyBuilder?.createAuthenticationScreen(router: self) else { return }
+                
+                window.rootViewController = authenticationScreen
+            }
         }
     }
     

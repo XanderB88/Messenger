@@ -10,7 +10,7 @@ import Firebase
 import FirebaseFirestore
 
 class FirestoreService: FireStoreServiceProtocol {
-   
+    
     private let db = Firestore.firestore()
     private let validator: ValidatorProtocol
     
@@ -46,6 +46,27 @@ class FirestoreService: FireStoreServiceProtocol {
             } else {
                 
                 completion(.success(user))
+            }
+        }
+    }
+ 
+    func getUserData(user: User, completion: @escaping (Result<UserModel, Error>) -> Void) {
+        
+        let docRef = userRef.document(user.uid)
+        docRef.getDocument { document, error in
+            
+            if let document = document, document.exists {
+                
+                guard let user = UserModel(document: document) else {
+                    
+                    completion(.failure(UserError.cannotUnwrapToUserModel))
+                    return
+                }
+                
+                completion(.success(user))
+            } else {
+                
+                completion(.failure(UserError.cannotGetUserInfo))
             }
         }
     }
