@@ -12,5 +12,5 @@ protocol PeopleViewPresenterProtocol: AnyObject {
     init (view: PeopleViewProtocol, authenticationService: AuthenticationServiceProtocol, router: RouterAuthenticationProtocol, fireStoreService: FireStoreServiceProtocol)
     func logOutButtonPressed()
     func popToRoot()
-    func getUsername(completion: @escaping (UserModel) -> Void)
+    func getUsername()
 }

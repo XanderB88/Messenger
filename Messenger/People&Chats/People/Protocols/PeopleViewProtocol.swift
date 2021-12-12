@@ -9,5 +9,6 @@ import Foundation
 
 protocol PeopleViewProtocol: AnyObject {
     
-    func success()
+    func logOut()
+    func updateView(user: UserModel)
 }

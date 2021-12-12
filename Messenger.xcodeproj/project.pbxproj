@@ -22,6 +22,9 @@
 		1163EB272758456600728C6D /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1163EB262758456600728C6D /* AuthenticationService.swift */; };
 		1163EB2A27585EE100728C6D /* AuthenticationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1163EB2927585EE100728C6D /* AuthenticationServiceProtocol.swift */; };
 		1167AB3D275448F30085A66C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1167AB3C275448F30085A66C /* UIView+Extension.swift */; };
+		11686ADE2766B6A0000A0B2E /* ChatsViewPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11686ADD2766B6A0000A0B2E /* ChatsViewPresenterProtocol.swift */; };
+		11686AE02766B9CD000A0B2E /* ChatsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11686ADF2766B9CD000A0B2E /* ChatsViewProtocol.swift */; };
+		11686AE22766BA6B000A0B2E /* ChatsViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11686AE12766BA6B000A0B2E /* ChatsViewPresenter.swift */; };
 		1168914E275C5657005003A0 /* SetupProfileViewPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1168914D275C5657005003A0 /* SetupProfileViewPresenterProtocol.swift */; };
 		11689150275C572C005003A0 /* SetupProfileViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1168914F275C572C005003A0 /* SetupProfileViewPresenter.swift */; };
 		11689152275C5B27005003A0 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11689151275C5B27005003A0 /* UIAlertController+Extension.swift */; };
@@ -92,6 +95,9 @@
 		1163EB262758456600728C6D /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		1163EB2927585EE100728C6D /* AuthenticationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationServiceProtocol.swift; sourceTree = "<group>"; };
 		1167AB3C275448F30085A66C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		11686ADD2766B6A0000A0B2E /* ChatsViewPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewPresenterProtocol.swift; sourceTree = "<group>"; };
+		11686ADF2766B9CD000A0B2E /* ChatsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewProtocol.swift; sourceTree = "<group>"; };
+		11686AE12766BA6B000A0B2E /* ChatsViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewPresenter.swift; sourceTree = "<group>"; };
 		1168914D275C5657005003A0 /* SetupProfileViewPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewPresenterProtocol.swift; sourceTree = "<group>"; };
 		1168914F275C572C005003A0 /* SetupProfileViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewPresenter.swift; sourceTree = "<group>"; };
 		11689151275C5B27005003A0 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
@@ -206,6 +212,23 @@
 				1189215D275EF28A00CF871F /* UserError.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		11686ADB2766B576000A0B2E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				11686AE12766BA6B000A0B2E /* ChatsViewPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		11686ADC2766B58A000A0B2E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				11686ADF2766B9CD000A0B2E /* ChatsViewProtocol.swift */,
+				11686ADD2766B6A0000A0B2E /* ChatsViewPresenterProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		1168914B275C561A005003A0 /* Presenter */ = {
@@ -545,6 +568,8 @@
 		118C8AA6275868F300B0C014 /* Chats */ = {
 			isa = PBXGroup;
 			children = (
+				11686ADC2766B58A000A0B2E /* Protocols */,
+				11686ADB2766B576000A0B2E /* Presenter */,
 				118C8AA8275869D100B0C014 /* Views */,
 			);
 			path = Chats;
@@ -754,6 +779,7 @@
 				11690133274C628300A0C991 /* ActiveChatCell.swift in Sources */,
 				11125484274725D400F6F53F /* EmailRegistrationViewController.swift in Sources */,
 				1175D7A0275B1EF100039D8F /* RouterProtocol.swift in Sources */,
+				11686ADE2766B6A0000A0B2E /* ChatsViewPresenterProtocol.swift in Sources */,
 				1189215E275EF28B00CF871F /* UserError.swift in Sources */,
 				116B46E62757015500B064C4 /* Validator.swift in Sources */,
 				11892162275EFD3D00CF871F /* SetupProfileViewProtocol.swift in Sources */,
@@ -774,6 +800,7 @@
 				11689152275C5B27005003A0 /* UIAlertController+Extension.swift in Sources */,
 				116FFD492751A0E2000E6C2D /* UserModel.swift in Sources */,
 				11623C602741D3DA00EFA598 /* UnderlineTextField.swift in Sources */,
+				11686AE02766B9CD000A0B2E /* ChatsViewProtocol.swift in Sources */,
 				1189215C275EEB8900CF871F /* FirestoreService.swift in Sources */,
 				116DE6EF274882BE0060016D /* PeopleViewController.swift in Sources */,
 				1178E850273DDEB10049EA54 /* AppDelegate.swift in Sources */,
@@ -790,6 +817,7 @@
 				11A806472745E97800C08379 /* LoginViewController.swift in Sources */,
 				11A8064E2745EA0E00C08379 /* UIButton+Extension.swift in Sources */,
 				118C8A9C275866FB00B0C014 /* ProfileViewController.swift in Sources */,
+				11686AE22766BA6B000A0B2E /* ChatsViewPresenter.swift in Sources */,
 				11690136274C648000A0C991 /* CellConfigurationProtocol.swift in Sources */,
 				1162D6C22747148800AAF936 /* UISegmentedControl+Extension.swift in Sources */,
 				116067202759BE5100ABA84B /* AssemblyBuilderProtocol.swift in Sources */,

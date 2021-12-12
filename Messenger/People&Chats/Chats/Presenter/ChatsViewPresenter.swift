@@ -1,40 +1,25 @@
 //
-//  PeopleViewPresenter.swift
+//  ChatsViewPresenter.swift
 //  Messenger
 //
-//  Created by Alexander on 09.12.2021.
+//  Created by Alexander on 13.12.2021.
 //
 
 import Foundation
 
-class PeopleViewPresenter: PeopleViewPresenterProtocol {
+class ChatsViewPresenter: ChatsViewPresenterProtocol {
     
-    let view: PeopleViewProtocol?
+    let view: ChatsViewProtocol?
     let authenticationService: AuthenticationServiceProtocol!
-    let router: RouterAuthenticationProtocol!
     let fireStoreService: FireStoreServiceProtocol!
+    let router: RouterAuthenticationProtocol!
     
-    required init(view: PeopleViewProtocol, authenticationService: AuthenticationServiceProtocol, router: RouterAuthenticationProtocol, fireStoreService: FireStoreServiceProtocol) {
-        
+    required init(view: ChatsViewProtocol, authenticationService: AuthenticationServiceProtocol, fireStoreService: FireStoreServiceProtocol, router: RouterAuthenticationProtocol) {
+      
         self.view = view
         self.authenticationService = authenticationService
-        self.router = router
         self.fireStoreService = fireStoreService
-    }
-    
-    func logOutButtonPressed() {
-        
-        authenticationService.logout { [weak self] in
-            
-            guard let self = self else { return }
-            
-            self.view?.logOut()
-        }
-    }
-    
-    func popToRoot() {
-        
-        router.initialAuthenticationScreen()
+        self.router = router
     }
     
     func getUsername() {
@@ -51,4 +36,6 @@ class PeopleViewPresenter: PeopleViewPresenterProtocol {
             }
         }
     }
+    
+    
 }

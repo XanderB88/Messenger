@@ -8,7 +8,7 @@
 import UIKit
 
 class PeopleAndChatsTabBarController: UITabBarController {
-        
+    
     func generateNavigationControllers(rootViewController: UIViewController, title: String, image: UIImage) -> UIViewController {
         
         let navigationViewController = UINavigationController(rootViewController: rootViewController)

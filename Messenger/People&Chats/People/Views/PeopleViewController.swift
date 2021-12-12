@@ -36,9 +36,7 @@ class PeopleViewController: UIViewController {
         setupDataSource()
         reloadData(with: nil)
         
-        presenter.getUsername { user in
-            self.title = user.username
-        }
+        presenter.getUsername()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logOutButtonPressed))
     }
@@ -49,9 +47,16 @@ class PeopleViewController: UIViewController {
     }
 }
 
+// MARK: - People View Protocol
 extension PeopleViewController: PeopleViewProtocol {
     
-    func success() {
+    func updateView(user: UserModel) {
+        
+        self.title = user.username
+    }
+    
+    
+    func logOut() {
         
         self.showLogOutAlert(withTitle: "", withMessage: "Are you sure you want to log out of your account?") {
             

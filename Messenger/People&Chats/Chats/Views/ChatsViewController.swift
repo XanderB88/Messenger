@@ -34,6 +34,10 @@ class ChatsViewController: UIViewController {
     var dataSource: UICollectionViewDiffableDataSource<Section, ChatModel>?
     var searchBar = SearchBar()
     
+    // MARK: - Presenter
+    
+    var presenter: ChatsViewPresenterProtocol!
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +48,17 @@ class ChatsViewController: UIViewController {
         setupCollectionView()
         setupDataSource()
         reloadData(with: nil)
+        
+        presenter.getUsername()
+    }
+}
+
+// MARK: - Chats view protocol
+extension ChatsViewController: ChatsViewProtocol {
+    
+    func updateView(user: UserModel) {
+        
+        self.title = user.username
     }
 }
 
