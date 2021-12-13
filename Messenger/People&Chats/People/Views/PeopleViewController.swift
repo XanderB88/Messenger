@@ -39,6 +39,10 @@ class PeopleViewController: UIViewController {
         presenter.getUsername()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logOutButtonPressed))
+        navigationItem.rightBarButtonItem?.tintColor = UIColor.mainBlue
+        
+        let attributes : [NSAttributedString.Key: Any] = [.font: UIFont.secondaryFont!]
+        navigationItem.rightBarButtonItem?.setTitleTextAttributes(attributes, for: .normal)
     }
     
     @objc private func logOutButtonPressed() {
@@ -52,7 +56,10 @@ extension PeopleViewController: PeopleViewProtocol {
     
     func updateView(user: UserModel) {
         
-        self.title = user.username
+        self.navigationItem.title = user.username
+        
+        navigationItem.setAppearance(font: UIFont.secondaryFont!, color: UIColor.mainWhite)
+        
     }
     
     

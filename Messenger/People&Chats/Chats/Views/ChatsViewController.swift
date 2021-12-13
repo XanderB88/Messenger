@@ -58,7 +58,9 @@ extension ChatsViewController: ChatsViewProtocol {
     
     func updateView(user: UserModel) {
         
-        self.title = user.username
+        self.navigationItem.title = user.username
+        
+        navigationItem.setAppearance(font: UIFont.secondaryFont!, color: UIColor.mainWhite)
     }
 }
 

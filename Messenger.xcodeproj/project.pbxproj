@@ -25,6 +25,7 @@
 		11686ADE2766B6A0000A0B2E /* ChatsViewPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11686ADD2766B6A0000A0B2E /* ChatsViewPresenterProtocol.swift */; };
 		11686AE02766B9CD000A0B2E /* ChatsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11686ADF2766B9CD000A0B2E /* ChatsViewProtocol.swift */; };
 		11686AE22766BA6B000A0B2E /* ChatsViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11686AE12766BA6B000A0B2E /* ChatsViewPresenter.swift */; };
+		11686AE42766C6A3000A0B2E /* UINavigationItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11686AE32766C6A3000A0B2E /* UINavigationItem+Extension.swift */; };
 		1168914E275C5657005003A0 /* SetupProfileViewPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1168914D275C5657005003A0 /* SetupProfileViewPresenterProtocol.swift */; };
 		11689150275C572C005003A0 /* SetupProfileViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1168914F275C572C005003A0 /* SetupProfileViewPresenter.swift */; };
 		11689152275C5B27005003A0 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11689151275C5B27005003A0 /* UIAlertController+Extension.swift */; };
@@ -98,6 +99,7 @@
 		11686ADD2766B6A0000A0B2E /* ChatsViewPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewPresenterProtocol.swift; sourceTree = "<group>"; };
 		11686ADF2766B9CD000A0B2E /* ChatsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewProtocol.swift; sourceTree = "<group>"; };
 		11686AE12766BA6B000A0B2E /* ChatsViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewPresenter.swift; sourceTree = "<group>"; };
+		11686AE32766C6A3000A0B2E /* UINavigationItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationItem+Extension.swift"; sourceTree = "<group>"; };
 		1168914D275C5657005003A0 /* SetupProfileViewPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewPresenterProtocol.swift; sourceTree = "<group>"; };
 		1168914F275C572C005003A0 /* SetupProfileViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewPresenter.swift; sourceTree = "<group>"; };
 		11689151275C5B27005003A0 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 				116FFD4C2751A8EB000E6C2D /* UIViewController+Extension.swift */,
 				1167AB3C275448F30085A66C /* UIView+Extension.swift */,
 				11689151275C5B27005003A0 /* UIAlertController+Extension.swift */,
+				11686AE32766C6A3000A0B2E /* UINavigationItem+Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -758,6 +761,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11686AE42766C6A3000A0B2E /* UINavigationItem+Extension.swift in Sources */,
 				1167AB3D275448F30085A66C /* UIView+Extension.swift in Sources */,
 				11892158275EE9AC00CF871F /* FireStoreServiceProtocol.swift in Sources */,
 				1175D790275AE4FD00039D8F /* LoginViewPresenter.swift in Sources */,
