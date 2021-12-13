@@ -24,17 +24,15 @@ class PeopleViewPresenter: PeopleViewPresenterProtocol {
     
     func logOutButtonPressed() {
         
-        authenticationService.logout { [weak self] in
-            
-            guard let self = self else { return }
-            
-            self.view?.logOut()
-        }
+        self.view?.logOut()
     }
     
     func popToRoot() {
         
-        router.initialAuthenticationScreen()
+        authenticationService.logout {
+
+            self.router.initialAuthenticationScreen()
+        }
     }
     
     func getUsername() {
