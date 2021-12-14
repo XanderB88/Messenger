@@ -48,6 +48,10 @@ class ChatsViewController: UIViewController {
         setupCollectionView()
         setupDataSource()
         reloadData(with: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         presenter.getUsername()
     }

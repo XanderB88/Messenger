@@ -69,6 +69,10 @@
 		11892162275EFD3D00CF871F /* SetupProfileViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11892161275EFD3D00CF871F /* SetupProfileViewProtocol.swift */; };
 		118C8A9B275866FB00B0C014 /* ChatRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118C8A99275866FB00B0C014 /* ChatRequestViewController.swift */; };
 		118C8A9C275866FB00B0C014 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118C8A9A275866FB00B0C014 /* ProfileViewController.swift */; };
+		118CCC7D276819010023AA49 /* ConfigurationProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118CCC7C276819010023AA49 /* ConfigurationProfileViewController.swift */; };
+		118CCC7F2768198E0023AA49 /* ConfigurationProfileViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118CCC7E2768198E0023AA49 /* ConfigurationProfileViewProtocol.swift */; };
+		118CCC81276819D60023AA49 /* ConfigurationProfileViewPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118CCC80276819D60023AA49 /* ConfigurationProfileViewPresenterProtocol.swift */; };
+		118CCC8327681A2A0023AA49 /* ConfigurationProfileViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118CCC8227681A2A0023AA49 /* ConfigurationProfileViewPresenter.swift */; };
 		1193F1432755B61300C601C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1193F1422755B61300C601C0 /* GoogleService-Info.plist */; };
 		119513B327618C750096FA95 /* PeopleViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119513B227618C750096FA95 /* PeopleViewProtocol.swift */; };
 		119513B527618CE00096FA95 /* PeopleViewPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119513B427618CE00096FA95 /* PeopleViewPresenterProtocol.swift */; };
@@ -145,6 +149,10 @@
 		11892161275EFD3D00CF871F /* SetupProfileViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewProtocol.swift; sourceTree = "<group>"; };
 		118C8A99275866FB00B0C014 /* ChatRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRequestViewController.swift; sourceTree = "<group>"; };
 		118C8A9A275866FB00B0C014 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		118CCC7C276819010023AA49 /* ConfigurationProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationProfileViewController.swift; sourceTree = "<group>"; };
+		118CCC7E2768198E0023AA49 /* ConfigurationProfileViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationProfileViewProtocol.swift; sourceTree = "<group>"; };
+		118CCC80276819D60023AA49 /* ConfigurationProfileViewPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationProfileViewPresenterProtocol.swift; sourceTree = "<group>"; };
+		118CCC8227681A2A0023AA49 /* ConfigurationProfileViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationProfileViewPresenter.swift; sourceTree = "<group>"; };
 		1193F1422755B61300C601C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		119513B227618C750096FA95 /* PeopleViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewProtocol.swift; sourceTree = "<group>"; };
 		119513B427618CE00096FA95 /* PeopleViewPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewPresenterProtocol.swift; sourceTree = "<group>"; };
@@ -285,6 +293,7 @@
 				116DBB5C275D89E70015806D /* View */,
 				118C8AA5275868CF00B0C014 /* People */,
 				118C8AA6275868F300B0C014 /* Chats */,
+				118CCC7B276818D50023AA49 /* Profile */,
 			);
 			path = "People&Chats";
 			sourceTree = "<group>";
@@ -597,6 +606,41 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		118CCC7B276818D50023AA49 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				118CCC8427681BE10023AA49 /* View */,
+				118CCC8527681BF50023AA49 /* Protocols */,
+				118CCC8627681C030023AA49 /* Presenter */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		118CCC8427681BE10023AA49 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				118CCC7C276819010023AA49 /* ConfigurationProfileViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		118CCC8527681BF50023AA49 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				118CCC7E2768198E0023AA49 /* ConfigurationProfileViewProtocol.swift */,
+				118CCC80276819D60023AA49 /* ConfigurationProfileViewPresenterProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		118CCC8627681C030023AA49 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				118CCC8227681A2A0023AA49 /* ConfigurationProfileViewPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		119513B127618C4F0096FA95 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -785,6 +829,7 @@
 				1175D7A0275B1EF100039D8F /* RouterProtocol.swift in Sources */,
 				11686ADE2766B6A0000A0B2E /* ChatsViewPresenterProtocol.swift in Sources */,
 				1189215E275EF28B00CF871F /* UserError.swift in Sources */,
+				118CCC7F2768198E0023AA49 /* ConfigurationProfileViewProtocol.swift in Sources */,
 				116B46E62757015500B064C4 /* Validator.swift in Sources */,
 				11892162275EFD3D00CF871F /* SetupProfileViewProtocol.swift in Sources */,
 				1175D797275AFFB200039D8F /* RouterAuthentication.swift in Sources */,
@@ -810,6 +855,7 @@
 				1178E850273DDEB10049EA54 /* AppDelegate.swift in Sources */,
 				116FFD4B2751A30B000E6C2D /* UserCell.swift in Sources */,
 				116067172759B89B00ABA84B /* AssemblyBuilder.swift in Sources */,
+				118CCC8327681A2A0023AA49 /* ConfigurationProfileViewPresenter.swift in Sources */,
 				1178E852273DDEB10049EA54 /* SceneDelegate.swift in Sources */,
 				1168914E275C5657005003A0 /* SetupProfileViewPresenterProtocol.swift in Sources */,
 				116B46E827570CAB00B064C4 /* AuthenticationError.swift in Sources */,
@@ -822,7 +868,9 @@
 				11A8064E2745EA0E00C08379 /* UIButton+Extension.swift in Sources */,
 				118C8A9C275866FB00B0C014 /* ProfileViewController.swift in Sources */,
 				11686AE22766BA6B000A0B2E /* ChatsViewPresenter.swift in Sources */,
+				118CCC81276819D60023AA49 /* ConfigurationProfileViewPresenterProtocol.swift in Sources */,
 				11690136274C648000A0C991 /* CellConfigurationProtocol.swift in Sources */,
+				118CCC7D276819010023AA49 /* ConfigurationProfileViewController.swift in Sources */,
 				1162D6C22747148800AAF936 /* UISegmentedControl+Extension.swift in Sources */,
 				116067202759BE5100ABA84B /* AssemblyBuilderProtocol.swift in Sources */,
 			);

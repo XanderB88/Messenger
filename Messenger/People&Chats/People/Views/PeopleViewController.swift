@@ -36,13 +36,17 @@ class PeopleViewController: UIViewController {
         setupDataSource()
         reloadData(with: nil)
         
-        presenter.getUsername()
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logOutButtonPressed))
         navigationItem.rightBarButtonItem?.tintColor = UIColor.mainBlue
         
         let attributes : [NSAttributedString.Key: Any] = [.font: UIFont.secondaryFont!]
         navigationItem.rightBarButtonItem?.setTitleTextAttributes(attributes, for: .normal)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        presenter.getUsername()
     }
     
     @objc private func logOutButtonPressed() {

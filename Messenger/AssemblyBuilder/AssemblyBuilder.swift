@@ -64,13 +64,16 @@ class AssemblyBuilder: AssemblyBuilderProtocol {
         let view = PeopleAndChatsTabBarController()
         let peopleView = PeopleViewController()
         let chatsView = ChatsViewController()
+        let configProfileView = ConfigurationProfileViewController()
         
         let peopleIcon = UIImage(systemName: "person.3", withConfiguration: UIImage.SymbolConfiguration(weight: .medium))!
         let chatsIcon = UIImage(systemName: "captions.bubble", withConfiguration: UIImage.SymbolConfiguration(weight: .medium))!
+        let profileIcon = UIImage(systemName: "person.crop.circle", withConfiguration: UIImage.SymbolConfiguration(weight: .medium))!
 
         view.viewControllers = [
             view.generateNavigationControllers(rootViewController: peopleView, title: "People", image: peopleIcon),
-            view.generateNavigationControllers(rootViewController: chatsView, title: "Chats", image: chatsIcon)
+            view.generateNavigationControllers(rootViewController: chatsView, title: "Chats", image: chatsIcon),
+            view.generateNavigationControllers(rootViewController: configProfileView, title: "Profile", image: profileIcon)
         ]
        
         let validator = Validator()
@@ -84,6 +87,10 @@ class AssemblyBuilder: AssemblyBuilderProtocol {
         let chatsViewPresenter = ChatsViewPresenter(view: chatsView, authenticationService: authenticationService, fireStoreService: fireStoreService, router: router)
         
         chatsView.presenter = chatsViewPresenter
+        
+        let profileViewPresenter = ConfigurationProfileViewPresenter(view: configProfileView, fireStoreService: fireStoreService, authenticationService: authenticationService, router: router)
+        
+        configProfileView.presenter = profileViewPresenter
         
         view.modalPresentationStyle = .fullScreen
         
