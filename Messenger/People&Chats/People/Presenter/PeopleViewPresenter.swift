@@ -22,19 +22,6 @@ class PeopleViewPresenter: PeopleViewPresenterProtocol {
         self.fireStoreService = fireStoreService
     }
     
-    func logOutButtonPressed() {
-        
-        self.view?.logOut()
-    }
-    
-    func popToRoot() {
-        
-        authenticationService.logout {
-
-            self.router.initialAuthenticationScreen()
-        }
-    }
-    
     func getUsername() {
         
         guard let currentUser = authenticationService.getCurrentUser() else { return }

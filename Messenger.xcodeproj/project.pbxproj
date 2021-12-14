@@ -294,6 +294,7 @@
 				118C8AA5275868CF00B0C014 /* People */,
 				118C8AA6275868F300B0C014 /* Chats */,
 				118CCC7B276818D50023AA49 /* Profile */,
+				118CCC8427681BE10023AA49 /* View */,
 			);
 			path = "People&Chats";
 			sourceTree = "<group>";
@@ -609,7 +610,6 @@
 		118CCC7B276818D50023AA49 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				118CCC8427681BE10023AA49 /* View */,
 				118CCC8527681BF50023AA49 /* Protocols */,
 				118CCC8627681C030023AA49 /* Presenter */,
 			);
@@ -621,7 +621,8 @@
 			children = (
 				118CCC7C276819010023AA49 /* ConfigurationProfileViewController.swift */,
 			);
-			path = View;
+			name = View;
+			path = Profile/View;
 			sourceTree = "<group>";
 		};
 		118CCC8527681BF50023AA49 /* Protocols */ = {

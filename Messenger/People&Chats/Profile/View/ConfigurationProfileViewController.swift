@@ -39,6 +39,11 @@ class ConfigurationProfileViewController: UIViewController {
         setupConstraints()
  
         saveButton.addTarget(self, action: #selector(saveButtonPressed), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logOutButtonPressed))
+        navigationItem.rightBarButtonItem?.tintColor = UIColor.mainBlue
+        
+        let attributes : [NSAttributedString.Key: Any] = [.font: UIFont.secondaryFont!]
+        navigationItem.rightBarButtonItem?.setTitleTextAttributes(attributes, for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,6 +58,11 @@ class ConfigurationProfileViewController: UIViewController {
                                   userImageString: "None",
                                   description: aboutMeTextField.text,
                                   gender: genderControl.titleForSegment(at: genderControl.selectedSegmentIndex))
+    }
+    
+    @objc private func logOutButtonPressed() {
+        
+        presenter.logOutButtonPressed()
     }
 }
 
@@ -87,6 +97,14 @@ extension ConfigurationProfileViewController: ConfigurationProfileViewProtocol {
     func failure(error: Error) {
         
         self.showAlert(withTitle: "Error", withMessage: error.localizedDescription)
+    }
+    
+    func logOut() {
+        
+        self.showLogOutAlert(withTitle: "", withMessage: "Are you sure you want to log out of your account?") {
+            
+            self.presenter.popToRoot()
+        }
     }
 }
 

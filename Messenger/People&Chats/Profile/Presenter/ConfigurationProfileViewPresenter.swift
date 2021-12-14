@@ -58,5 +58,18 @@ class ConfigurationProfileViewPresenter: ConfigurationProfileViewPresenterProtoc
             }
         }
     }
+    
+    func logOutButtonPressed() {
+        
+        self.view?.logOut()
+    }
+    
+    func popToRoot() {
+        
+        authenticationService.logout {
+
+            self.router?.initialAuthenticationScreen()
+        }
+    }
 }
 

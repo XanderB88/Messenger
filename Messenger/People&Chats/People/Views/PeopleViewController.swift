@@ -36,22 +36,12 @@ class PeopleViewController: UIViewController {
         setupDataSource()
         reloadData(with: nil)
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logOutButtonPressed))
-        navigationItem.rightBarButtonItem?.tintColor = UIColor.mainBlue
-        
-        let attributes : [NSAttributedString.Key: Any] = [.font: UIFont.secondaryFont!]
-        navigationItem.rightBarButtonItem?.setTitleTextAttributes(attributes, for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         presenter.getUsername()
-    }
-    
-    @objc private func logOutButtonPressed() {
-        
-        presenter.logOutButtonPressed()
     }
 }
 
@@ -64,15 +54,6 @@ extension PeopleViewController: PeopleViewProtocol {
         
         navigationItem.setAppearance(font: UIFont.secondaryFont!, color: UIColor.mainWhite)
         
-    }
-    
-    
-    func logOut() {
-        
-        self.showLogOutAlert(withTitle: "", withMessage: "Are you sure you want to log out of your account?") {
-            
-            self.presenter.popToRoot()
-        }
     }
 }
 

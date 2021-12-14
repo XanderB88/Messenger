@@ -12,4 +12,5 @@ protocol ConfigurationProfileViewProtocol: AnyObject {
     func success()
     func updateView(user: UserModel)
     func failure(error: Error)
+    func logOut()
 }
