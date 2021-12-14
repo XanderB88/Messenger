@@ -60,9 +60,9 @@ class ChatsViewController: UIViewController {
 // MARK: - Chats view protocol
 extension ChatsViewController: ChatsViewProtocol {
     
-    func updateView(user: UserModel) {
+    func updateView(username: String) {
         
-        self.navigationItem.title = user.username
+        self.navigationItem.title = username
         
         navigationItem.setAppearance(font: UIFont.secondaryFont!, color: UIColor.mainWhite)
     }

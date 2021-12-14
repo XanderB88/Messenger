@@ -48,9 +48,9 @@ class PeopleViewController: UIViewController {
 // MARK: - People View Protocol
 extension PeopleViewController: PeopleViewProtocol {
     
-    func updateView(user: UserModel) {
+    func updateView(username: String) {
         
-        self.navigationItem.title = user.username
+        self.navigationItem.title = username
         
         navigationItem.setAppearance(font: UIFont.secondaryFont!, color: UIColor.mainWhite)
         

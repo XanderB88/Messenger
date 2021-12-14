@@ -9,5 +9,5 @@ import Foundation
 
 protocol PeopleViewProtocol: AnyObject {
     
-    func updateView(user: UserModel)
+    func updateView(username: String)
 }

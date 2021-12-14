@@ -30,7 +30,7 @@ class ChatsViewPresenter: ChatsViewPresenterProtocol {
             
             switch result {
                 case .success(let modelUser):
-                    self.view?.updateView(user: modelUser)
+                    self.view?.updateView(username: modelUser.username)
                 case .failure(let error):
                     print(error.localizedDescription)
             }

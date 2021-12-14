@@ -9,5 +9,5 @@ import Foundation
 
 protocol ChatsViewProtocol: AnyObject {
     
-    func updateView(user: UserModel)
+    func updateView(username: String)
 }
