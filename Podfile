@@ -5,10 +5,13 @@ platform :ios, '12.0'
 target 'Messenger' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
+  inhibit_all_warnings!
 
   # Pods for Messenger
 
 pod 'Firebase/Auth'
+pod 'GoogleSignIn'
 pod 'Firebase/Firestore'
+pod 'Firebase/Storage'
 
 end

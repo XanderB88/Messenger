@@ -75,6 +75,8 @@ class AssemblyBuilder: AssemblyBuilderProtocol {
             view.generateNavigationControllers(rootViewController: chatsView, title: "Chats", image: chatsIcon),
             view.generateNavigationControllers(rootViewController: configProfileView, title: "Profile", image: profileIcon)
         ]
+        
+        view.selectedIndex = 1
        
         let validator = Validator()
         let authenticationService = AuthenticationService(validator: validator)

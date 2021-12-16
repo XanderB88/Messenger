@@ -77,6 +77,9 @@
 		119513B327618C750096FA95 /* PeopleViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119513B227618C750096FA95 /* PeopleViewProtocol.swift */; };
 		119513B527618CE00096FA95 /* PeopleViewPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119513B427618CE00096FA95 /* PeopleViewPresenterProtocol.swift */; };
 		119513B827618E4C0096FA95 /* PeopleViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119513B727618E4C0096FA95 /* PeopleViewPresenter.swift */; };
+		119C16D6276AC148004CBD17 /* StorageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119C16D5276AC147004CBD17 /* StorageServiceProtocol.swift */; };
+		119C16D8276AC1C8004CBD17 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119C16D7276AC1C8004CBD17 /* StorageService.swift */; };
+		119C16DA276AC3DE004CBD17 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119C16D9276AC3DE004CBD17 /* UIImage+Extension.swift */; };
 		11A806462745E97800C08379 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A806422745E97700C08379 /* AuthenticationViewController.swift */; };
 		11A806472745E97800C08379 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A806432745E97700C08379 /* LoginViewController.swift */; };
 		11A8064B2745E99300C08379 /* AddProfilePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A8064A2745E99300C08379 /* AddProfilePhoto.swift */; };
@@ -157,6 +160,9 @@
 		119513B227618C750096FA95 /* PeopleViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewProtocol.swift; sourceTree = "<group>"; };
 		119513B427618CE00096FA95 /* PeopleViewPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewPresenterProtocol.swift; sourceTree = "<group>"; };
 		119513B727618E4C0096FA95 /* PeopleViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewPresenter.swift; sourceTree = "<group>"; };
+		119C16D5276AC147004CBD17 /* StorageServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServiceProtocol.swift; sourceTree = "<group>"; };
+		119C16D7276AC1C8004CBD17 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		119C16D9276AC3DE004CBD17 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		11A806422745E97700C08379 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		11A806432745E97700C08379 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		11A8064A2745E99300C08379 /* AddProfilePhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProfilePhoto.swift; sourceTree = "<group>"; };
@@ -210,6 +216,7 @@
 				1163EB282758599900728C6D /* Helpers */,
 				11892156275EE94600CF871F /* FirestoreService */,
 				11892154275EE90700CF871F /* AuthenticationService */,
+				119C16D4276AC115004CBD17 /* StorageService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -330,6 +337,7 @@
 				1167AB3C275448F30085A66C /* UIView+Extension.swift */,
 				11689151275C5B27005003A0 /* UIAlertController+Extension.swift */,
 				11686AE32766C6A3000A0B2E /* UINavigationItem+Extension.swift */,
+				119C16D9276AC3DE004CBD17 /* UIImage+Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -659,6 +667,15 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		119C16D4276AC115004CBD17 /* StorageService */ = {
+			isa = PBXGroup;
+			children = (
+				119C16D5276AC147004CBD17 /* StorageServiceProtocol.swift */,
+				119C16D7276AC1C8004CBD17 /* StorageService.swift */,
+			);
+			path = StorageService;
+			sourceTree = "<group>";
+		};
 		11A8064C2745E9A600C08379 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -830,12 +847,14 @@
 				1175D7A0275B1EF100039D8F /* RouterProtocol.swift in Sources */,
 				11686ADE2766B6A0000A0B2E /* ChatsViewPresenterProtocol.swift in Sources */,
 				1189215E275EF28B00CF871F /* UserError.swift in Sources */,
+				119C16D6276AC148004CBD17 /* StorageServiceProtocol.swift in Sources */,
 				118CCC7F2768198E0023AA49 /* ConfigurationProfileViewProtocol.swift in Sources */,
 				116B46E62757015500B064C4 /* Validator.swift in Sources */,
 				11892162275EFD3D00CF871F /* SetupProfileViewProtocol.swift in Sources */,
 				1175D797275AFFB200039D8F /* RouterAuthentication.swift in Sources */,
 				116E5E40273F341200AE2FB2 /* UIImageview+Extension.swift in Sources */,
 				1175D799275B179100039D8F /* AuthenticationViewPresenter.swift in Sources */,
+				119C16DA276AC3DE004CBD17 /* UIImage+Extension.swift in Sources */,
 				11A8064B2745E99300C08379 /* AddProfilePhoto.swift in Sources */,
 				11724BED2745F3F5003AF64E /* SetupProfileViewController.swift in Sources */,
 				116DE6ED274882AA0060016D /* ChatsViewController.swift in Sources */,
@@ -860,6 +879,7 @@
 				1178E852273DDEB10049EA54 /* SceneDelegate.swift in Sources */,
 				1168914E275C5657005003A0 /* SetupProfileViewPresenterProtocol.swift in Sources */,
 				116B46E827570CAB00B064C4 /* AuthenticationError.swift in Sources */,
+				119C16D8276AC1C8004CBD17 /* StorageService.swift in Sources */,
 				1163EB2A27585EE100728C6D /* AuthenticationServiceProtocol.swift in Sources */,
 				11616732274DADB000A81B2D /* WaitingChatCell.swift in Sources */,
 				1178E86A273E01D90049EA54 /* UIColor+Extension.swift in Sources */,

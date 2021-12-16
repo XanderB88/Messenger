@@ -20,7 +20,7 @@ class AuthenticationService: AuthenticationServiceProtocol {
     
     func getCurrentUser() -> User? {
         
-        return Auth.auth().currentUser
+        return authentication.currentUser
     }
     
     func register(email: String?, password: String?, confirmPassword: String?, completion: @escaping (Result<User, Error>) -> Void) {
