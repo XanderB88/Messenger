@@ -60,4 +60,11 @@ extension UIViewController {
         
         present(alertController, animated: true, completion: nil)
     }
+    
+    func getImageData(image: UIImage?) -> Data? {
+            
+        let scaledImage = image?.scaleToSafeUploadSize
+        
+        return scaledImage?.jpegData(compressionQuality: 0.4)
+    }
 }

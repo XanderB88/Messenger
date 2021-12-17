@@ -5,11 +5,11 @@
 //  Created by Alexander on 16.12.2021.
 //
 
-import UIKit
+import Foundation
 import FirebaseAuth
 import FirebaseStorage
 
 protocol StorageServiceProtocol: AnyObject {
     
-    func upload(image: UIImage, completion: @escaping (Result<URL, Error>) -> Void)
+    func upload(imageData: Data?, completion: @escaping (Result<URL, Error>) -> Void)
 }

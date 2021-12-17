@@ -24,10 +24,9 @@ class StorageService: StorageServiceProtocol {
         return authentication.currentUser!.uid
     }
     
-    func upload(image: UIImage, completion: @escaping (Result<URL, Error>) -> Void) {
+    func upload(imageData: Data?, completion: @escaping (Result<URL, Error>) -> Void) {
         
-        guard let scaledImage = image.scaleToSafeUploadSize,
-              let imageData = scaledImage.jpegData(compressionQuality: 0.4) else { return }
+        guard let imageData = imageData else { return }
         
         let metaData = StorageMetadata()
         metaData.contentType = "image/jpeg"

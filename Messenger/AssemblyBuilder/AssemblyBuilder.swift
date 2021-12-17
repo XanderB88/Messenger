@@ -49,7 +49,8 @@ class AssemblyBuilder: AssemblyBuilderProtocol {
         
         let view = SetupProfileViewController()
         let validator = Validator()
-        let fireStoreService = FirestoreService(validator: validator)
+        let storageService = StorageService()
+        let fireStoreService = FirestoreService(validator: validator, storageService: storageService)
         let authenticationService = AuthenticationService(validator: validator)
         
         let presenter = SetupProfileViewPresenter(view: view, fireStoreService: fireStoreService, authenticationService: authenticationService, router: router)
@@ -79,8 +80,9 @@ class AssemblyBuilder: AssemblyBuilderProtocol {
         view.selectedIndex = 1
        
         let validator = Validator()
+        let storageService = StorageService()
         let authenticationService = AuthenticationService(validator: validator)
-        let fireStoreService = FirestoreService(validator: validator)
+        let fireStoreService = FirestoreService(validator: validator, storageService: storageService)
        
         let peopleViewPresenter = PeopleViewPresenter(view: peopleView, authenticationService: authenticationService, router: router, fireStoreService: fireStoreService)
         

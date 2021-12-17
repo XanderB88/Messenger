@@ -8,21 +8,24 @@
 import Foundation
 import Firebase
 import FirebaseFirestore
+import SwiftUI
 
 class FirestoreService: FireStoreServiceProtocol {
     
     private let db = Firestore.firestore()
-    private let validator: ValidatorProtocol
+    private let validator: ValidatorProtocol!
+    private let storageService: StorageServiceProtocol!
     
     private var userRef: CollectionReference {
         return db.collection("users")
     }
     
-    required init(validator: ValidatorProtocol) {
+    required init(validator: ValidatorProtocol, storageService: StorageServiceProtocol) {
         self.validator = validator
+        self.storageService = storageService
     }
     
-    func saveProfileWith(id: String, email: String, username: String?, userImageString: String?, description: String?, gender: String?, completion: @escaping (Result<UserModel, Error>) -> Void) {
+    func saveProfileWith(id: String, email: String, username: String?, userImageData: Data?, description: String?, gender: String?, completion: @escaping (Result<UserModel, Error>) -> Void) {
         
         guard validator.isFilledUser(username: username, description: description, gender: gender) else {
             
@@ -31,21 +34,36 @@ class FirestoreService: FireStoreServiceProtocol {
             return
         }
         
-        let user = UserModel(username: username!,
+        
+        var user = UserModel(username: username!,
                              email: email,
                              description: description!,
                              gender: gender!,
-                             userImageString: "doesn't exist",
+                             userImageUrl: "",
                              id: id)
         
-        self.userRef.document(user.id).setData(user.representation) { error in
+        storageService.upload(imageData: userImageData) { result in
             
-            if let error = error {
+            switch result {
+                    
+                case .success(let url):
+                    
+                    user.userImageUrl = url.absoluteString
+                    
+                    self.userRef.document(user.id).setData(user.representation) { error in
+                        
+                        if let error = error {
+                            
+                            completion(.failure(error))
+                        } else {
+                            
+                            completion(.success(user))
+                        }
+                    }
                 
-                completion(.failure(error))
-            } else {
-                
-                completion(.success(user))
+                case .failure(let error):
+                    
+                    completion(.failure(error))
             }
         }
     }

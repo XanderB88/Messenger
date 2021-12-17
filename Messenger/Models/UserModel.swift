@@ -14,7 +14,7 @@ struct UserModel: Hashable, Decodable {
     var email: String
     var description: String
     var gender: String
-    var userImageString: String
+    var userImageUrl: String
     var id: String
     
     var representation: [String: Any] {
@@ -23,19 +23,19 @@ struct UserModel: Hashable, Decodable {
         represent["email"] = email
         represent["description"] = description
         represent["gender"] = gender
-        represent["userImage"] = userImageString
+        represent["userImage"] = userImageUrl
         represent["uid"] = id
         
         return represent
     }
     
-    init(username: String, email: String, description: String, gender: String, userImageString: String, id: String) {
+    init(username: String, email: String, description: String, gender: String, userImageUrl: String, id: String) {
         
         self.username = username
         self.email = email
         self.description = description
         self.gender = gender
-        self.userImageString = userImageString
+        self.userImageUrl = userImageUrl
         self.id = id
     }
     
@@ -47,14 +47,14 @@ struct UserModel: Hashable, Decodable {
               let email = data["email"] as? String,
               let description = data["description"] as? String,
               let gender = data["gender"] as? String,
-              let userImageString = data["userImage"] as? String,
+              let userImageUrl = data["userImage"] as? String,
               let id = data["uid"] as? String else { return nil }
         
         self.username = username
         self.email = email
         self.description = description
         self.gender = gender
-        self.userImageString = userImageString
+        self.userImageUrl = userImageUrl
         self.id = id
     }
     

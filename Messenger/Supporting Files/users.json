@@ -4,7 +4,7 @@
         "email": "fake1@gmail.com",
         "description": "I'm user",
         "gender": "male",
-        "userImageString": "user1",
+        "userImageUrl": "user1",
         "id": "dkjhfkahkjdhfjksdhfa"
     },
     {
@@ -12,7 +12,7 @@
         "email": "fake2@gmail.com",
         "description": "I'm user",
         "gender": "male",
-        "userImageString": "user2",
+        "userImageUrl": "user2",
         "id": "kdfjkdlfakljflkad"
     },
     {
@@ -20,7 +20,7 @@
         "email": "fake3@gmail.com",
         "description": "I'm user",
         "gender": "male",
-        "userImageString": "user3",
+        "userImageUrl": "user3",
         "id": "lkdjfkjdlsafld"
     },
     {
@@ -28,7 +28,7 @@
         "email": "fake4@gmail.com",
         "description": "I'm user",
         "gender": "male",
-        "userImageString": "user4",
+        "userImageUrl": "user4",
         "id": "djkfsdshfkadhsfjahkf"
     },
     {
@@ -36,7 +36,7 @@
         "email": "fake5@gmail.com",
         "description": "I'm user",
         "gender": "female",
-        "userImageString": "user5",
+        "userImageUrl": "user5",
         "id": "lkdfjlksdjfljdfla"
     },
     {
@@ -44,7 +44,7 @@
         "email": "fake6@gmail.com",
         "description": "I'm user",
         "gender": "male",
-        "userImageString": "user6",
+        "userImageUrl": "user6",
         "id": "kdjfksdjfalfkdfj"
     },
     {
@@ -52,7 +52,7 @@
         "email": "fake7@gmail.com",
         "description": "I'm user",
         "gender": "male",
-        "userImageString": "user7",
+        "userImageUrl": "user7",
         "id": "ldsjfldjfliajfljdf"
     },
     {
@@ -60,7 +60,7 @@
         "email": "fake8@gmail.com",
         "description": "I'm user",
         "gender": "male",
-        "userImageString": "user8",
+        "userImageUrl": "user8",
         "id": "dkjfkdsjflajfhdflaf"
     },
     {
@@ -68,7 +68,7 @@
         "email": "fake9@gmail.com",
         "description": "I'm user",
         "gender": "female",
-        "userImageString": "user9",
+        "userImageUrl": "user9",
         "id": "lkdfjldfjklafkjfakfjda"
     },
     {
@@ -76,7 +76,7 @@
         "email": "fake10@gmail.com",
         "description": "I'm user",
         "gender": "female",
-        "userImageString": "user10",
+        "userImageUrl": "user10",
         "id": "lkdfjdkfkaljfljfd"
     }
 ]

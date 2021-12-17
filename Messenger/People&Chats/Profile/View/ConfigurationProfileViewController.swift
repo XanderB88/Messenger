@@ -68,8 +68,10 @@ class ConfigurationProfileViewController: UIViewController {
     
     @objc private func saveButtonPressed() {
         
+        let imageData = getImageData(image: profileImageForm.profileImage.image)
+        
         presenter.saveUserProfile(username: fullNameTextField.text,
-                                  userImageString: "None",
+                                  userImageData: imageData,
                                   description: aboutMeTextField.text,
                                   gender: genderControl.titleForSegment(at: genderControl.selectedSegmentIndex))
     }

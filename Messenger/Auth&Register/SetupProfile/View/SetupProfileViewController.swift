@@ -55,8 +55,10 @@ class SetupProfileViewController: UIViewController {
     
     @objc private func goToChatButtonPressed() {
         
+        let imageData = getImageData(image: profileImageForm.profileImage.image)
+        
         presenter.saveUserProfile(username: fullNameTextField.text,
-                                  userImageString: "None",
+                                  userImageData: imageData,
                                   description: aboutMeTextField.text,
                                   gender: genderControl.titleForSegment(at: genderControl.selectedSegmentIndex))
     }

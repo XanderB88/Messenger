@@ -36,7 +36,7 @@ extension UserCell: CellConfigurationProtocol {
         
         guard let user: UserModel = model as? UserModel else { return }
         
-        userImageView.image = UIImage(named: user.userImageString)
+        userImageView.image = UIImage(named: user.userImageUrl)
         userName.text = user.username
     }
    

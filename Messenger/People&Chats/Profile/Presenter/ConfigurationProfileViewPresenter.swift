@@ -22,14 +22,14 @@ class ConfigurationProfileViewPresenter: ConfigurationProfileViewPresenterProtoc
         self.router = router
     }
     
-    func saveUserProfile(username: String?, userImageString: String?, description: String?, gender: String?) {
+    func saveUserProfile(username: String?, userImageData: Data?, description: String?, gender: String?) {
         
         guard let currentUser = authenticationService.getCurrentUser() else { return }
 
         fireStoreService.saveProfileWith(id: currentUser.uid,
                                          email: currentUser.email!,
                                          username: username,
-                                         userImageString: userImageString,
+                                         userImageData: userImageData,
                                          description: description,
                                          gender: gender) { [weak self] result in
             

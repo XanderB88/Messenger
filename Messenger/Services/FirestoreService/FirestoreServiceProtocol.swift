@@ -7,9 +7,10 @@
 
 import Foundation
 import Firebase
+import SwiftUI
 
 protocol FireStoreServiceProtocol: AnyObject {
     
-    func saveProfileWith(id: String, email: String, username: String?, userImageString: String?, description: String?, gender: String?, completion: @escaping (Result<UserModel, Error>) -> Void)
+    func saveProfileWith(id: String, email: String, username: String?, userImageData: Data?, description: String?, gender: String?, completion: @escaping (Result<UserModel, Error>) -> Void)
     func getUserData(user: User, completion: @escaping (Result<UserModel, Error>) -> Void)
 }
