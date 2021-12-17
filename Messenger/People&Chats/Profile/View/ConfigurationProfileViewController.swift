@@ -38,7 +38,11 @@ class ConfigurationProfileViewController: UIViewController {
         view.backgroundColor = .mainDark
         setupConstraints()
  
+        
+        profileImageForm.plusButton.addTarget(self, action: #selector(plusButtonPressed), for: .touchUpInside)
+        
         saveButton.addTarget(self, action: #selector(saveButtonPressed), for: .touchUpInside)
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logOutButtonPressed))
         navigationItem.rightBarButtonItem?.tintColor = UIColor.mainBlue
         
@@ -52,6 +56,16 @@ class ConfigurationProfileViewController: UIViewController {
         presenter.getUserInfo()
     }
     
+    @objc private func plusButtonPressed() {
+        
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.allowsEditing = true
+        
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
     @objc private func saveButtonPressed() {
         
         presenter.saveUserProfile(username: fullNameTextField.text,
@@ -63,6 +77,20 @@ class ConfigurationProfileViewController: UIViewController {
     @objc private func logOutButtonPressed() {
         
         presenter.logOutButtonPressed()
+    }
+}
+
+extension ConfigurationProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        picker.dismiss(animated: true, completion: nil)
+        
+        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else { return }
+        
+        profileImageForm.profileImage.contentMode = .scaleToFill
+        profileImageForm.profileImage.clipsToBounds = true
+        profileImageForm.profileImage.image = image
     }
 }
 
