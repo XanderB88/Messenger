@@ -104,6 +104,21 @@ extension ConfigurationProfileViewController: ConfigurationProfileViewProtocol {
         fullNameTextField.text = user.username
         aboutMeTextField.text = user.description
         
+        presenter.getImageData(url: user.userImageUrl) { result in
+            
+            switch result {
+                    
+                case .success(let imageData):
+                        
+                        self.profileImageForm.profileImage.contentMode = .scaleToFill
+                        self.profileImageForm.profileImage.clipsToBounds = true
+                        self.profileImageForm.profileImage.image = UIImage(data: imageData)
+                    
+                case .failure(let error):
+                    print(error.localizedDescription)
+            }
+        }
+        
         if user.gender == "Male" {
             
             genderControl.selectedSegmentIndex = 0

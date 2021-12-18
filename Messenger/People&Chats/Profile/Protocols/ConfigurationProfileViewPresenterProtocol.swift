@@ -12,6 +12,7 @@ protocol ConfigurationProfileViewPresenterProtocol: AnyObject {
     init(view: ConfigurationProfileViewProtocol, fireStoreService: FireStoreServiceProtocol, authenticationService: AuthenticationServiceProtocol, router: RouterAuthenticationProtocol)
     func saveUserProfile(username: String?, userImageData: Data?, description: String?, gender: String?)
     func getUserInfo()
+    func getImageData(url: String, completion: @escaping (Result<Data, Error>) -> Void)
     func logOutButtonPressed()
     func popToRoot()
 }
