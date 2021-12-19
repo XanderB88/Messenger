@@ -59,20 +59,6 @@ class ConfigurationProfileViewPresenter: ConfigurationProfileViewPresenterProtoc
         }
     }
     
-    func getImageData(url: String, completion: @escaping (Result<Data, Error>) -> Void) {
-    
-        guard let url = URL(string: url) else { return }
-        
-        let data = try? Data(contentsOf: url)
-        
-        guard let imageData = data else {
-            completion(.failure(UserError.userImageCannotBeLoad))
-            return
-        }
-        
-        completion(.success(imageData))
-    }
-    
     func logOutButtonPressed() {
         
         self.view?.logOut()

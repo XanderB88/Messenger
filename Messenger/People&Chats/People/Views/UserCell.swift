@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class UserCell: UICollectionViewCell {
     
@@ -36,7 +37,7 @@ extension UserCell: CellConfigurationProtocol {
         
         guard let user: UserModel = model as? UserModel else { return }
         
-        userImageView.image = UIImage(named: user.userImageUrl)
+        userImageView.sd_setImage(with: URL(string: user.userImageUrl))
         userName.text = user.username
     }
    
