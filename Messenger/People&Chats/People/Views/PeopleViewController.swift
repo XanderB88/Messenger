@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class PeopleViewController: UIViewController {
 
     // MARK: - Constants
-    let users = Bundle.main.decode([UserModel].self, from: "users.json")
-    
+//    let users = Bundle.main.decode([UserModel].self, from: "users.json")
+
     enum Section: Int, CaseIterable {
        
         case users
@@ -22,8 +23,16 @@ class PeopleViewController: UIViewController {
     var dataSource: UICollectionViewDiffableDataSource<Section, UserModel>?
     var searchBar = SearchBar()
     
+    var users = [UserModel]()
+    var userListener: ListenerRegistration?
+    
     // MARK: - Presenter
     var presenter: PeopleViewPresenterProtocol!
+    
+    deinit {
+        
+        userListener?.remove()
+    }
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -36,17 +45,25 @@ class PeopleViewController: UIViewController {
         setupDataSource()
         reloadData(with: nil)
         
+        userListener = presenter.userListener
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         presenter.getUsername()
+        
     }
 }
 
 // MARK: - People View Protocol
 extension PeopleViewController: PeopleViewProtocol {
+    
+    func updateUsers(users: [UserModel]) {
+        
+        self.users = users
+        reloadData(with: nil)
+    }
     
     func updateView(username: String) {
         

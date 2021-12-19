@@ -74,6 +74,8 @@
 		118CCC81276819D60023AA49 /* ConfigurationProfileViewPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118CCC80276819D60023AA49 /* ConfigurationProfileViewPresenterProtocol.swift */; };
 		118CCC8327681A2A0023AA49 /* ConfigurationProfileViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118CCC8227681A2A0023AA49 /* ConfigurationProfileViewPresenter.swift */; };
 		1193F1432755B61300C601C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1193F1422755B61300C601C0 /* GoogleService-Info.plist */; };
+		1194137D276EB19E008EBA2A /* ListenerServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194137C276EB19E008EBA2A /* ListenerServiceProtocol.swift */; };
+		11941380276EB3B8008EBA2A /* ListenerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1194137F276EB3B8008EBA2A /* ListenerService.swift */; };
 		119513B327618C750096FA95 /* PeopleViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119513B227618C750096FA95 /* PeopleViewProtocol.swift */; };
 		119513B527618CE00096FA95 /* PeopleViewPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119513B427618CE00096FA95 /* PeopleViewPresenterProtocol.swift */; };
 		119513B827618E4C0096FA95 /* PeopleViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119513B727618E4C0096FA95 /* PeopleViewPresenter.swift */; };
@@ -157,6 +159,8 @@
 		118CCC80276819D60023AA49 /* ConfigurationProfileViewPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationProfileViewPresenterProtocol.swift; sourceTree = "<group>"; };
 		118CCC8227681A2A0023AA49 /* ConfigurationProfileViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationProfileViewPresenter.swift; sourceTree = "<group>"; };
 		1193F1422755B61300C601C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1194137C276EB19E008EBA2A /* ListenerServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenerServiceProtocol.swift; sourceTree = "<group>"; };
+		1194137F276EB3B8008EBA2A /* ListenerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenerService.swift; sourceTree = "<group>"; };
 		119513B227618C750096FA95 /* PeopleViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewProtocol.swift; sourceTree = "<group>"; };
 		119513B427618CE00096FA95 /* PeopleViewPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewPresenterProtocol.swift; sourceTree = "<group>"; };
 		119513B727618E4C0096FA95 /* PeopleViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewPresenter.swift; sourceTree = "<group>"; };
@@ -217,6 +221,7 @@
 				11892156275EE94600CF871F /* FirestoreService */,
 				11892154275EE90700CF871F /* AuthenticationService */,
 				119C16D4276AC115004CBD17 /* StorageService */,
+				1194137E276EB1A5008EBA2A /* ListenerService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -649,6 +654,15 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		1194137E276EB1A5008EBA2A /* ListenerService */ = {
+			isa = PBXGroup;
+			children = (
+				1194137C276EB19E008EBA2A /* ListenerServiceProtocol.swift */,
+				1194137F276EB3B8008EBA2A /* ListenerService.swift */,
+			);
+			path = ListenerService;
+			sourceTree = "<group>";
+		};
 		119513B127618C4F0096FA95 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -844,9 +858,11 @@
 				11690133274C628300A0C991 /* ActiveChatCell.swift in Sources */,
 				11125484274725D400F6F53F /* EmailRegistrationViewController.swift in Sources */,
 				1175D7A0275B1EF100039D8F /* RouterProtocol.swift in Sources */,
+				11941380276EB3B8008EBA2A /* ListenerService.swift in Sources */,
 				11686ADE2766B6A0000A0B2E /* ChatsViewPresenterProtocol.swift in Sources */,
 				1189215E275EF28B00CF871F /* UserError.swift in Sources */,
 				119C16D6276AC148004CBD17 /* StorageServiceProtocol.swift in Sources */,
+				1194137D276EB19E008EBA2A /* ListenerServiceProtocol.swift in Sources */,
 				118CCC7F2768198E0023AA49 /* ConfigurationProfileViewProtocol.swift in Sources */,
 				116B46E62757015500B064C4 /* Validator.swift in Sources */,
 				11892162275EFD3D00CF871F /* SetupProfileViewProtocol.swift in Sources */,

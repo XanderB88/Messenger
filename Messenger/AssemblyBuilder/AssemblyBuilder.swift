@@ -83,8 +83,9 @@ class AssemblyBuilder: AssemblyBuilderProtocol {
         let storageService = StorageService()
         let authenticationService = AuthenticationService(validator: validator)
         let fireStoreService = FirestoreService(validator: validator, storageService: storageService)
+        let listenerService = ListenerService()
        
-        let peopleViewPresenter = PeopleViewPresenter(view: peopleView, authenticationService: authenticationService, router: router, fireStoreService: fireStoreService)
+        let peopleViewPresenter = PeopleViewPresenter(view: peopleView, authenticationService: authenticationService, router: router, fireStoreService: fireStoreService, listenerService: listenerService)
         
         peopleView.presenter = peopleViewPresenter
         
