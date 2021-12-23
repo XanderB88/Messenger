@@ -9,6 +9,7 @@ import Foundation
 import FirebaseFirestore
 
 class PeopleViewPresenter: PeopleViewPresenterProtocol {
+    
    
     var users = [UserModel]()
     
@@ -53,5 +54,10 @@ class PeopleViewPresenter: PeopleViewPresenterProtocol {
                     print(error.localizedDescription)
             }
         }
+    }
+   
+    func toProfileScreen(user: UserModel) {
+        
+        router.toProfileScreen(user: user)
     }
 }

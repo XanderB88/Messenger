@@ -14,4 +14,5 @@ protocol AssemblyBuilderProtocol {
     func createLoginScreen(router: RouterAuthenticationProtocol) -> UIViewController
     func createSetupProfileScreen(router: RouterAuthenticationProtocol) -> UIViewController
     func createPeopleAndChatsTabBarController(router: RouterAuthenticationProtocol) -> UIViewController
+    func createProfileScreen(router: RouterAuthenticationProtocol, user: UserModel) -> UIViewController
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProfileViewController: UIViewController {
 
@@ -21,6 +22,22 @@ class ProfileViewController: UIViewController {
 
     // MARK: - ProfileForm
     let profileForm = UIView()
+    
+    private let user: UserModel
+    
+    init(user: UserModel) {
+        
+        self.user = user
+        self.userNameLabel.text = user.username
+        self.aboutUserLabel.text = user.description
+        self.profileImageView.sd_setImage(with: URL(string: user.userImageUrl))
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -103,24 +120,3 @@ extension ProfileViewController {
     }
 }
 
-// MARK: - Activate a canvas
-import SwiftUI
-
-struct ProfileViewControllerProvider: PreviewProvider {
-    
-    static var previews: some View {
-        ContainerView().edgesIgnoringSafeArea(.all)
-    }
-    
-    struct ContainerView: UIViewControllerRepresentable {
-        
-        let viewController = ProfileViewController()
-        
-        func makeUIViewController(context: Context) -> some UIViewController {
-            return viewController
-        }
-        
-        func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-        }
-    }
-}

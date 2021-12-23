@@ -74,6 +74,16 @@ extension PeopleViewController: PeopleViewProtocol {
     }
 }
 
+extension PeopleViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        guard let user = self.dataSource?.itemIdentifier(for: indexPath) else { return }
+        
+        presenter.toProfileScreen(user: user)
+    }
+}
+
 extension PeopleViewController {
     
     // MARK: - Setup collection view
@@ -87,7 +97,8 @@ extension PeopleViewController {
         collectionView.register(UserCell.self, forCellWithReuseIdentifier: UserCell.reusableId)
         
         collectionView.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reusableId)
-    
+        
+        collectionView.delegate = self
     }
     
     // MARK: - Setup compositional layout

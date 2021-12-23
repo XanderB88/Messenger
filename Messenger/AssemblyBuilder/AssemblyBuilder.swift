@@ -20,7 +20,6 @@ class AssemblyBuilder: AssemblyBuilderProtocol {
         return view
     }
     
-    
     func createEmailRegistrationScreen(router: RouterAuthenticationProtocol) -> UIViewController {
         
         let view = EmailRegistrationViewController()
@@ -98,6 +97,13 @@ class AssemblyBuilder: AssemblyBuilderProtocol {
         configProfileView.presenter = profileViewPresenter
         
         view.modalPresentationStyle = .fullScreen
+        
+        return view
+    }
+    
+    func createProfileScreen(router: RouterAuthenticationProtocol, user: UserModel) -> UIViewController {
+        
+        let view = ProfileViewController(user: user)
         
         return view
     }
