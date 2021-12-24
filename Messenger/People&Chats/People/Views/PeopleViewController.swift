@@ -11,8 +11,6 @@ import FirebaseFirestore
 class PeopleViewController: UIViewController {
 
     // MARK: - Constants
-//    let users = Bundle.main.decode([UserModel].self, from: "users.json")
-
     enum Section: Int, CaseIterable {
        
         case users

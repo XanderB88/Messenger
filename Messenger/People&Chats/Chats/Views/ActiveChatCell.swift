@@ -39,9 +39,9 @@ extension ActiveChatCell: CellConfigurationProtocol {
         
         guard let chat: ChatModel = model as? ChatModel else { return }
         
-        userImageView.image = UIImage(named: chat.userImageString)
-        userName.text = chat.username
-        lastMessage.text = chat.lastMessage
+        userImageView.image = UIImage(named: chat.friendUserImageUrl)
+        userName.text = chat.friendUsername
+        lastMessage.text = chat.friendLastMessage
     }
     
     // MARK: - Setup view configuration

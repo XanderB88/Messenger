@@ -37,7 +37,7 @@ extension WaitingChatCell: CellConfigurationProtocol {
         
         guard let chat: ChatModel = model as? ChatModel else { return }
         
-        userImageView.image = UIImage(named: chat.userImageString)
+        userImageView.image = UIImage(named: chat.friendUserImageUrl)
     }
     
     // MARK: - Setup view configuration

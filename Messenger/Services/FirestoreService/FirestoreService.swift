@@ -16,11 +16,15 @@ class FirestoreService: FireStoreServiceProtocol {
     private let validator: ValidatorProtocol!
     private let storageService: StorageServiceProtocol!
     
+    var currentUser: UserModel!
+    
     private var userRef: CollectionReference {
+       
         return db.collection("users")
     }
     
     required init(validator: ValidatorProtocol, storageService: StorageServiceProtocol) {
+        
         self.validator = validator
         self.storageService = storageService
     }
@@ -80,11 +84,42 @@ class FirestoreService: FireStoreServiceProtocol {
                     completion(.failure(UserError.cannotUnwrapToUserModel))
                     return
                 }
-                
+                self.currentUser = user
                 completion(.success(user))
             } else {
                 
                 completion(.failure(UserError.cannotGetUserInfo))
+            }
+        }
+    }
+    
+    func createWaitingChat(message: String, receiver: UserModel, completion: @escaping (Result<Void, Error>) -> Void) {
+        
+        let reference = db.collection(["users", receiver.id, "waitingChats"].joined(separator: "/"))
+        let messageRef = reference.document(self.currentUser.id).collection("messages")
+        
+        let message = MessageModel(user: currentUser, content: message)
+        let chat = ChatModel(friendUsername: currentUser.username,
+                             friendUserImageUrl: currentUser.userImageUrl,
+                             friendLastMessage: message.content,
+                             friendUserId: currentUser.id)
+        
+        reference.document(currentUser.id).setData(chat.representation) { error in
+            
+            if let error = error {
+                
+                completion(.failure(error))
+                return
+            }
+            
+            messageRef.addDocument(data: message.representation) { error in
+                
+                if let error = error {
+                    
+                    completion(.failure(error))
+                    return
+                }
+                completion(.success(Void()))
             }
         }
     }

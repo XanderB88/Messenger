@@ -79,6 +79,7 @@
 		119513B327618C750096FA95 /* PeopleViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119513B227618C750096FA95 /* PeopleViewProtocol.swift */; };
 		119513B527618CE00096FA95 /* PeopleViewPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119513B427618CE00096FA95 /* PeopleViewPresenterProtocol.swift */; };
 		119513B827618E4C0096FA95 /* PeopleViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119513B727618E4C0096FA95 /* PeopleViewPresenter.swift */; };
+		119602EA277557CE0063AA40 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119602E9277557CE0063AA40 /* MessageModel.swift */; };
 		119C16D6276AC148004CBD17 /* StorageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119C16D5276AC147004CBD17 /* StorageServiceProtocol.swift */; };
 		119C16D8276AC1C8004CBD17 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119C16D7276AC1C8004CBD17 /* StorageService.swift */; };
 		119C16DA276AC3DE004CBD17 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119C16D9276AC3DE004CBD17 /* UIImage+Extension.swift */; };
@@ -164,6 +165,7 @@
 		119513B227618C750096FA95 /* PeopleViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewProtocol.swift; sourceTree = "<group>"; };
 		119513B427618CE00096FA95 /* PeopleViewPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewPresenterProtocol.swift; sourceTree = "<group>"; };
 		119513B727618E4C0096FA95 /* PeopleViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewPresenter.swift; sourceTree = "<group>"; };
+		119602E9277557CE0063AA40 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		119C16D5276AC147004CBD17 /* StorageServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServiceProtocol.swift; sourceTree = "<group>"; };
 		119C16D7276AC1C8004CBD17 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		119C16D9276AC3DE004CBD17 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 			children = (
 				116E1E5F274B0E8B00C0B27E /* ChatModel.swift */,
 				116FFD482751A0E2000E6C2D /* UserModel.swift */,
+				119602E9277557CE0063AA40 /* MessageModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -905,6 +908,7 @@
 				118C8A9C275866FB00B0C014 /* ProfileViewController.swift in Sources */,
 				11686AE22766BA6B000A0B2E /* ChatsViewPresenter.swift in Sources */,
 				118CCC81276819D60023AA49 /* ConfigurationProfileViewPresenterProtocol.swift in Sources */,
+				119602EA277557CE0063AA40 /* MessageModel.swift in Sources */,
 				11690136274C648000A0C991 /* CellConfigurationProtocol.swift in Sources */,
 				118CCC7D276819010023AA49 /* ConfigurationProfileViewController.swift in Sources */,
 				1162D6C22747148800AAF936 /* UISegmentedControl+Extension.swift in Sources */,

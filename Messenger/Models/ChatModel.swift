@@ -9,17 +9,28 @@ import Foundation
 
 struct ChatModel: Hashable, Decodable {
     
-    var username: String
-    var userImageString: String
-    var lastMessage: String
-    var id: Int
+    var friendUsername: String
+    var friendUserImageUrl: String
+    var friendLastMessage: String
+    var friendUserId: String
+    
+    
+    var representation: [String: Any] {
+       
+        var represent = ["friendUsername": friendUsername]
+        represent["friendUserImageUrl"] = friendUserImageUrl
+        represent["lastMessage"] = friendLastMessage
+        represent["friendUserId"] = friendUserId
+       
+        return represent
+    }
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
+        hasher.combine(friendUserId)
     }
     
     static func == (lhs: ChatModel, rhs: ChatModel) -> Bool {
-        return lhs.id == rhs.id
+        return lhs.friendUserId == rhs.friendUserId
     }
     
     func containsChatWithUser(filter: String?) -> Bool {
@@ -28,6 +39,6 @@ struct ChatModel: Hashable, Decodable {
         
         if filter.isEmpty { return true }
         
-        return username.lowercased().contains(filter.lowercased())
+        return friendUsername.lowercased().contains(filter.lowercased())
     }
 }
