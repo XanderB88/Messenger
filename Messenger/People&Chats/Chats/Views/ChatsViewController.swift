@@ -10,7 +10,8 @@ import UIKit
 class ChatsViewController: UIViewController {
 
     // MARK: - Constants
-    let waitingChats = Bundle.main.decode([ChatModel].self, from: "waitingChats.json")
+//    let waitingChats = Bundle.main.decode([ChatModel].self, from: "waitingChats.json")
+    let waitingChats = [ChatModel]()
     let activeChats = Bundle.main.decode([ChatModel].self, from: "activeChats.json")
     let chatCellSize: CGFloat = 88
     

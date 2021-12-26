@@ -25,6 +25,8 @@ class ProfileViewController: UIViewController {
     
     private let user: UserModel
     
+    var presenter: ProfileViewPresenterProtocol!
+    
     init(user: UserModel) {
         
         self.user = user
@@ -50,6 +52,9 @@ class ProfileViewController: UIViewController {
     
     @objc private func sendMessage() {
         
+        guard let message = messageTextField.text, message != "" else { return }
+           
+        self.presenter.sendMessage(message: message, receiver: self.user)
     }
 }
 

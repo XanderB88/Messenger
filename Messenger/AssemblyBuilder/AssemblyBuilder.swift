@@ -104,7 +104,14 @@ class AssemblyBuilder: AssemblyBuilderProtocol {
     func createProfileScreen(router: RouterAuthenticationProtocol, user: UserModel) -> UIViewController {
         
         let view = ProfileViewController(user: user)
+        let validator = Validator()
+        let storageService = StorageService()
+        let fireStoreService = FirestoreService(validator: validator, storageService: storageService)
         
+        let profilePresenter = ProfileViewPresenter(fireStoreService: fireStoreService, router: router)
+        
+        view.presenter = profilePresenter
+       
         return view
     }
 }

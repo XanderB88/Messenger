@@ -63,6 +63,8 @@
 		1178E85C273DDEB40049EA54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1178E85A273DDEB40049EA54 /* LaunchScreen.storyboard */; };
 		1178E86A273E01D90049EA54 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178E869273E01D90049EA54 /* UIColor+Extension.swift */; };
 		1178E86C273E05FA0049EA54 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178E86B273E05FA0049EA54 /* UIFont+Extension.swift */; };
+		118328E92777F92800A53A22 /* ProfileViewPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118328E82777F92800A53A22 /* ProfileViewPresenterProtocol.swift */; };
+		118328EB2777F99F00A53A22 /* ProfileViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118328EA2777F99F00A53A22 /* ProfileViewPresenter.swift */; };
 		11892158275EE9AC00CF871F /* FireStoreServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11892157275EE9AC00CF871F /* FireStoreServiceProtocol.swift */; };
 		1189215C275EEB8900CF871F /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1189215B275EEB8900CF871F /* FirestoreService.swift */; };
 		1189215E275EF28B00CF871F /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1189215D275EF28A00CF871F /* UserError.swift */; };
@@ -149,6 +151,8 @@
 		1178E85D273DDEB40049EA54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1178E869273E01D90049EA54 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		1178E86B273E05FA0049EA54 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		118328E82777F92800A53A22 /* ProfileViewPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewPresenterProtocol.swift; sourceTree = "<group>"; };
+		118328EA2777F99F00A53A22 /* ProfileViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewPresenter.swift; sourceTree = "<group>"; };
 		11892157275EE9AC00CF871F /* FireStoreServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreServiceProtocol.swift; sourceTree = "<group>"; };
 		1189215B275EEB8900CF871F /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		1189215D275EF28A00CF871F /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
@@ -461,6 +465,22 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		118328E62777F8D000A53A22 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				118328EA2777F99F00A53A22 /* ProfileViewPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		118328E72777F8E400A53A22 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				118328E82777F92800A53A22 /* ProfileViewPresenterProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		11892154275EE90700CF871F /* AuthenticationService */ = {
 			isa = PBXGroup;
 			children = (
@@ -530,6 +550,8 @@
 		118C8A9E2758675400B0C014 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				118328E72777F8E400A53A22 /* Protocols */,
+				118328E62777F8D000A53A22 /* Presenter */,
 				118C8AA32758686600B0C014 /* View */,
 			);
 			path = Profile;
@@ -864,6 +886,7 @@
 				11941380276EB3B8008EBA2A /* ListenerService.swift in Sources */,
 				11686ADE2766B6A0000A0B2E /* ChatsViewPresenterProtocol.swift in Sources */,
 				1189215E275EF28B00CF871F /* UserError.swift in Sources */,
+				118328EB2777F99F00A53A22 /* ProfileViewPresenter.swift in Sources */,
 				119C16D6276AC148004CBD17 /* StorageServiceProtocol.swift in Sources */,
 				1194137D276EB19E008EBA2A /* ListenerServiceProtocol.swift in Sources */,
 				118CCC7F2768198E0023AA49 /* ConfigurationProfileViewProtocol.swift in Sources */,
@@ -899,6 +922,7 @@
 				116B46E827570CAB00B064C4 /* AuthenticationError.swift in Sources */,
 				119C16D8276AC1C8004CBD17 /* StorageService.swift in Sources */,
 				1163EB2A27585EE100728C6D /* AuthenticationServiceProtocol.swift in Sources */,
+				118328E92777F92800A53A22 /* ProfileViewPresenterProtocol.swift in Sources */,
 				11616732274DADB000A81B2D /* WaitingChatCell.swift in Sources */,
 				1178E86A273E01D90049EA54 /* UIColor+Extension.swift in Sources */,
 				116067152759A96300ABA84B /* EmailRegistrationViewPresenter.swift in Sources */,

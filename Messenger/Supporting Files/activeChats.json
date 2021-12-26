@@ -1,33 +1,33 @@
 [
     {
-        "username": "Robert Zenden",
-        "userImageString": "user1",
-        "lastMessage": "How are you?",
-        "id": 1
+        "friendUsername": "Robert Zenden",
+        "friendUserImageUrl": "user1",
+        "friendLastMessage": "How are you?",
+        "friendUserId": "hgjgjgjjhgjhgghg"
     },
     {
-        "username": "John Smith",
-        "userImageString": "user2",
-        "lastMessage": "Where are you?",
-        "id": 2
+        "friendUsername": "John Smith",
+        "friendUserImageUrl": "user2",
+        "friendLastMessage": "Where are you?",
+        "friendUserId": "mdbnfjhasfkhk"
     },
     {
-        "username": "Michel Night",
-        "userImageString": "user3",
-        "lastMessage": "Who are you?",
-        "id": 3
+        "friendUsername": "Michel Night",
+        "friendUserImageUrl": "user3",
+        "friendLastMessage": "Who are you?",
+        "friendUserId": "nfjhagfhdsfhjadf"
     },
     {
-        "username": "Alexander Jenkins",
-        "userImageString": "user4",
-        "lastMessage": "How old are you?",
-        "id": 4
+        "friendUsername": "Alexander Jenkins",
+        "friendUserImageUrl": "user4",
+        "friendLastMessage": "How old are you?",
+        "friendUserId": "nzbncnxzbchaJD"
     },
     {
-        "username": "Veronica White",
-        "userImageString": "user5",
-        "lastMessage": "Where are we?",
-        "id": 5
+        "friendUsername": "Veronica White",
+        "friendUserImageUrl": "user5",
+        "friendLastMessage": "Where are we?",
+        "friendUserId": "XBVSDVFAGFVDAGHJ"
     }
 ]
 
