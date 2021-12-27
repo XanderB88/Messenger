@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		11125484274725D400F6F53F /* EmailRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11125483274725D400F6F53F /* EmailRegistrationViewController.swift */; };
+		115D73C427794CF5005D5251 /* ProfileViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D73C327794CF5005D5251 /* ProfileViewProtocol.swift */; };
 		115F12EA274F077A00B238E2 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115F12E9274F077A00B238E2 /* SectionHeader.swift */; };
 		115F12EF274F1F7300B238E2 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115F12EE274F1F7300B238E2 /* SearchBar.swift */; };
 		116067152759A96300ABA84B /* EmailRegistrationViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116067142759A96300ABA84B /* EmailRegistrationViewPresenter.swift */; };
@@ -94,6 +95,7 @@
 
 /* Begin PBXFileReference section */
 		11125483274725D400F6F53F /* EmailRegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailRegistrationViewController.swift; sourceTree = "<group>"; };
+		115D73C327794CF5005D5251 /* ProfileViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewProtocol.swift; sourceTree = "<group>"; };
 		115F12E9274F077A00B238E2 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		115F12EE274F1F7300B238E2 /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		116067142759A96300ABA84B /* EmailRegistrationViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegistrationViewPresenter.swift; sourceTree = "<group>"; };
@@ -477,6 +479,7 @@
 			isa = PBXGroup;
 			children = (
 				118328E82777F92800A53A22 /* ProfileViewPresenterProtocol.swift */,
+				115D73C327794CF5005D5251 /* ProfileViewProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -865,6 +868,7 @@
 				1167AB3D275448F30085A66C /* UIView+Extension.swift in Sources */,
 				11892158275EE9AC00CF871F /* FireStoreServiceProtocol.swift in Sources */,
 				1175D790275AE4FD00039D8F /* LoginViewPresenter.swift in Sources */,
+				115D73C427794CF5005D5251 /* ProfileViewProtocol.swift in Sources */,
 				1178E86C273E05FA0049EA54 /* UIFont+Extension.swift in Sources */,
 				1175D795275AE54C00039D8F /* LoginViewPresenterProtocol.swift in Sources */,
 				1160671D2759BDA500ABA84B /* EmailRegistrationViewPresenterProtocol.swift in Sources */,

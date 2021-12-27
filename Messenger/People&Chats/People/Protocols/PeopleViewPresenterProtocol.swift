@@ -12,6 +12,6 @@ protocol PeopleViewPresenterProtocol: AnyObject {
     
     init (view: PeopleViewProtocol, authenticationService: AuthenticationServiceProtocol, router: RouterAuthenticationProtocol, fireStoreService: FireStoreServiceProtocol, listenerService: ListenerServiceProtocol)
     var userListener: ListenerRegistration? { get }
-    func getUsername()
-    func toProfileScreen(user: UserModel)
+    func getUserInfo()
+    func toProfileScreen(user: UserModel, currentUser: UserModel)
 }

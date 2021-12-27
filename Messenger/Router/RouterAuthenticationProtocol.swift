@@ -14,5 +14,5 @@ protocol RouterAuthenticationProtocol: RouterProtocol {
     func toEmailRegistrationScreen()
     func toSetupProfileScreen()
     func toPeopleAndChatsTabBarController()
-    func toProfileScreen(user: UserModel)
+    func toProfileScreen(user: UserModel, currentUser: UserModel)
 }

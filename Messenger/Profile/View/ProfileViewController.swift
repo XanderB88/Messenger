@@ -26,6 +26,7 @@ class ProfileViewController: UIViewController {
     private let user: UserModel
     
     var presenter: ProfileViewPresenterProtocol!
+    var currentUser: UserModel!
     
     init(user: UserModel) {
         
@@ -54,7 +55,16 @@ class ProfileViewController: UIViewController {
         
         guard let message = messageTextField.text, message != "" else { return }
            
-        self.presenter.sendMessage(message: message, receiver: self.user)
+        self.presenter.sendMessage(message: message, receiver: self.user, currentUser: self.currentUser)
+    }
+}
+
+// MARK: - Profile view protocol
+extension ProfileViewController: ProfileViewProtocol {
+   
+    func requestForChatIsSuccess() {
+        
+        self.dismiss(animated: true, completion: nil)
     }
 }
 

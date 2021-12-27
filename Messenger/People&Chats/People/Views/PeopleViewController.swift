@@ -22,6 +22,7 @@ class PeopleViewController: UIViewController {
     var searchBar = SearchBar()
     
     var users = [UserModel]()
+    var currentUser: UserModel?
     var userListener: ListenerRegistration?
     
     // MARK: - Presenter
@@ -49,7 +50,7 @@ class PeopleViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        presenter.getUsername()
+        presenter.getUserInfo()
         
     }
 }
@@ -63,9 +64,11 @@ extension PeopleViewController: PeopleViewProtocol {
         reloadData(with: nil)
     }
     
-    func updateView(username: String) {
+    func updateView(currentUser: UserModel) {
         
-        self.navigationItem.title = username
+        self.currentUser = currentUser
+        
+        self.navigationItem.title = currentUser.username
         
         navigationItem.setAppearance(font: UIFont.secondaryFont!, color: UIColor.mainWhite)
         
@@ -78,7 +81,7 @@ extension PeopleViewController: UICollectionViewDelegate {
         
         guard let user = self.dataSource?.itemIdentifier(for: indexPath) else { return }
         
-        presenter.toProfileScreen(user: user)
+        presenter.toProfileScreen(user: user, currentUser: self.currentUser!)
     }
 }
 

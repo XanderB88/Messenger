@@ -16,8 +16,6 @@ class FirestoreService: FireStoreServiceProtocol {
     private let validator: ValidatorProtocol!
     private let storageService: StorageServiceProtocol!
     
-    var currentUser: UserModel!
-    
     private var userRef: CollectionReference {
        
         return db.collection("users")
@@ -37,8 +35,7 @@ class FirestoreService: FireStoreServiceProtocol {
            
             return
         }
-        
-        
+    
         var user = UserModel(username: username!,
                              email: email,
                              description: description!,
@@ -84,7 +81,7 @@ class FirestoreService: FireStoreServiceProtocol {
                     completion(.failure(UserError.cannotUnwrapToUserModel))
                     return
                 }
-                self.currentUser = user
+        
                 completion(.success(user))
             } else {
                 
@@ -93,10 +90,12 @@ class FirestoreService: FireStoreServiceProtocol {
         }
     }
     
-    func createWaitingChat(message: String, receiver: UserModel, completion: @escaping (Result<Void, Error>) -> Void) {
+    func createWaitingChat(message: String, receiver: UserModel, currentUser: UserModel, completion: @escaping (Result<Void, Error>) -> Void) {
         
         let reference = db.collection(["users", receiver.id, "waitingChats"].joined(separator: "/"))
-        let messageRef = reference.document(self.currentUser.id).collection("messages")
+        
+        print( "current user = \(String(describing: currentUser))" )
+        let messageRef = reference.document(currentUser.id).collection("messages")
         
         let message = MessageModel(user: currentUser, content: message)
         let chat = ChatModel(friendUsername: currentUser.username,

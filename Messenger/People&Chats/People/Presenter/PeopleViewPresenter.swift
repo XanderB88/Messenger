@@ -9,9 +9,9 @@ import Foundation
 import FirebaseFirestore
 
 class PeopleViewPresenter: PeopleViewPresenterProtocol {
-    
    
     var users = [UserModel]()
+    var currentUser: UserModel?
     
     var userListener: ListenerRegistration? {
         
@@ -41,7 +41,7 @@ class PeopleViewPresenter: PeopleViewPresenterProtocol {
         self.listenerService = listenerService
     }
     
-    func getUsername() {
+    func getUserInfo() {
         
         guard let currentUser = authenticationService.getCurrentUser() else { return }
         
@@ -49,15 +49,15 @@ class PeopleViewPresenter: PeopleViewPresenterProtocol {
             
             switch result {
                 case .success(let modelUser):
-                    self.view?.updateView(username: modelUser.username)
+                    self.view?.updateView(currentUser: modelUser)
                 case .failure(let error):
                     print(error.localizedDescription)
             }
         }
     }
    
-    func toProfileScreen(user: UserModel) {
+    func toProfileScreen(user: UserModel, currentUser: UserModel) {
         
-        router.toProfileScreen(user: user)
+        router.toProfileScreen(user: user, currentUser: currentUser)
     }
 }

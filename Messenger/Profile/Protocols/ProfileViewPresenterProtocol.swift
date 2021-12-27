@@ -10,6 +10,6 @@ import UIKit
 
 protocol ProfileViewPresenterProtocol: AnyObject {
     
-    init(fireStoreService: FireStoreServiceProtocol, router: RouterAuthenticationProtocol)
-    func sendMessage(message: String, receiver: UserModel)
+    init(view: ProfileViewProtocol, fireStoreService: FireStoreServiceProtocol, router: RouterAuthenticationProtocol)
+    func sendMessage(message: String, receiver: UserModel, currentUser: UserModel)
 }

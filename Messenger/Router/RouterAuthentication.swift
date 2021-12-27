@@ -79,11 +79,11 @@ class RouterAuthentication: RouterAuthenticationProtocol {
         }
     }
     
-    func toProfileScreen(user: UserModel) {
+    func toProfileScreen(user: UserModel, currentUser: UserModel) {
        
         if let window = window {
             
-            guard let profileScreen = assemblyBuilder?.createProfileScreen(router: self, user: user) else { return }
+            guard let profileScreen = assemblyBuilder?.createProfileScreen(router: self, user: user, currentUser: currentUser) else { return }
         
         window.rootViewController?.present(profileScreen, animated: true, completion: nil)
         }
