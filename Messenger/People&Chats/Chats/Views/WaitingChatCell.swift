@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 
 class WaitingChatCell: UICollectionViewCell {
     
@@ -37,7 +38,7 @@ extension WaitingChatCell: CellConfigurationProtocol {
         
         guard let chat: ChatModel = model as? ChatModel else { return }
         
-        userImageView.image = UIImage(named: chat.friendUserImageUrl)
+        userImageView.sd_setImage(with: URL(string: chat.friendUserImageUrl))
     }
     
     // MARK: - Setup view configuration

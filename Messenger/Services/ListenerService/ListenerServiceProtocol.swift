@@ -11,4 +11,5 @@ import FirebaseFirestore
 protocol ListenerServiceProtocol {
     
     func usersObserve(users: [UserModel], completion: @escaping (Result<[UserModel], Error>) -> Void) -> ListenerRegistration?
+    func waitingChatsObserve(chats: [ChatModel], completion: @escaping (Result<[ChatModel], Error>) -> Void) -> ListenerRegistration?
 }

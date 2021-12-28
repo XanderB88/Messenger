@@ -6,12 +6,12 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class ChatsViewController: UIViewController {
 
     // MARK: - Constants
 //    let waitingChats = Bundle.main.decode([ChatModel].self, from: "waitingChats.json")
-    let waitingChats = [ChatModel]()
     let activeChats = Bundle.main.decode([ChatModel].self, from: "activeChats.json")
     let chatCellSize: CGFloat = 88
     
@@ -35,9 +35,16 @@ class ChatsViewController: UIViewController {
     var dataSource: UICollectionViewDiffableDataSource<Section, ChatModel>?
     var searchBar = SearchBar()
     
-    // MARK: - Presenter
+    var waitingChats = [ChatModel]()
+    var chatListener: ListenerRegistration?
     
+    // MARK: - Presenter
     var presenter: ChatsViewPresenterProtocol!
+    
+    deinit {
+        
+        chatListener?.remove()
+    }
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -49,6 +56,8 @@ class ChatsViewController: UIViewController {
         setupCollectionView()
         setupDataSource()
         reloadData(with: nil)
+        
+        chatListener = presenter.chatListener
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,12 +69,18 @@ class ChatsViewController: UIViewController {
 
 // MARK: - Chats view protocol
 extension ChatsViewController: ChatsViewProtocol {
-    
+   
     func updateView(username: String) {
         
         self.navigationItem.title = username
         
         navigationItem.setAppearance(font: UIFont.secondaryFont!, color: UIColor.mainWhite)
+    }
+   
+    func updateWaitingChats(chats: [ChatModel]) {
+        
+        self.waitingChats = chats
+        reloadData(with: nil)
     }
 }
 

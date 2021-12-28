@@ -88,7 +88,7 @@ class AssemblyBuilder: AssemblyBuilderProtocol {
         
         peopleView.presenter = peopleViewPresenter
         
-        let chatsViewPresenter = ChatsViewPresenter(view: chatsView, authenticationService: authenticationService, fireStoreService: fireStoreService, router: router)
+        let chatsViewPresenter = ChatsViewPresenter(view: chatsView, authenticationService: authenticationService, fireStoreService: fireStoreService, router: router, listenerService: listenerService)
         
         chatsView.presenter = chatsViewPresenter
         

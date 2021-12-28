@@ -22,6 +22,11 @@ class ListenerService: ListenerServiceProtocol {
         return Auth.auth().currentUser!.uid
     }
     
+    private var chatRef: CollectionReference {
+        
+        return db.collection(["users", currentUserId, "waitingChats"].joined(separator: "/"))
+    }
+    
     func usersObserve(users: [UserModel], completion: @escaping (Result<[UserModel], Error>) -> Void) -> ListenerRegistration? {
         
         var users = users
@@ -57,5 +62,40 @@ class ListenerService: ListenerServiceProtocol {
         }
         
         return userListener
+    }
+    
+    func waitingChatsObserve(chats: [ChatModel], completion: @escaping (Result<[ChatModel], Error>) -> Void) -> ListenerRegistration? {
+        
+        var chats = chats
+        
+        let chatListener = chatRef.addSnapshotListener { querySnapshot, error in
+            
+            guard let snapshot = querySnapshot else {
+                
+                completion(.failure(error!))
+                return
+            }
+            
+            snapshot.documentChanges.forEach { diff in
+                
+                guard let modelChat = ChatModel(document: diff.document) else { return }
+                
+                switch diff.type {
+                    case .added:
+                        guard !chats.contains(modelChat) else { return }
+                        chats.append(modelChat)
+                    case .modified:
+                        guard let index = chats.firstIndex(of: modelChat) else { return }
+                        chats[index] = modelChat
+                    case .removed:
+                        guard let index = chats.firstIndex(of: modelChat) else { return }
+                        chats.remove(at: index)
+                }
+            }
+            
+            completion(.success(chats))
+        }
+        
+        return chatListener
     }
 }

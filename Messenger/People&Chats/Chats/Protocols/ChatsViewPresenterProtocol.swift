@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 protocol ChatsViewPresenterProtocol: AnyObject {
     
-    init(view: ChatsViewProtocol, authenticationService: AuthenticationServiceProtocol, fireStoreService: FireStoreServiceProtocol, router: RouterAuthenticationProtocol)
+    init(view: ChatsViewProtocol, authenticationService: AuthenticationServiceProtocol, fireStoreService: FireStoreServiceProtocol, router: RouterAuthenticationProtocol, listenerService: ListenerServiceProtocol)
+    var chatListener: ListenerRegistration? { get }
     func getUsername()
 }

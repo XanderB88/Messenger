@@ -6,20 +6,38 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 class ChatsViewPresenter: ChatsViewPresenterProtocol {
+    
+    var waitingChats = [ChatModel]()
+    
+    var chatListener: ListenerRegistration? {
+        
+        return listenerService.waitingChatsObserve(chats: waitingChats) { result in
+          
+            switch result {
+                case .success(let chats):
+                    self.view?.updateWaitingChats(chats: chats)
+                case .failure(let error):
+                    print(error.localizedDescription)
+            }
+        }
+    }
     
     let view: ChatsViewProtocol?
     let authenticationService: AuthenticationServiceProtocol!
     let fireStoreService: FireStoreServiceProtocol!
     let router: RouterAuthenticationProtocol!
+    let listenerService: ListenerServiceProtocol!
     
-    required init(view: ChatsViewProtocol, authenticationService: AuthenticationServiceProtocol, fireStoreService: FireStoreServiceProtocol, router: RouterAuthenticationProtocol) {
+    required init(view: ChatsViewProtocol, authenticationService: AuthenticationServiceProtocol, fireStoreService: FireStoreServiceProtocol, router: RouterAuthenticationProtocol, listenerService: ListenerServiceProtocol) {
       
         self.view = view
         self.authenticationService = authenticationService
         self.fireStoreService = fireStoreService
         self.router = router
+        self.listenerService = listenerService
     }
     
     func getUsername() {
