@@ -13,4 +13,5 @@ protocol ChatsViewPresenterProtocol: AnyObject {
     init(view: ChatsViewProtocol, authenticationService: AuthenticationServiceProtocol, fireStoreService: FireStoreServiceProtocol, router: RouterAuthenticationProtocol, listenerService: ListenerServiceProtocol)
     var chatListener: ListenerRegistration? { get }
     func getUsername()
+    func toRequestChat(chat: ChatModel)
 }

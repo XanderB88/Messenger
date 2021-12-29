@@ -79,6 +79,11 @@ extension ChatsViewController: ChatsViewProtocol {
    
     func updateWaitingChats(chats: [ChatModel]) {
         
+        if self.waitingChats != [], self.waitingChats.count <= chats.count {
+            
+            presenter.toRequestChat(chat: chats.last!)
+        }
+        
         self.waitingChats = chats
         reloadData(with: nil)
     }

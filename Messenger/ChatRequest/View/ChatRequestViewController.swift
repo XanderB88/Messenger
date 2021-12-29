@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ChatRequestViewController: UIViewController {
     
@@ -22,6 +23,21 @@ class ChatRequestViewController: UIViewController {
     
     // MARK: - Request form
     let requestForm = UIView()
+    
+    var chat: ChatModel?
+    
+    init(chat: ChatModel) {
+        
+        self.chat = chat
+        userNameLabel.text = chat.friendUsername
+        profileImageView.sd_setImage(with: URL(string: chat.friendUserImageUrl))
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -113,24 +129,3 @@ extension ChatRequestViewController {
     }
 }
 
-// MARK: - Activate a canvas
-import SwiftUI
-
-struct ChatRequestViewControllerProvider: PreviewProvider {
-    
-    static var previews: some View {
-        ContainerView().edgesIgnoringSafeArea(.all)
-    }
-    
-    struct ContainerView: UIViewControllerRepresentable {
-        
-        let viewController = ChatRequestViewController()
-        
-        func makeUIViewController(context: Context) -> some UIViewController {
-            return viewController
-        }
-        
-        func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-        }
-    }
-}

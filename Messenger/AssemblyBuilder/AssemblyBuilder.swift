@@ -115,4 +115,11 @@ class AssemblyBuilder: AssemblyBuilderProtocol {
        
         return view
     }
+    
+    func createRequestChat(router: RouterAuthenticationProtocol, chat: ChatModel) -> UIViewController {
+        
+        let view = ChatRequestViewController(chat: chat)
+        
+        return view
+    }
 }

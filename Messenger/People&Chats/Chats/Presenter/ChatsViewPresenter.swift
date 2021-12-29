@@ -55,5 +55,9 @@ class ChatsViewPresenter: ChatsViewPresenterProtocol {
         }
     }
     
+    func toRequestChat(chat: ChatModel) {
+        
+        router.toRequestChat(chat: chat)
+    }
     
 }

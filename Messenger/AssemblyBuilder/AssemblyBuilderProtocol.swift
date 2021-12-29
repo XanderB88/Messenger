@@ -15,4 +15,5 @@ protocol AssemblyBuilderProtocol {
     func createSetupProfileScreen(router: RouterAuthenticationProtocol) -> UIViewController
     func createPeopleAndChatsTabBarController(router: RouterAuthenticationProtocol) -> UIViewController
     func createProfileScreen(router: RouterAuthenticationProtocol, user: UserModel, currentUser: UserModel) -> UIViewController
+    func createRequestChat(router: RouterAuthenticationProtocol, chat: ChatModel) -> UIViewController
 }

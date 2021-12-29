@@ -375,9 +375,9 @@
 		1175D79E275B1EAB00039D8F /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				1175D796275AFFB200039D8F /* RouterAuthentication.swift */,
 				1175D79F275B1EF100039D8F /* RouterProtocol.swift */,
 				1175D7A2275B1F3E00039D8F /* RouterAuthenticationProtocol.swift */,
+				1175D796275AFFB200039D8F /* RouterAuthentication.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -545,6 +545,8 @@
 		118C8A9D2758672C00B0C014 /* ChatRequest */ = {
 			isa = PBXGroup;
 			children = (
+				118C9DF6277BEBA10097BB38 /* Protocols */,
+				118C9DF7277BEBB40097BB38 /* Presenter */,
 				118C8AA42758687200B0C014 /* View */,
 			);
 			path = ChatRequest;
@@ -645,6 +647,20 @@
 				11690132274C628300A0C991 /* ActiveChatCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		118C9DF6277BEBA10097BB38 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		118C9DF7277BEBB40097BB38 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		118CCC7B276818D50023AA49 /* ProfileConfiguration */ = {
