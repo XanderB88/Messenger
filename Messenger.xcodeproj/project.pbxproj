@@ -478,8 +478,8 @@
 		118328E72777F8E400A53A22 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				118328E82777F92800A53A22 /* ProfileViewPresenterProtocol.swift */,
 				115D73C327794CF5005D5251 /* ProfileViewProtocol.swift */,
+				118328E82777F92800A53A22 /* ProfileViewPresenterProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";

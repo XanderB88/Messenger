@@ -11,7 +11,6 @@ import FirebaseFirestore
 class ChatsViewController: UIViewController {
 
     // MARK: - Constants
-//    let waitingChats = Bundle.main.decode([ChatModel].self, from: "waitingChats.json")
     let activeChats = Bundle.main.decode([ChatModel].self, from: "activeChats.json")
     let chatCellSize: CGFloat = 88
     
@@ -51,7 +50,7 @@ class ChatsViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .mainDark
-        
+
         searchBar.setupSearchBar(navigationItem: navigationItem, delegate: self)
         setupCollectionView()
         setupDataSource()
@@ -89,6 +88,23 @@ extension ChatsViewController: ChatsViewProtocol {
     }
 }
 
+// MARK: - Collection view delegate
+extension ChatsViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        guard let chat = self.dataSource?.itemIdentifier(for: indexPath) else { return }
+        guard let section = Section(rawValue: indexPath.section) else { return }
+        
+        switch section {
+            case .waitingChats:
+                presenter.toRequestChat(chat: chat)
+            case .activeChats:
+                print("nothing")
+        }
+    }
+}
+
 extension ChatsViewController {
     
     // MARK: - Setup collection view
@@ -103,7 +119,8 @@ extension ChatsViewController {
         collectionView.register(ActiveChatCell.self, forCellWithReuseIdentifier: ActiveChatCell.reusableId)
         
         collectionView.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reusableId)
-    
+        
+        collectionView.delegate = self
     }
     
     // MARK: - Setup compositional layout
