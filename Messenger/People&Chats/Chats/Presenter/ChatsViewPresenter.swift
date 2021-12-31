@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseFirestore
+import SwiftUI
 
 class ChatsViewPresenter: ChatsViewPresenterProtocol {
     
@@ -59,5 +60,4 @@ class ChatsViewPresenter: ChatsViewPresenterProtocol {
         
         router.toRequestChat(chat: chat)
     }
-    
 }

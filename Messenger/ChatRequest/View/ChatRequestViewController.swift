@@ -24,7 +24,10 @@ class ChatRequestViewController: UIViewController {
     // MARK: - Request form
     let requestForm = UIView()
     
-    var chat: ChatModel?
+    private var chat: ChatModel
+    
+    // MARK: - Presenter
+    var presenter: ChatRequestPresenterProtocol!
     
     init(chat: ChatModel) {
         
@@ -55,6 +58,10 @@ class ChatRequestViewController: UIViewController {
     
     @objc private func denyButtonPressed() {
         
+        self.dismiss(animated: true) {
+            
+            self.presenter.removeWaitingChats(chat: self.chat)
+        }
     }
     
     override func viewWillLayoutSubviews() {

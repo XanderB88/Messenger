@@ -94,7 +94,6 @@ class FirestoreService: FireStoreServiceProtocol {
         
         let reference = db.collection(["users", receiver.id, "waitingChats"].joined(separator: "/"))
         
-        print( "current user = \(String(describing: currentUser))" )
         let messageRef = reference.document(currentUser.id).collection("messages")
         
         let message = MessageModel(user: currentUser, content: message)
@@ -120,6 +119,22 @@ class FirestoreService: FireStoreServiceProtocol {
                 }
                 completion(.success(Void()))
             }
+        }
+    }
+    
+    func removeWaitingChat(chat: ChatModel, currentUser: User, completion: @escaping (Result<Void, Error>) -> Void) {
+        
+        let waitingChatRef = db.collection(["users", currentUser.uid, "waitingChats"].joined(separator: "/"))
+                                           
+        waitingChatRef.document(chat.friendUserId).delete { error in
+            
+            if let error = error {
+                
+                completion(.failure(error))
+                return
+            }
+            
+            completion(.success(Void()))
         }
     }
 }

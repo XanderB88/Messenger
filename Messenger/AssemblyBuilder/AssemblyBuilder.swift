@@ -119,6 +119,14 @@ class AssemblyBuilder: AssemblyBuilderProtocol {
     func createRequestChat(router: RouterAuthenticationProtocol, chat: ChatModel) -> UIViewController {
         
         let view = ChatRequestViewController(chat: chat)
+        let validator = Validator()
+        let storageService = StorageService()
+        let authenticationService = AuthenticationService(validator: validator)
+        let fireStoreService = FirestoreService(validator: validator, storageService: storageService)
+        
+        let chatRequestPresenter = ChatRequestPresenter(authenticationService: authenticationService, fireStoreService: fireStoreService)
+        
+        view.presenter = chatRequestPresenter
         
         return view
     }

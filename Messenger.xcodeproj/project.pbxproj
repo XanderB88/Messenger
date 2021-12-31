@@ -83,6 +83,8 @@
 		119513B527618CE00096FA95 /* PeopleViewPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119513B427618CE00096FA95 /* PeopleViewPresenterProtocol.swift */; };
 		119513B827618E4C0096FA95 /* PeopleViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119513B727618E4C0096FA95 /* PeopleViewPresenter.swift */; };
 		119602EA277557CE0063AA40 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119602E9277557CE0063AA40 /* MessageModel.swift */; };
+		119A2533277E91A600AFC99C /* ChatRequestPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119A2532277E91A600AFC99C /* ChatRequestPresenterProtocol.swift */; };
+		119A2535277E923900AFC99C /* ChatRequestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119A2534277E923900AFC99C /* ChatRequestPresenter.swift */; };
 		119C16D6276AC148004CBD17 /* StorageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119C16D5276AC147004CBD17 /* StorageServiceProtocol.swift */; };
 		119C16D8276AC1C8004CBD17 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119C16D7276AC1C8004CBD17 /* StorageService.swift */; };
 		119C16DA276AC3DE004CBD17 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119C16D9276AC3DE004CBD17 /* UIImage+Extension.swift */; };
@@ -172,6 +174,8 @@
 		119513B427618CE00096FA95 /* PeopleViewPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewPresenterProtocol.swift; sourceTree = "<group>"; };
 		119513B727618E4C0096FA95 /* PeopleViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewPresenter.swift; sourceTree = "<group>"; };
 		119602E9277557CE0063AA40 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
+		119A2532277E91A600AFC99C /* ChatRequestPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequestPresenterProtocol.swift; sourceTree = "<group>"; };
+		119A2534277E923900AFC99C /* ChatRequestPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequestPresenter.swift; sourceTree = "<group>"; };
 		119C16D5276AC147004CBD17 /* StorageServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServiceProtocol.swift; sourceTree = "<group>"; };
 		119C16D7276AC1C8004CBD17 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		119C16D9276AC3DE004CBD17 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
@@ -652,6 +656,7 @@
 		118C9DF6277BEBA10097BB38 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				119A2532277E91A600AFC99C /* ChatRequestPresenterProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -659,6 +664,7 @@
 		118C9DF7277BEBB40097BB38 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				119A2534277E923900AFC99C /* ChatRequestPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -886,6 +892,7 @@
 				1175D790275AE4FD00039D8F /* LoginViewPresenter.swift in Sources */,
 				115D73C427794CF5005D5251 /* ProfileViewProtocol.swift in Sources */,
 				1178E86C273E05FA0049EA54 /* UIFont+Extension.swift in Sources */,
+				119A2535277E923900AFC99C /* ChatRequestPresenter.swift in Sources */,
 				1175D795275AE54C00039D8F /* LoginViewPresenterProtocol.swift in Sources */,
 				1160671D2759BDA500ABA84B /* EmailRegistrationViewPresenterProtocol.swift in Sources */,
 				119513B527618CE00096FA95 /* PeopleViewPresenterProtocol.swift in Sources */,
@@ -893,6 +900,7 @@
 				119513B327618C750096FA95 /* PeopleViewProtocol.swift in Sources */,
 				1163EB272758456600728C6D /* AuthenticationService.swift in Sources */,
 				11A806462745E97800C08379 /* AuthenticationViewController.swift in Sources */,
+				119A2533277E91A600AFC99C /* ChatRequestPresenterProtocol.swift in Sources */,
 				115F12EA274F077A00B238E2 /* SectionHeader.swift in Sources */,
 				116E1E60274B0E8B00C0B27E /* ChatModel.swift in Sources */,
 				1175D7A3275B1F3E00039D8F /* RouterAuthenticationProtocol.swift in Sources */,
