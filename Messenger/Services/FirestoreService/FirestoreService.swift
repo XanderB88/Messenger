@@ -17,7 +17,7 @@ class FirestoreService: FireStoreServiceProtocol {
     private let storageService: StorageServiceProtocol!
     
     private var userRef: CollectionReference {
-       
+        
         return db.collection("users")
     }
     
@@ -32,10 +32,10 @@ class FirestoreService: FireStoreServiceProtocol {
         guard validator.isFilledUser(username: username, description: description, gender: gender) else {
             
             completion(.failure(UserError.fieldsIsNotFilled))
-           
+            
             return
         }
-    
+        
         var user = UserModel(username: username!,
                              email: email,
                              description: description!,
@@ -61,14 +61,14 @@ class FirestoreService: FireStoreServiceProtocol {
                             completion(.success(user))
                         }
                     }
-                
+                    
                 case .failure(let error):
                     
                     completion(.failure(error))
             }
         }
     }
- 
+    
     func getUserData(user: User, completion: @escaping (Result<UserModel, Error>) -> Void) {
         
         let docRef = userRef.document(user.uid)
@@ -81,7 +81,7 @@ class FirestoreService: FireStoreServiceProtocol {
                     completion(.failure(UserError.cannotUnwrapToUserModel))
                     return
                 }
-        
+                
                 completion(.success(user))
             } else {
                 
@@ -125,7 +125,7 @@ class FirestoreService: FireStoreServiceProtocol {
     func removeWaitingChat(chat: ChatModel, currentUser: User, completion: @escaping (Result<Void, Error>) -> Void) {
         
         let waitingChatRef = db.collection(["users", currentUser.uid, "waitingChats"].joined(separator: "/"))
-                                           
+        
         waitingChatRef.document(chat.friendUserId).delete { error in
             
             if let error = error {
@@ -133,8 +133,61 @@ class FirestoreService: FireStoreServiceProtocol {
                 completion(.failure(error))
                 return
             }
+        
+            self.deleteMessage(chat: chat, waitingChatRef: waitingChatRef, completion: completion)
+        }
+    }
+    
+    func getWaitingChatMessage(chat: ChatModel, reference: CollectionReference, completion: @escaping (Result<[MessageModel], Error>) -> Void) {
+        
+        var messages = [MessageModel]()
+        
+        reference.getDocuments { querySnapshot, error in
             
-            completion(.success(Void()))
+            if let error = error {
+                
+                completion(.failure(error))
+                return
+            }
+            
+            for document in querySnapshot!.documents {
+                
+                guard let message = MessageModel(document: document) else { return }
+                
+                messages.append(message)
+            }
+            completion(.success(messages))
+        }
+    }
+    
+    func deleteMessage(chat: ChatModel, waitingChatRef: CollectionReference, completion: @escaping (Result<Void, Error>) -> Void) {
+        
+        let reference = waitingChatRef.document(chat.friendUserId).collection("messages")
+        
+        getWaitingChatMessage(chat: chat, reference: reference) { result in
+            
+            switch result {
+                case .success(let messages):
+                    
+                    for message in messages {
+                        
+                        guard let documentId = message.id else { return }
+                        
+                        let messageRef = reference.document(documentId)
+                        
+                        messageRef.delete { error in
+                            
+                            if let error = error {
+                                
+                                completion(.failure(error))
+                                return
+                            }
+                            completion(.success(Void()))
+                        }
+                    }
+                case .failure(let error):
+                    completion(.failure(error))
+            }
         }
     }
 }
