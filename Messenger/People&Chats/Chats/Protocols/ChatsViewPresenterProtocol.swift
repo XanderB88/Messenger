@@ -11,7 +11,8 @@ import FirebaseFirestore
 protocol ChatsViewPresenterProtocol: AnyObject {
     
     init(view: ChatsViewProtocol, authenticationService: AuthenticationServiceProtocol, fireStoreService: FireStoreServiceProtocol, router: RouterAuthenticationProtocol, listenerService: ListenerServiceProtocol)
-    var chatListener: ListenerRegistration? { get }
+    var waitingChatListener: ListenerRegistration? { get }
+    var activeChatListener: ListenerRegistration? { get }
     func getUsername()
     func toRequestChat(chat: ChatModel)
 }

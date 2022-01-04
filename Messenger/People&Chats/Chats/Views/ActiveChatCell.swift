@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ActiveChatCell: UICollectionViewCell {
     
@@ -39,7 +40,7 @@ extension ActiveChatCell: CellConfigurationProtocol {
         
         guard let chat: ChatModel = model as? ChatModel else { return }
         
-        userImageView.image = UIImage(named: chat.friendUserImageUrl)
+        userImageView.sd_setImage(with: URL(string: chat.friendUserImageUrl))
         userName.text = chat.friendUsername
         lastMessage.text = chat.friendLastMessage
     }

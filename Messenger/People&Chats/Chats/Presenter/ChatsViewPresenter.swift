@@ -12,14 +12,28 @@ import SwiftUI
 class ChatsViewPresenter: ChatsViewPresenterProtocol {
     
     var waitingChats = [ChatModel]()
+    var activeChats = [ChatModel]()
     
-    var chatListener: ListenerRegistration? {
+    var waitingChatListener: ListenerRegistration? {
         
         return listenerService.waitingChatsObserve(chats: waitingChats) { result in
           
             switch result {
                 case .success(let chats):
-                    self.view?.updateWaitingChats(chats: chats)
+                    self.view?.updateWaitingChats(waitingChats: chats)
+                case .failure(let error):
+                    print(error.localizedDescription)
+            }
+        }
+    }
+    
+    var activeChatListener: ListenerRegistration? {
+        
+        return listenerService.activeChatsObserve(chats: activeChats) { result in
+          
+            switch result {
+                case .success(let chats):
+                    self.view?.updateActiveChats(activeChats: chats)
                 case .failure(let error):
                     print(error.localizedDescription)
             }

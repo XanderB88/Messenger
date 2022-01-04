@@ -11,7 +11,6 @@ import FirebaseFirestore
 class ChatsViewController: UIViewController {
 
     // MARK: - Constants
-    let activeChats = Bundle.main.decode([ChatModel].self, from: "activeChats.json")
     let chatCellSize: CGFloat = 88
     
     enum Section: Int, CaseIterable {
@@ -35,14 +34,17 @@ class ChatsViewController: UIViewController {
     var searchBar = SearchBar()
     
     var waitingChats = [ChatModel]()
-    var chatListener: ListenerRegistration?
+    var activeChats = [ChatModel]()
+    var waitingChatListener: ListenerRegistration?
+    var activeChatListener: ListenerRegistration?
     
     // MARK: - Presenter
     var presenter: ChatsViewPresenterProtocol!
     
     deinit {
         
-        chatListener?.remove()
+        waitingChatListener?.remove()
+        activeChatListener?.remove()
     }
     
     // MARK: - Lifecycle
@@ -56,7 +58,8 @@ class ChatsViewController: UIViewController {
         setupDataSource()
         reloadData(with: nil)
         
-        chatListener = presenter.chatListener
+        waitingChatListener = presenter.waitingChatListener
+        activeChatListener = presenter.activeChatListener
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -76,14 +79,21 @@ extension ChatsViewController: ChatsViewProtocol {
         navigationItem.setAppearance(font: UIFont.secondaryFont!, color: UIColor.mainWhite)
     }
    
-    func updateWaitingChats(chats: [ChatModel]) {
+    func updateWaitingChats(waitingChats: [ChatModel]) {
         
-        if self.waitingChats != [], self.waitingChats.count <= chats.count {
+        self.waitingChats = waitingChats
+        reloadData(with: nil)
+       
+        if self.waitingChats != [], self.waitingChats.count <= waitingChats.count {
             
-            presenter.toRequestChat(chat: chats.last!)
+            presenter.toRequestChat(chat: waitingChats.last!)
         }
         
-        self.waitingChats = chats
+    }
+    
+    func updateActiveChats(activeChats: [ChatModel]) {
+        
+        self.activeChats = activeChats
         reloadData(with: nil)
     }
 }

@@ -10,5 +10,6 @@ import Foundation
 protocol ChatsViewProtocol: AnyObject {
     
     func updateView(username: String)
-    func updateWaitingChats(chats: [ChatModel])
+    func updateWaitingChats(waitingChats: [ChatModel])
+    func updateActiveChats(activeChats: [ChatModel])
 }
