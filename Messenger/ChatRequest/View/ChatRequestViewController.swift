@@ -54,6 +54,9 @@ class ChatRequestViewController: UIViewController {
     
     @objc private func acceptButtonPressed() {
         
+        self.dismiss(animated: true) {
+            self.presenter.createActiveChat(chat: self.chat)
+        }
     }
     
     @objc private func denyButtonPressed() {

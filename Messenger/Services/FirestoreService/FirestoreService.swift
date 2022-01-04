@@ -168,7 +168,6 @@ class FirestoreService: FireStoreServiceProtocol {
             
             switch result {
                 case .success(let messages):
-                    
                     for message in messages {
                         
                         guard let documentId = message.id else { return }
@@ -183,6 +182,69 @@ class FirestoreService: FireStoreServiceProtocol {
                                 return
                             }
                             completion(.success(Void()))
+                        }
+                    }
+                case .failure(let error):
+                    completion(.failure(error))
+            }
+        }
+    }
+    
+    func createActiveChat(chat: ChatModel, messages: [MessageModel], currentUser: User, completion: @escaping (Result<Void, Error>) -> Void) {
+        
+        let activeChatRef = db.collection(["users", currentUser.uid, "activeChats"].joined(separator: "/"))
+        
+        let messageRef = activeChatRef.document(chat.friendUserId).collection("messages")
+        
+        activeChatRef.document(chat.friendUserId).setData(chat.representation) { error in
+            
+            if let error = error {
+                
+                completion(.failure(error))
+                return
+            }
+            
+            for message in messages {
+                
+                messageRef.addDocument(data: message.representation) { error in
+                    
+                    if let error = error {
+                        
+                        completion(.failure(error))
+                        return
+                    }
+                    
+                    completion(.success(Void()))
+                }
+            }
+        }
+    }
+    
+    func changeToActive(chat: ChatModel, currentUser: User, completion: @escaping (Result<Void, Error>) -> Void) {
+        
+        let waitingChatRef = db.collection(["users", currentUser.uid, "waitingChats"].joined(separator: "/"))
+        
+        let reference = waitingChatRef.document(chat.friendUserId).collection("messages")
+        
+        getWaitingChatMessage(chat: chat, reference: reference) { result in
+            
+            switch result {
+                case .success(let messages):
+                    self.removeWaitingChat(chat: chat, currentUser: currentUser) { result in
+                        
+                        switch result {
+                            case .success():
+                                self.createActiveChat(chat: chat, messages: messages, currentUser: currentUser) { result in
+                                    
+                                    switch result {
+                                        case .success():
+                                            completion(.success(Void()))
+                                        case .failure(let error):
+                                            completion(.failure(error))
+                                    }
+                                }
+                            case .failure(let error):
+                                completion(.failure(error))
                         }
                     }
                 case .failure(let error):

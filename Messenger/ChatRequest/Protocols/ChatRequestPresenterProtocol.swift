@@ -11,4 +11,5 @@ protocol ChatRequestPresenterProtocol: AnyObject {
     
     init(authenticationService: AuthenticationServiceProtocol, fireStoreService: FireStoreServiceProtocol)
     func removeWaitingChats(chat: ChatModel)
+    func createActiveChat(chat: ChatModel)
 }

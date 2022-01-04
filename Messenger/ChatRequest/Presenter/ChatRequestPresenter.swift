@@ -34,4 +34,19 @@ class ChatRequestPresenter: ChatRequestPresenterProtocol {
             }
         }
     }
+    
+    func createActiveChat(chat: ChatModel) {
+        
+        guard let currentUser = authenticationService.getCurrentUser() else { return }
+        
+        fireStoreService.changeToActive(chat: chat, currentUser: currentUser) { result in
+            
+            switch result {
+                case .success():
+                    print("Success")
+                case .failure(let error):
+                    print(error.localizedDescription)
+            }
+        }
+    }
 }

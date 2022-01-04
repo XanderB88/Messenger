@@ -15,4 +15,6 @@ protocol FireStoreServiceProtocol: AnyObject {
     func getUserData(user: User, completion: @escaping (Result<UserModel, Error>) -> Void)
     func createWaitingChat(message: String, receiver: UserModel, currentUser: UserModel, completion: @escaping (Result<Void, Error>) -> Void)
     func removeWaitingChat(chat: ChatModel, currentUser: User, completion: @escaping (Result<Void, Error>) -> Void)
+    func createActiveChat(chat: ChatModel, messages: [MessageModel], currentUser: User, completion: @escaping (Result<Void, Error>) -> Void)
+    func changeToActive(chat: ChatModel, currentUser: User, completion: @escaping (Result<Void, Error>) -> Void)
 }
