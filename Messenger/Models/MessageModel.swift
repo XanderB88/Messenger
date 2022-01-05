@@ -7,23 +7,29 @@
 
 import Foundation
 import FirebaseFirestore
+import MessageKit
 
-struct MessageModel: Hashable {
+struct MessageModel: Hashable, MessageType {
     
     let content: String
-    let senderId: String
-    let senderUsername: String
-    var date: Date
     let id: String?
-    
+    var sender: SenderType
+    var kind: MessageKind {
+        return .text(content)
+    }
+    var sentDate: Date
+    var messageId: String {
+        return id ?? UUID().uuidString
+    }
+
     var representation: [String: Any] {
        
         let represent: [String: Any] = [
         
             "content": content,
-            "senderId": senderId,
-            "senderUsername": senderUsername,
-            "created": date
+            "senderId": sender.senderId,
+            "senderUsername": sender.displayName,
+            "created": sentDate
         ]
        
         return represent
@@ -32,10 +38,8 @@ struct MessageModel: Hashable {
     init(user: UserModel, content: String) {
         
         self.content = content
-        
-        senderId = user.id
-        senderUsername = user.username
-        date = Date()
+        sender = Sender(senderId: user.id, displayName: user.username)
+        sentDate = Date()
         id = nil
     }
    
@@ -51,8 +55,15 @@ struct MessageModel: Hashable {
         
         self.id = document.documentID
         self.content = content
-        self.senderId = senderId
-        self.senderUsername = senderUsername
-        self.date = date.dateValue()
+        sender = Sender(senderId: senderId, displayName: senderUsername)
+        self.sentDate = date.dateValue()
+    }
+  
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(messageId)
+    }
+    
+    static func == (lhs: MessageModel, rhs: MessageModel) -> Bool {
+        return lhs.messageId == rhs.messageId
     }
 }

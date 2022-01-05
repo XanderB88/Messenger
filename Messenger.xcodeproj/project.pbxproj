@@ -38,13 +38,10 @@
 		116DE6EF274882BE0060016D /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116DE6EE274882BE0060016D /* PeopleViewController.swift */; };
 		116DE6F1274883650060016D /* PeopleAndChatsTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116DE6F0274883650060016D /* PeopleAndChatsTabBarController.swift */; };
 		116E1E60274B0E8B00C0B27E /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E1E5F274B0E8B00C0B27E /* ChatModel.swift */; };
-		116E1E64274B1BDC00C0B27E /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 116E1E62274B1BDC00C0B27E /* activeChats.json */; };
-		116E1E65274B1BDC00C0B27E /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 116E1E63274B1BDC00C0B27E /* waitingChats.json */; };
 		116E1E6A274B1F6200C0B27E /* BandleDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E1E69274B1F6200C0B27E /* BandleDecodable.swift */; };
 		116E5E3E273F33F400AE2FB2 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E5E3D273F33F400AE2FB2 /* UILabel+Extension.swift */; };
 		116E5E40273F341200AE2FB2 /* UIImageview+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E5E3F273F341200AE2FB2 /* UIImageview+Extension.swift */; };
 		116E5E42273F47FB00AE2FB2 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E5E41273F47FB00AE2FB2 /* UIStackView+Extension.swift */; };
-		116F10402760439600341F83 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 116F103F2760439600341F83 /* users.json */; };
 		116F8F0627531BEF00283018 /* MessageFromProfileTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116F8F0527531BEF00283018 /* MessageFromProfileTextField.swift */; };
 		116FFD492751A0E2000E6C2D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116FFD482751A0E2000E6C2D /* UserModel.swift */; };
 		116FFD4B2751A30B000E6C2D /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116FFD4A2751A30B000E6C2D /* UserCell.swift */; };
@@ -82,6 +79,7 @@
 		119513B327618C750096FA95 /* PeopleViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119513B227618C750096FA95 /* PeopleViewProtocol.swift */; };
 		119513B527618CE00096FA95 /* PeopleViewPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119513B427618CE00096FA95 /* PeopleViewPresenterProtocol.swift */; };
 		119513B827618E4C0096FA95 /* PeopleViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119513B727618E4C0096FA95 /* PeopleViewPresenter.swift */; };
+		119600DC278535A600F4AA74 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119600DB278535A600F4AA74 /* ConversationViewController.swift */; };
 		119602EA277557CE0063AA40 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119602E9277557CE0063AA40 /* MessageModel.swift */; };
 		119A2533277E91A600AFC99C /* ChatRequestPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119A2532277E91A600AFC99C /* ChatRequestPresenterProtocol.swift */; };
 		119A2535277E923900AFC99C /* ChatRequestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119A2534277E923900AFC99C /* ChatRequestPresenter.swift */; };
@@ -127,13 +125,10 @@
 		116DE6EE274882BE0060016D /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		116DE6F0274883650060016D /* PeopleAndChatsTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleAndChatsTabBarController.swift; sourceTree = "<group>"; };
 		116E1E5F274B0E8B00C0B27E /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
-		116E1E62274B1BDC00C0B27E /* activeChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activeChats.json; sourceTree = "<group>"; };
-		116E1E63274B1BDC00C0B27E /* waitingChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = waitingChats.json; sourceTree = "<group>"; };
 		116E1E69274B1F6200C0B27E /* BandleDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandleDecodable.swift; sourceTree = "<group>"; };
 		116E5E3D273F33F400AE2FB2 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		116E5E3F273F341200AE2FB2 /* UIImageview+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageview+Extension.swift"; sourceTree = "<group>"; };
 		116E5E41273F47FB00AE2FB2 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
-		116F103F2760439600341F83 /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
 		116F8F0527531BEF00283018 /* MessageFromProfileTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFromProfileTextField.swift; sourceTree = "<group>"; };
 		116FFD482751A0E2000E6C2D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		116FFD4A2751A30B000E6C2D /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
@@ -173,6 +168,7 @@
 		119513B227618C750096FA95 /* PeopleViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewProtocol.swift; sourceTree = "<group>"; };
 		119513B427618CE00096FA95 /* PeopleViewPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewPresenterProtocol.swift; sourceTree = "<group>"; };
 		119513B727618E4C0096FA95 /* PeopleViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewPresenter.swift; sourceTree = "<group>"; };
+		119600DB278535A600F4AA74 /* ConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
 		119602E9277557CE0063AA40 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		119A2532277E91A600AFC99C /* ChatRequestPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequestPresenterProtocol.swift; sourceTree = "<group>"; };
 		119A2534277E923900AFC99C /* ChatRequestPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequestPresenter.swift; sourceTree = "<group>"; };
@@ -431,6 +427,7 @@
 				1178E865273DFE6E0049EA54 /* Extensions */,
 				116DE6EB27487FC10060016D /* Auth&Register */,
 				116DE6F2274888410060016D /* People&Chats */,
+				119600DA2785354700F4AA74 /* Messages */,
 				118C8A9E2758675400B0C014 /* Profile */,
 				118C8A9D2758672C00B0C014 /* ChatRequest */,
 				1178E864273DDF0B0049EA54 /* Supporting Files */,
@@ -450,9 +447,6 @@
 		1178E864273DDF0B0049EA54 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				116E1E62274B1BDC00C0B27E /* activeChats.json */,
-				116E1E63274B1BDC00C0B27E /* waitingChats.json */,
-				116F103F2760439600341F83 /* users.json */,
 				1178E858273DDEB40049EA54 /* Assets.xcassets */,
 				1178E85A273DDEB40049EA54 /* LaunchScreen.storyboard */,
 				1178E85D273DDEB40049EA54 /* Info.plist */,
@@ -730,6 +724,22 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		119600DA2785354700F4AA74 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				119600DD278535B500F4AA74 /* View */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		119600DD278535B500F4AA74 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				119600DB278535A600F4AA74 /* ConversationViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		119C16D4276AC115004CBD17 /* StorageService */ = {
 			isa = PBXGroup;
 			children = (
@@ -828,12 +838,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				116F10402760439600341F83 /* users.json in Resources */,
 				1178E85C273DDEB40049EA54 /* LaunchScreen.storyboard in Resources */,
-				116E1E64274B1BDC00C0B27E /* activeChats.json in Resources */,
 				1193F1432755B61300C601C0 /* GoogleService-Info.plist in Resources */,
 				1178E859273DDEB40049EA54 /* Assets.xcassets in Resources */,
-				116E1E65274B1BDC00C0B27E /* waitingChats.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -916,6 +923,7 @@
 				1189215E275EF28B00CF871F /* UserError.swift in Sources */,
 				118328EB2777F99F00A53A22 /* ProfileViewPresenter.swift in Sources */,
 				119C16D6276AC148004CBD17 /* StorageServiceProtocol.swift in Sources */,
+				119600DC278535A600F4AA74 /* ConversationViewController.swift in Sources */,
 				1194137D276EB19E008EBA2A /* ListenerServiceProtocol.swift in Sources */,
 				118CCC7F2768198E0023AA49 /* ConfigurationProfileViewProtocol.swift in Sources */,
 				116B46E62757015500B064C4 /* Validator.swift in Sources */,

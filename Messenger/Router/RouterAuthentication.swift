@@ -98,4 +98,14 @@ class RouterAuthentication: RouterAuthenticationProtocol {
         window.rootViewController?.present(requestChatScreen, animated: true, completion: nil)
         }
     }
+    
+    func toConversationScreen(chat: ChatModel, user: UserModel) {
+        
+        if let window = window {
+            
+            guard let conversationScreen = assemblyBuilder?.createConversationScreen(router: self, chat: chat, user: user) else { return }
+        
+        window.rootViewController?.present(conversationScreen, animated: true, completion: nil)
+        }
+    }
 }

@@ -130,4 +130,11 @@ class AssemblyBuilder: AssemblyBuilderProtocol {
         
         return view
     }
+    
+    func createConversationScreen(router: RouterAuthenticationProtocol, chat: ChatModel, user: UserModel) -> UIViewController {
+        
+        let view = ConversationViewController(user: user, chat: chat)
+        
+        return view
+    }
 }

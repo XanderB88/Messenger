@@ -74,4 +74,9 @@ class ChatsViewPresenter: ChatsViewPresenterProtocol {
         
         router.toRequestChat(chat: chat)
     }
+    
+    func toConversationScreen(chat: ChatModel, user: UserModel) {
+        
+        router.toConversationScreen(chat: chat, user: user)
+    }
 }
