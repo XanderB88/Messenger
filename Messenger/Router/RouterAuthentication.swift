@@ -104,8 +104,9 @@ class RouterAuthentication: RouterAuthenticationProtocol {
         if let window = window {
             
             guard let conversationScreen = assemblyBuilder?.createConversationScreen(router: self, chat: chat, user: user) else { return }
-        
-        window.rootViewController?.present(conversationScreen, animated: true, completion: nil)
+            
+            let navigationController = UINavigationController(rootViewController: conversationScreen)
+            window.rootViewController = navigationController
         }
     }
 }

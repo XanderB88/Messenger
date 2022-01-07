@@ -110,7 +110,7 @@ extension ChatsViewController: UICollectionViewDelegate {
             case .waitingChats:
                 presenter.toRequestChat(chat: chat)
             case .activeChats:
-                presenter.toConversationScreen(chat: chat, user: UserModel(username: "Text", email: "Text", description: "Text", gender: "Male", userImageUrl: "String", id: "kdjalhdhfahdfjdhfkjahkdkafhjkdf"))
+                presenter.toConversationScreen(chat: chat, user: UserModel(username: "Some Name", email: "Text", description: "Text", gender: "Male", userImageUrl: "String", id: "kdjalhdhfahdfjdhfkjahkdkafhjkdf"))
         }
     }
 }
