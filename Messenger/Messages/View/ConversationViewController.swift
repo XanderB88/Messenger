@@ -52,31 +52,32 @@ extension ConversationViewController {
         messageInputBar.isTranslucent = true
         messageInputBar.separatorLine.isHidden = true
         messageInputBar.backgroundView.backgroundColor = .mainDark
-        messageInputBar.inputTextView.backgroundColor = .mainDark
-        messageInputBar.inputTextView.placeholderTextColor = .mainWhite
-        messageInputBar.inputTextView.textContainerInset = UIEdgeInsets(top: 14, left: 14, bottom: 30, right: 36)
-        messageInputBar.inputTextView.placeholderLabelInsets = UIEdgeInsets(top: 14, left: 14, bottom: 36, right: 36)
+        messageInputBar.inputTextView.backgroundColor = .mainDark.withAlphaComponent(0.4)
+        messageInputBar.inputTextView.textColor = .white
+        messageInputBar.inputTextView.placeholderTextColor = .secondaryWhite
+        messageInputBar.inputTextView.textContainerInset = UIEdgeInsets(top: 24, left: 14, bottom: 22, right: 36)
+        messageInputBar.inputTextView.placeholderLabelInsets = UIEdgeInsets(top: 24, left: 14, bottom: 22, right: 36)
         messageInputBar.inputTextView.layer.borderColor = UIColor.mainWhite.cgColor
         messageInputBar.inputTextView.layer.borderWidth = 0.2
         messageInputBar.inputTextView.layer.cornerRadius = 18
         messageInputBar.inputTextView.layer.masksToBounds = true
         messageInputBar.inputTextView.scrollIndicatorInsets = UIEdgeInsets(top: 14, left: 0, bottom: 14, right: 0)
         
-        messageInputBar.layer.shadowColor = UIColor.mainDark.cgColor
-        messageInputBar.layer.shadowRadius = 5
-        messageInputBar.layer.opacity = 0.3
-        messageInputBar.layer.shadowOffset = CGSize(width: 0, height: 4)
+//        messageInputBar.layer.shadowColor = UIColor.mainDark.cgColor
+//        messageInputBar.layer.shadowRadius = 5
+//        messageInputBar.layer.opacity = 0.3
+//        messageInputBar.layer.shadowOffset = CGSize(width: 0, height: 4)
     }
     
     func setupSendButton() {
         
-        messageInputBar.sendButton.setImage(UIImage(systemName: "arrowshape.turn.up.forward.circle"), for: .normal)
+        messageInputBar.sendButton.setImage(UIImage(named: "send"), for: .normal)
         messageInputBar.sendButton.addGradient(cornerRadius: 18)
         messageInputBar.setRightStackViewWidthConstant(to: 56, animated: false)
         messageInputBar.sendButton.tintColor = .mainBlue
-        messageInputBar.sendButton.contentEdgeInsets = UIEdgeInsets(top: 2, left: 2, bottom: 6, right: 29)
-        messageInputBar.sendButton.setSize(CGSize(width: 48, height: 48), animated: false)
-        messageInputBar.middleContentViewPadding.right = -54
+        messageInputBar.sendButton.title = .none
+        messageInputBar.sendButton.setSize(CGSize(width: 66, height: 66), animated: false)
+//        messageInputBar.middleContentViewPadding.right
     }
 }
 
