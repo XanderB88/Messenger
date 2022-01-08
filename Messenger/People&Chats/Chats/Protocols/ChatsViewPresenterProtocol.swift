@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseFirestore
+import UIKit
 
 protocol ChatsViewPresenterProtocol: AnyObject {
     
@@ -15,5 +16,5 @@ protocol ChatsViewPresenterProtocol: AnyObject {
     var activeChatListener: ListenerRegistration? { get }
     func getUsername()
     func toRequestChat(chat: ChatModel)
-    func toConversationScreen(chat: ChatModel, user: UserModel)
+    func toConversationScreen(navigationController: UINavigationController, chat: ChatModel, user: UserModel)
 }

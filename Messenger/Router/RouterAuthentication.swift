@@ -99,14 +99,10 @@ class RouterAuthentication: RouterAuthenticationProtocol {
         }
     }
     
-    func toConversationScreen(chat: ChatModel, user: UserModel) {
-        
-        if let window = window {
+    func toConversationScreen(navigationController: UINavigationController, chat: ChatModel, user: UserModel) {
             
             guard let conversationScreen = assemblyBuilder?.createConversationScreen(router: self, chat: chat, user: user) else { return }
             
-            let navigationController = UINavigationController(rootViewController: conversationScreen)
-            window.rootViewController = navigationController
-        }
+           navigationController.pushViewController(conversationScreen, animated: true)
     }
 }

@@ -30,8 +30,8 @@ class ConversationViewController: MessagesViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        messagesCollectionView.collectionViewLayout.collectionView?.backgroundColor = .mainDark
-
+        
+        setupCollectionView()
         setupMessageInputBar()
         setupSendButton()
     }
@@ -41,18 +41,25 @@ class ConversationViewController: MessagesViewController {
         
         let navigationBar = self.navigationController?.navigationBar
         navigationBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.mainWhite]
-        print(navigationItem.hidesBackButton)
     }
 }
 
 extension ConversationViewController {
+    
+    func setupCollectionView() {
+            guard let flowLayout = messagesCollectionView.collectionViewLayout as? MessagesCollectionViewFlowLayout else {
+                print("Can't get flowLayout")
+                return
+            }
+                flowLayout.collectionView?.backgroundColor = .mainDark
+    }
     
     func setupMessageInputBar() {
         
         messageInputBar.isTranslucent = true
         messageInputBar.separatorLine.isHidden = true
         messageInputBar.backgroundView.backgroundColor = .mainDark
-        messageInputBar.inputTextView.backgroundColor = .mainDark.withAlphaComponent(0.4)
+        messageInputBar.inputTextView.backgroundColor = .mainDark
         messageInputBar.inputTextView.textColor = .white
         messageInputBar.inputTextView.placeholderTextColor = .secondaryWhite
         messageInputBar.inputTextView.textContainerInset = UIEdgeInsets(top: 24, left: 14, bottom: 22, right: 36)
@@ -62,11 +69,6 @@ extension ConversationViewController {
         messageInputBar.inputTextView.layer.cornerRadius = 18
         messageInputBar.inputTextView.layer.masksToBounds = true
         messageInputBar.inputTextView.scrollIndicatorInsets = UIEdgeInsets(top: 14, left: 0, bottom: 14, right: 0)
-        
-//        messageInputBar.layer.shadowColor = UIColor.mainDark.cgColor
-//        messageInputBar.layer.shadowRadius = 5
-//        messageInputBar.layer.opacity = 0.3
-//        messageInputBar.layer.shadowOffset = CGSize(width: 0, height: 4)
     }
     
     func setupSendButton() {
@@ -74,10 +76,8 @@ extension ConversationViewController {
         messageInputBar.sendButton.setImage(UIImage(named: "send"), for: .normal)
         messageInputBar.sendButton.addGradient(cornerRadius: 18)
         messageInputBar.setRightStackViewWidthConstant(to: 56, animated: false)
-        messageInputBar.sendButton.tintColor = .mainBlue
         messageInputBar.sendButton.title = .none
         messageInputBar.sendButton.setSize(CGSize(width: 66, height: 66), animated: false)
-//        messageInputBar.middleContentViewPadding.right
     }
 }
 

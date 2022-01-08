@@ -5,7 +5,7 @@
 //  Created by Alexander on 04.12.2021.
 //
 
-import Foundation
+import UIKit
 
 protocol RouterAuthenticationProtocol: RouterProtocol {
     
@@ -16,5 +16,5 @@ protocol RouterAuthenticationProtocol: RouterProtocol {
     func toPeopleAndChatsTabBarController()
     func toProfileScreen(user: UserModel, currentUser: UserModel)
     func toRequestChat(chat: ChatModel)
-    func toConversationScreen(chat: ChatModel, user: UserModel)
+    func toConversationScreen(navigationController: UINavigationController, chat: ChatModel, user: UserModel)
 }
