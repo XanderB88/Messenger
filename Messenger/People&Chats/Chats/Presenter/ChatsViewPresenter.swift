@@ -55,7 +55,7 @@ class ChatsViewPresenter: ChatsViewPresenterProtocol {
         self.listenerService = listenerService
     }
     
-    func getUsername() {
+    func getUserData() {
         
         guard let currentUser = authenticationService.getCurrentUser() else { return }
         
@@ -63,7 +63,7 @@ class ChatsViewPresenter: ChatsViewPresenterProtocol {
             
             switch result {
                 case .success(let modelUser):
-                    self.view?.updateView(username: modelUser.username)
+                    self.view?.updateView(user: modelUser)
                 case .failure(let error):
                     print(error.localizedDescription)
             }

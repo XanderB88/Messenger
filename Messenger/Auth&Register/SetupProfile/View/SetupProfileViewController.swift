@@ -79,6 +79,7 @@ extension SetupProfileViewController: UIImagePickerControllerDelegate, UINavigat
 }
 
 extension SetupProfileViewController: SetupProfileViewProtocol {
+   
     func success() {
         
         self.showAlert(withTitle: "Success", withMessage: "Profile is completed") {

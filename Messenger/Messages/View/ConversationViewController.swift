@@ -39,8 +39,7 @@ class ConversationViewController: MessagesViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let navigationBar = self.navigationController?.navigationBar
-        navigationBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.mainWhite]
+        navigationController?.navigationBar.standardAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
     }
 }
 
@@ -48,7 +47,6 @@ extension ConversationViewController {
     
     func setupCollectionView() {
             guard let flowLayout = messagesCollectionView.collectionViewLayout as? MessagesCollectionViewFlowLayout else {
-                print("Can't get flowLayout")
                 return
             }
                 flowLayout.collectionView?.backgroundColor = .mainDark

@@ -9,7 +9,7 @@ import Foundation
 
 protocol ChatsViewProtocol: AnyObject {
     
-    func updateView(username: String)
+    func updateView(user: UserModel)
     func updateWaitingChats(waitingChats: [ChatModel])
     func updateActiveChats(activeChats: [ChatModel])
 }

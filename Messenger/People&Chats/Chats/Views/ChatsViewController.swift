@@ -38,6 +38,8 @@ class ChatsViewController: UIViewController {
     var waitingChatListener: ListenerRegistration?
     var activeChatListener: ListenerRegistration?
     
+    var user: UserModel?
+    
     // MARK: - Presenter
     var presenter: ChatsViewPresenterProtocol!
     
@@ -65,16 +67,18 @@ class ChatsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        presenter.getUsername()
+        presenter.getUserData()
     }
 }
 
 // MARK: - Chats view protocol
 extension ChatsViewController: ChatsViewProtocol {
    
-    func updateView(username: String) {
+    func updateView(user: UserModel) {
         
-        self.navigationItem.title = username
+        self.user = user
+        
+        self.navigationItem.title = user.username
         
         navigationItem.setAppearance(font: UIFont.secondaryFont!, color: UIColor.mainWhite)
     }
@@ -110,7 +114,7 @@ extension ChatsViewController: UICollectionViewDelegate {
             case .waitingChats:
                 presenter.toRequestChat(chat: chat)
             case .activeChats:
-                presenter.toConversationScreen(navigationController: navigationController!, chat: chat, user: UserModel(username: "Some Name", email: "Text", description: "Text", gender: "Male", userImageUrl: "String", id: "kdjalhdhfahdfjdhfkjahkdkafhjkdf"))
+                presenter.toConversationScreen(navigationController: navigationController!, chat: chat, user: self.user!)
         }
     }
 }
