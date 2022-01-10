@@ -7,6 +7,7 @@
 
 import Foundation
 import MessageKit
+import InputBarAccessoryView
 
 class ConversationViewController: MessagesViewController {
     
@@ -31,6 +32,11 @@ class ConversationViewController: MessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        messageInputBar.delegate = self
+        messagesCollectionView.messagesDataSource = self
+        messagesCollectionView.messagesLayoutDelegate = self
+        messagesCollectionView.messagesDisplayDelegate = self
+        
         setupCollectionView()
         setupMessageInputBar()
         setupSendButton()
@@ -39,17 +45,31 @@ class ConversationViewController: MessagesViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.navigationBar.standardAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.standardAppearance.titleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont.headerFont!]
+        
+        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+    
+    private func insertNewMessage(message: MessageModel) {
+        
+        guard !messages.contains(message) else { return }
+        
+        messages.append(message)
+        messages.sort()
+        
+        messagesCollectionView.reloadData()
     }
 }
 
 extension ConversationViewController {
     
     func setupCollectionView() {
-            guard let flowLayout = messagesCollectionView.collectionViewLayout as? MessagesCollectionViewFlowLayout else {
-                return
-            }
-                flowLayout.collectionView?.backgroundColor = .mainDark
+        guard let flowLayout = messagesCollectionView.collectionViewLayout as? MessagesCollectionViewFlowLayout else {
+            return
+        }
+        flowLayout.collectionView?.backgroundColor = .mainDark
+        flowLayout.setMessageIncomingAvatarSize(.init(width: 55, height: 55))
+        flowLayout.setMessageOutgoingAvatarSize(.init(width: 55, height: 55))
     }
     
     func setupMessageInputBar() {
@@ -92,8 +112,58 @@ extension ConversationViewController: MessagesDataSource {
         return messages[indexPath.item]
     }
     
+    func numberOfItems(inSection section: Int, in messagesCollectionView: MessagesCollectionView) -> Int {
+        
+        return messages.count
+    }
+    
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
         
         return 1
+    }
+}
+
+// MARK: - Messages Layout Delegate
+extension ConversationViewController: MessagesLayoutDelegate {
+    
+    func footerViewSize(for section: Int, in messagesCollectionView: MessagesCollectionView) -> CGSize {
+        
+        return CGSize(width: 8, height: 8)
+    }
+}
+ 
+// MARK: - Messages Display Delegate
+extension ConversationViewController: MessagesDisplayDelegate {
+    
+    func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
+        
+        return isFromCurrentSender(message: message) ? .mainWhite.withAlphaComponent(0.5) : .mainBlue
+    }
+    
+    func textColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
+        
+        return isFromCurrentSender(message: message) ? .black : .white
+    }
+    
+    func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
+        
+        return avatarView.sd_setImage(with: URL(string: user.userImageUrl))
+    }
+    
+    func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
+        
+        return .bubble
+    }
+}
+
+extension ConversationViewController: InputBarAccessoryViewDelegate {
+    
+    func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
+        
+        let message = MessageModel(user: user, content: text)
+        
+        insertNewMessage(message: message)
+        
+        inputBar.inputTextView.text = ""
     }
 }

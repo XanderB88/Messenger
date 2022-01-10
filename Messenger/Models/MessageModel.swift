@@ -15,7 +15,12 @@ struct MessageModel: Hashable, MessageType {
     let id: String?
     var sender: SenderType
     var kind: MessageKind {
-        return .text(content)
+        
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.mainFont!
+                ]
+                let attributedContent = NSAttributedString.init(string: content, attributes: attributes)
+        return .attributedText(attributedContent)
     }
     var sentDate: Date
     var messageId: String {
@@ -65,5 +70,13 @@ struct MessageModel: Hashable, MessageType {
     
     static func == (lhs: MessageModel, rhs: MessageModel) -> Bool {
         return lhs.messageId == rhs.messageId
+    }
+}
+
+extension MessageModel: Comparable {
+   
+    static func < (lhs: MessageModel, rhs: MessageModel) -> Bool {
+        
+        return lhs.sentDate == rhs.sentDate
     }
 }
