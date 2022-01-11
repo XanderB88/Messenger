@@ -17,7 +17,7 @@ struct MessageModel: Hashable, MessageType {
     var kind: MessageKind {
         
         let attributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont.mainFont!
+            .font: UIFont.secondaryFont!
                 ]
                 let attributedContent = NSAttributedString.init(string: content, attributes: attributes)
         return .attributedText(attributedContent)

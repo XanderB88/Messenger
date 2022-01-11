@@ -16,6 +16,8 @@ class ConversationViewController: MessagesViewController {
     private let user: UserModel
     private let chat: ChatModel
     
+    var presenter: ConversationViewPresenterProtocol!
+    
     init(user: UserModel, chat: ChatModel) {
         
         self.user = user
@@ -45,7 +47,7 @@ class ConversationViewController: MessagesViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.navigationBar.standardAppearance.titleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont.headerFont!]
+        navigationController?.navigationBar.standardAppearance.titleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont.secondaryFont!]
         
         navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
@@ -61,6 +63,14 @@ class ConversationViewController: MessagesViewController {
     }
 }
 
+// MARK: - Conversation View Protocol
+extension ConversationViewController: ConversationViewProtocol {
+    
+    func updateView() {
+        self.messagesCollectionView.scrollToLastItem()
+    }
+}
+
 extension ConversationViewController {
     
     func setupCollectionView() {
@@ -68,8 +78,8 @@ extension ConversationViewController {
             return
         }
         flowLayout.collectionView?.backgroundColor = .mainDark
-        flowLayout.setMessageIncomingAvatarSize(.init(width: 55, height: 55))
-        flowLayout.setMessageOutgoingAvatarSize(.init(width: 55, height: 55))
+        flowLayout.setMessageIncomingAvatarSize(.init(width: 45, height: 45))
+        flowLayout.setMessageOutgoingAvatarSize(.init(width: 45, height: 45))
     }
     
     func setupMessageInputBar() {
@@ -163,6 +173,8 @@ extension ConversationViewController: InputBarAccessoryViewDelegate {
         let message = MessageModel(user: user, content: text)
         
         insertNewMessage(message: message)
+        
+        presenter.sendMessage(chat: chat, message: message, currentUser: user)
         
         inputBar.inputTextView.text = ""
     }

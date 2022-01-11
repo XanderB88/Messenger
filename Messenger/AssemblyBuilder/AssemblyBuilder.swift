@@ -134,6 +134,12 @@ class AssemblyBuilder: AssemblyBuilderProtocol {
     func createConversationScreen(router: RouterAuthenticationProtocol, chat: ChatModel, user: UserModel) -> UIViewController {
         
         let view = ConversationViewController(user: user, chat: chat)
+        let validator = Validator()
+        let storageService = StorageService()
+        let fireStoreService = FirestoreService(validator: validator, storageService: storageService)
+        let conversationPresenter = ConversationViewPresenter(view: view, firebaseFirestore: fireStoreService)
+        
+        view.presenter = conversationPresenter
         
         return view
     }
