@@ -171,7 +171,7 @@ extension ConversationViewController: MessagesDisplayDelegate {
     
     func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
         
-        return avatarView.sd_setImage(with: URL(string: user.userImageUrl))
+        return isFromCurrentSender(message: message) ? avatarView.sd_setImage(with: URL(string: chat.friendUserImageUrl)) : avatarView.sd_setImage(with: URL(string: user.userImageUrl))
     }
     
     func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
