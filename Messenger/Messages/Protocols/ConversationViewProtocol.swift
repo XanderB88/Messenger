@@ -10,4 +10,5 @@ import Foundation
 protocol ConversationViewProtocol: AnyObject {
     
     func updateView()
+    func updateMessages(message: MessageModel)
 }

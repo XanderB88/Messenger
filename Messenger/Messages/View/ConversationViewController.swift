@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseFirestore
 import MessageKit
 import InputBarAccessoryView
 
@@ -17,6 +18,7 @@ class ConversationViewController: MessagesViewController {
     private let chat: ChatModel
     
     var presenter: ConversationViewPresenterProtocol!
+    var messagesListener: ListenerRegistration?
     
     init(user: UserModel, chat: ChatModel) {
         
@@ -39,9 +41,16 @@ class ConversationViewController: MessagesViewController {
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
         
+        messagesListener = presenter.getMessageListener(chat: chat)
+        
         setupCollectionView()
         setupMessageInputBar()
         setupSendButton()
+    }
+    
+    deinit {
+        
+        messagesListener?.remove()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,6 +77,11 @@ extension ConversationViewController: ConversationViewProtocol {
     
     func updateView() {
         self.messagesCollectionView.scrollToLastItem()
+    }
+    
+    func updateMessages(message: MessageModel) {
+        
+        self.insertNewMessage(message: message)
     }
 }
 
@@ -171,8 +185,6 @@ extension ConversationViewController: InputBarAccessoryViewDelegate {
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
         
         let message = MessageModel(user: user, content: text)
-        
-        insertNewMessage(message: message)
         
         presenter.sendMessage(chat: chat, message: message, currentUser: user)
         

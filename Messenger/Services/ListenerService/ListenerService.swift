@@ -11,6 +11,7 @@ import FirebaseFirestore
 
 class ListenerService: ListenerServiceProtocol {
     
+    
     private let db = Firestore.firestore()
     
     private var userRef: CollectionReference {
@@ -137,5 +138,35 @@ class ListenerService: ListenerServiceProtocol {
         }
         
         return activeChatListener
+    }
+    
+    func messagesObserve(chat: ChatModel, completion: @escaping (Result<MessageModel, Error>) -> Void) -> ListenerRegistration? {
+        
+        let messagesRef = userRef.document(currentUserId).collection("activeChat").document(chat.friendUserId).collection("messages")
+        
+        let messagesListener = messagesRef.addSnapshotListener { querySnapshot, error in
+            
+            guard let snapshot = querySnapshot else {
+                
+                completion(.failure(error!))
+                return
+            }
+            
+            snapshot.documentChanges.forEach { diff in
+                
+                guard let modalMessage = MessageModel(document: diff.document) else { return }
+                
+                switch diff.type {
+                    case .added:
+                        completion(.success(modalMessage))
+                    case .modified:
+                        break
+                    case .removed:
+                        break
+                }
+            }
+        }
+        
+        return messagesListener
     }
 }

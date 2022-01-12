@@ -259,7 +259,7 @@ class FirestoreService: FireStoreServiceProtocol {
         
         let friendMessageRef = friendRef.collection("messages")
         
-        let selfMessageRef = userRef.document(currentUser.id).collection("activeChats").document(chat.friendUserId).collection("messages")
+        let selfMessageRef = userRef.document(currentUser.id).collection("activeChat").document(chat.friendUserId).collection("messages")
         
         let chatForFriend = ChatModel(friendUsername: currentUser.username,
                                       friendUserImageUrl: currentUser.userImageUrl,
