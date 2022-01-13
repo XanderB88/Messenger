@@ -255,11 +255,11 @@ class FirestoreService: FireStoreServiceProtocol {
     
     func sendMessage(chat: ChatModel, message: MessageModel, currentUser: UserModel, completion: @escaping (Result<Void, Error>) -> Void) {
         
-        let friendRef = userRef.document(chat.friendUserId).collection("activeChat").document(currentUser.id)
+        let friendRef = userRef.document(chat.friendUserId).collection("activeChats").document(currentUser.id)
         
         let friendMessageRef = friendRef.collection("messages")
         
-        let selfMessageRef = userRef.document(currentUser.id).collection("activeChat").document(chat.friendUserId).collection("messages")
+        let selfMessageRef = userRef.document(currentUser.id).collection("activeChats").document(chat.friendUserId).collection("messages")
         
         let chatForFriend = ChatModel(friendUsername: currentUser.username,
                                       friendUserImageUrl: currentUser.userImageUrl,

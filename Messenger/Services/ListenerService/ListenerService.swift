@@ -142,7 +142,7 @@ class ListenerService: ListenerServiceProtocol {
     
     func messagesObserve(chat: ChatModel, completion: @escaping (Result<MessageModel, Error>) -> Void) -> ListenerRegistration? {
         
-        let messagesRef = userRef.document(currentUserId).collection("activeChat").document(chat.friendUserId).collection("messages")
+        let messagesRef = userRef.document(currentUserId).collection("activeChats").document(chat.friendUserId).collection("messages")
         
         let messagesListener = messagesRef.addSnapshotListener { querySnapshot, error in
             
