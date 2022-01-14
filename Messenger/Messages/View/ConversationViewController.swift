@@ -61,6 +61,12 @@ class ConversationViewController: MessagesViewController {
         navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        messagesCollectionView.scrollToLastItem(animated: false)
+    }
+    
     private func insertNewMessage(message: MessageModel) {
         
         guard !messages.contains(message) else { return }
@@ -171,7 +177,7 @@ extension ConversationViewController: MessagesDisplayDelegate {
     
     func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
         
-        return isFromCurrentSender(message: message) ? avatarView.sd_setImage(with: URL(string: chat.friendUserImageUrl)) : avatarView.sd_setImage(with: URL(string: user.userImageUrl))
+        return isFromCurrentSender(message: message) ? avatarView.sd_setImage(with: URL(string: user.userImageUrl)) : avatarView.sd_setImage(with: URL(string: chat.friendUserImageUrl))
     }
     
     func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
