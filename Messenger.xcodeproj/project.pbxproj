@@ -433,9 +433,9 @@
 				1178E865273DFE6E0049EA54 /* Extensions */,
 				116DE6EB27487FC10060016D /* Auth&Register */,
 				116DE6F2274888410060016D /* People&Chats */,
-				119600DA2785354700F4AA74 /* Messages */,
 				118C8A9E2758675400B0C014 /* Profile */,
 				118C8A9D2758672C00B0C014 /* ChatRequest */,
+				119600DA2785354700F4AA74 /* Messages */,
 				1178E864273DDF0B0049EA54 /* Supporting Files */,
 			);
 			path = Messenger;

@@ -9,6 +9,7 @@ import Foundation
 import FirebaseFirestore
 import MessageKit
 import InputBarAccessoryView
+import UIKit
 
 class ConversationViewController: MessagesViewController {
     
@@ -46,6 +47,7 @@ class ConversationViewController: MessagesViewController {
         setupCollectionView()
         setupMessageInputBar()
         setupSendButton()
+        setupCameraButton()
     }
     
     deinit {
@@ -75,6 +77,10 @@ class ConversationViewController: MessagesViewController {
         messages.sort()
         
         messagesCollectionView.reloadData()
+    }
+    
+    @objc private func cameraButtonPressed() {
+        
     }
 }
 
@@ -122,10 +128,27 @@ extension ConversationViewController {
     func setupSendButton() {
         
         messageInputBar.sendButton.setImage(UIImage(named: "send"), for: .normal)
-        messageInputBar.sendButton.addGradient(cornerRadius: 18)
         messageInputBar.setRightStackViewWidthConstant(to: 56, animated: false)
         messageInputBar.sendButton.title = .none
         messageInputBar.sendButton.setSize(CGSize(width: 66, height: 66), animated: false)
+    }
+    
+    func setupCameraButton() {
+        
+        let cameraItem = InputBarButtonItem(type: .system)
+        cameraItem.tintColor = .mainDark
+        
+        let cameraImage = UIImage(named: "camera")
+        
+        cameraItem.image = cameraImage
+        cameraItem.addTarget(self, action: #selector(cameraButtonPressed), for: .primaryActionTriggered)
+        cameraItem.setSize(CGSize(width: 66, height: 66), animated: false)
+        
+        messageInputBar.leftStackView.alignment = .center
+        messageInputBar.setLeftStackViewWidthConstant(to: 56, animated: false)
+        
+        messageInputBar.setStackViewItems([cameraItem], forStack: .left, animated: false)
+        
     }
 }
 
